@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杀戮尖塔流派助手 - STS1 & STS2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <style>
+        .new-badge {
+            background: linear-gradient(90deg, #a855f7, #6366f1);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            margin-left: 5px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .info-box {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .info-box h3 {
+            color: #a855f7;
+            margin-bottom: 15px;
+        }
+        
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-box li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-box li:last-child {
+            border-bottom: none;
+        }
+        
+        .video-link {
+            color: #6bcb77;
+            text-decoration: none;
+        }
+        
+        .video-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗡️ 杀戮尖塔流派助手</h1>
+            <p class="subtitle">分析你的牌库，推荐最佳流派</p>
+            
+            <div class="version-switch">
+                <button class="version-btn active" data-version="sts1" onclick="switchVersion('sts1')">
+                    ⚔️ 杀戮尖塔 1
+                </button>
+                <button class="version-btn sts2" data-version="sts2" onclick="switchVersion('sts2')">
+                    🗡️ 杀戮尖塔 2 <span class="new-badge">NEW</span>
+                </button>
+            </div>
+            <p class="save-hint" id="saveHint">💾 选择会自动保存</p>
+        </header>
+
+        <div class="info-box" id="sts2Info" style="display: none;">
+            <h3>🎮 STS2 新角色</h3>
+            <ul>
+                <li>💀 <strong>亡灵契约师</strong> - 契约与亡灵机制</li>
+                <li>👑 <strong>储君</strong> - 攻击卡组合专家</li>
+            </ul>
+            <p style="margin-top: 15px; color: #aaa;">
+                📺 攻略视频：
+                <a href="https://www.bilibili.com/video/BV1tyNNzxEpK/" target="_blank" class="video-link">
+                    全英雄基础流派攻略【完结】
+                </a>
+            </p>
+            <p style="margin-top: 10px; color: #ff6b6b;">
+                ⚠️ STS2卡牌数据需要手动补充，欢迎贡献！
+            </p>
+        </div>
+
+        <section class="character-select">
+            <h2>选择角色</h2>
+            <div class="characters" id="characterList">
+                <!-- 由JS填充 -->
+            </div>
+        </section>
+
+        <section class="card-input" id="cardInput" style="display: none;">
+            <h2>选择你已有的卡牌</h2>
+            <div class="search-box">
+                <input type="text" id="cardSearch" placeholder="搜索卡牌名称...">
+            </div>
+            <div class="card-categories" id="cardCategories"></div>
+            <div class="selected-cards">
+                <h3>已选择的卡牌 (<span id="selectedCount">0</span>)</h3>
+                <div id="selectedCardsList"></div>
+            </div>
+            <button class="analyze-btn" id="analyzeBtn">分析流派</button>
+            <button class="reset-btn" id="resetBtn">清空选择</button>
+        </section>
+
+        <section class="results" id="results" style="display: none;">
+            <h2>流派分析结果</h2>
+            <div id="archetypeResults"></div>
+        </section>
+
+        <section class="archetype-guide" id="archetypeGuide" style="display: none;">
+            <h2>流派详情</h2>
+            <div id="guideContent"></div>
+        </section>
+    </div>
+
+    <script src="data/ironclad.js"></script>
+    <script src="data/silent.js"></script>
+    <script src="data/defect.js"></script>
+    <script src="data/watcher.js"></script>
+    <script src="data/sts2_data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cards.js"></script>
+    <script>
+        let currentVersion = 'sts1';
+        
+        function switchVersion(version) {
+            currentVersion = version;
+            Storage.saveVersion(version); // 持久化版本选择
+            
+            document.querySelectorAll('.version-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.version-btn[data-version="${version}"]`).classList.add('active');
+            
+            const infoEl = document.getElementById('sts2Info');
+            infoEl.style.display = version === 'sts2' ? 'block' : 'none';
+            
+            currentCharacter = null;
+            selectedCards = [];
+            
+            // 尝试恢复之前保存的角色
+            const savedChar = Storage.loadCurrentCharacter();
+            if (savedChar) {
+                currentCharacter = savedChar;
+                selectedCards = Storage.loadSelectedCards() || [];
+            }
+            
+            document.getElementById('cardInput').style.display = currentCharacter ? 'block' : 'none';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('archetypeGuide').style.display = 'none';
+            
+            renderCharacterList();
+            
+            // 如果有恢复的角色，高亮它
+            if (currentCharacter) {
+                setTimeout(() => {
+                    const btn = document.querySelector(`.char-btn[data-char="${currentCharacter}"]`);
+                    if (btn) btn.classList.add('active');
+                }, 50);
+            }
+        }
+        
+        function renderCharacterList() {
+            const container = document.getElementById('characterList');
+            container.innerHTML = '';
+            
+            let characters;
+            if (currentVersion === 'sts2') {
+                characters = [
+                    { id: 'ironclad', icon: '🗡️', name: '铁甲战士' },
+                    { id: 'silent', icon: '🗡️', name: '静默猎人' },
+                    { id: 'defect', icon: '🔷', name: '故障机器人' },
+                    { id: 'watcher', icon: '👁️', name: '观者' },
+                    { id: 'necromancer', icon: '💀', name: '亡灵契约师', isNew: true },
+                    { id: 'prince', icon: '👑', name: '储君', isNew: true }
+                ];
+            } else {
+                characters = [
+                    { id: 'ironclad', icon: '🗡️', name: '铁甲战士' },
+                    { id: 'silent', icon: '🗡️', name: '静默猎人' },
+                    { id: 'defect', icon: '🔷', name: '故障机器人' },
+                    { id: 'watcher', icon: '👁️', name: '观者' }
+                ];
+            }
+            
+            characters.forEach(char => {
+                const btn = document.createElement('button');
+                btn.className = 'char-btn' + (char.isNew ? ' sts2' : '');
+                btn.dataset.char = char.id;
+                btn.innerHTML = `
+                    <span class="char-icon">${char.icon}</span>
+                    <span class="char-name">${char.name}${char.isNew ? '<span class="new-badge">新</span>' : ''}</span>
+                `;
+                btn.addEventListener('click', () => {
+                    selectCharacter(char.id);
+                    document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+                container.appendChild(btn);
+            });
+        }
+        
+        renderCharacterList();
+    </script>
+</body>
+</html>

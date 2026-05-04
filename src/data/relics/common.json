@@ -1,0 +1,147 @@
+{
+  "relics": [
+    {
+      "id": "vajra",
+      "name": "金刚杵",
+      "nameEn": "Vajra",
+      "rarity": "common",
+      "character": "common",
+      "description": "每场战斗开始时获得1层力量。",
+      "effects": [{ "trigger": "on_combat_start", "description": "力量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["力量"]
+    },
+    {
+      "id": "oddly_smooth_stone",
+      "name": "奇石",
+      "nameEn": "Oddly Smooth Stone",
+      "rarity": "common",
+      "character": "common",
+      "description": "每场战斗开始时获得1层敏捷。",
+      "effects": [{ "trigger": "on_combat_start", "description": "敏捷+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["敏捷"]
+    },
+    {
+      "id": "bag_of_preparation",
+      "name": "准备之袋",
+      "nameEn": "Bag of Preparation",
+      "rarity": "common",
+      "character": "common",
+      "description": "每场战斗开始时额外抽2张牌。",
+      "effects": [{ "trigger": "on_combat_start", "description": "抽2张牌", "power": 2 }],
+      "dataSource": "manual",
+      "tags": ["过牌"]
+    },
+    {
+      "id": "anchor",
+      "name": "船锚",
+      "nameEn": "Anchor",
+      "rarity": "common",
+      "character": "common",
+      "description": "每场战斗开始时获得10点护甲。",
+      "effects": [{ "trigger": "on_combat_start", "description": "护甲+10", "power": 10 }],
+      "dataSource": "manual",
+      "tags": ["护甲"]
+    },
+    {
+      "id": "bronze_scales",
+      "name": "铜鳞",
+      "nameEn": "Bronze Scales",
+      "rarity": "common",
+      "character": "common",
+      "description": "每当你受到伤害时，对攻击者造成3点伤害。",
+      "effects": [{ "trigger": "on_take_damage", "description": "反伤3", "power": 3 }],
+      "dataSource": "manual",
+      "tags": ["反伤"]
+    },
+    {
+      "id": "centennial_puzzle",
+      "name": "百年谜题",
+      "nameEn": "Centennial Puzzle",
+      "rarity": "common",
+      "character": "common",
+      "description": "每场战斗第一次受到伤害时，抽3张牌。",
+      "effects": [{ "trigger": "on_take_damage", "description": "抽3张牌", "power": 3 }],
+      "dataSource": "manual",
+      "tags": ["过牌"]
+    },
+    {
+      "id": "lantern",
+      "name": "灯笼",
+      "nameEn": "Lantern",
+      "rarity": "common",
+      "character": "common",
+      "description": "每场战斗第一回合获得1点额外能量。",
+      "effects": [{ "trigger": "on_combat_start", "description": "能量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["能量"]
+    },
+    {
+      "id": "nunchaku",
+      "name": "双截棍",
+      "nameEn": "Nunchaku",
+      "rarity": "common",
+      "character": "common",
+      "description": "每打出10张攻击牌，获得1点能量。",
+      "effects": [{ "trigger": "on_play_attack", "description": "10攻击牌后能量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["能量", "攻击"]
+    },
+    {
+      "id": "ornamental_fan",
+      "name": "装饰风扇",
+      "nameEn": "Ornamental Fan",
+      "rarity": "common",
+      "character": "common",
+      "description": "每回合打出3张攻击牌时，获得4点护甲。",
+      "effects": [{ "trigger": "on_play_attack", "description": "3攻击牌后护甲+4", "power": 4 }],
+      "dataSource": "manual",
+      "tags": ["护甲", "攻击"]
+    },
+    {
+      "id": "pen_nib",
+      "name": "笔尖",
+      "nameEn": "Pen Nib",
+      "rarity": "common",
+      "character": "common",
+      "description": "每打出10张攻击牌，下一张攻击牌造成双倍伤害。",
+      "effects": [{ "trigger": "on_play_attack", "description": "10攻击牌后双倍伤害", "power": 2 }],
+      "dataSource": "manual",
+      "tags": ["攻击"]
+    },
+    {
+      "id": "blood_vial",
+      "name": "血瓶",
+      "nameEn": "Blood Vial",
+      "rarity": "common",
+      "character": "common",
+      "description": "每场战斗开始时恢复2点生命。",
+      "effects": [{ "trigger": "on_combat_start", "description": "恢复2HP", "power": 2 }],
+      "dataSource": "manual",
+      "tags": ["回复"]
+    },
+    {
+      "id": "regal_pillow",
+      "name": "皇家枕头",
+      "nameEn": "Regal Pillow",
+      "rarity": "common",
+      "character": "common",
+      "description": "每场战斗结束时额外恢复3点生命。",
+      "effects": [{ "trigger": "passive", "description": "战斗结束恢复3HP", "power": 3 }],
+      "dataSource": "manual",
+      "tags": ["回复"]
+    },
+    {
+      "id": "maw_bank",
+      "name": "颚银行",
+      "nameEn": "Maw Bank",
+      "rarity": "common",
+      "character": "common",
+      "description": "每进入一个非战斗房间获得12金币。在商店花费金币时失去此遗物。",
+      "effects": [{ "trigger": "passive", "description": "非战斗房间+12金", "power": 12 }],
+      "dataSource": "manual",
+      "tags": ["经济"]
+    }
+  ]
+}

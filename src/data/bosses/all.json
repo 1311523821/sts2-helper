@@ -1,0 +1,253 @@
+{
+  "bosses": [
+    {
+      "id": "boss_gremlin_nob",
+      "name": "地精头目",
+      "nameEn": "Gremlin Nob",
+      "act": 1,
+      "hp": { "min": 82, "max": 86 },
+      "description": "精英Boss。每次你打出技能牌时获得愤怒（力量+2）。",
+      "skills": [
+        { "name": "冲锋", "description": "造成14点伤害", "intent": "attack" },
+        { "name": "猛击", "description": "造成32点伤害", "intent": "attack" },
+        { "name": "战吼", "description": "获得2层愤怒（力量+2）", "intent": "buff" }
+      ],
+      "strategy": [
+        "不要打技能牌！每次打技能牌它会获得力量。",
+        "尽量用攻击牌快速击杀。",
+        "前期力量不高时全力输出，不要浪费回合防御。",
+        "如果有力量流，可以利用它的愤怒机制反向叠加。"
+      ],
+      "weaknesses": ["高伤害攻击", "易伤", "力量叠加"],
+      "threats": ["技能牌触发愤怒", "猛击高伤"]
+    },
+    {
+      "id": "boss_lagavulin",
+      "name": "拉加维林",
+      "nameEn": "Lagavulin",
+      "act": 1,
+      "hp": { "min": 109, "max": 111 },
+      "description": "精英Boss。前3回合处于沉睡状态（不攻击），之后每3回合施加8层虚弱和8层易伤。",
+      "skills": [
+        { "name": "沉睡", "description": "不行动", "intent": "sleep" },
+        { "name": "苏醒", "description": "施加8层虚弱和8层易伤", "intent": "debuff" },
+        { "name": "重击", "description": "造成18点伤害", "intent": "attack" },
+        { "name": "大重击", "description": "造成30点伤害", "intent": "attack" }
+      ],
+      "strategy": [
+        "前3回合全力输出！它不会攻击你。",
+        "苏醒后会施加大量虚弱和易伤，需要准备防御。",
+        "如果伤害不够在3回合内击杀，需要准备应对虚弱。",
+        "力量流在前3回合可以快速叠加力量。",
+        "防战流可以在前3回合积累大量护甲。"
+      ],
+      "weaknesses": ["前3回合不攻击", "可以安全setup"],
+      "threats": ["苏醒后大量debuff", "高伤害攻击"]
+    },
+    {
+      "id": "boss_hexaghost",
+      "name": "六面体幽灵",
+      "nameEn": "Hexaghost",
+      "act": 1,
+      "hp": { "min": 250, "max": 250 },
+      "description": "章节Boss。每6回合发动一次强力攻击，伤害基于你的当前生命值。",
+      "skills": [
+        { "name": "燃烧", "description": "施加2层灼烧", "intent": "debuff" },
+        { "name": "旋风", "description": "造成2点伤害6次", "intent": "attack" },
+        { "name": "强化", "description": "获得2层力量", "intent": "buff" },
+        { "name": "炽焰", "description": "造成X点伤害（X=你当前生命/12+1）", "intent": "attack" }
+      ],
+      "strategy": [
+        "炽焰伤害基于你当前生命值，生命越高伤害越高！",
+        "保持较低生命可以减少炽焰伤害（但要确保不会被打死）。",
+        "尽快击杀，拖延越久它越强。",
+        "灼烧牌会污染牌组，尽量不要拿太多。",
+        "力量流和毒流都是不错的选择。"
+      ],
+      "weaknesses": ["生命越低炽焰伤害越低", "可以快速击杀"],
+      "threats": ["炽焰高伤", "灼烧污染牌组", "持续叠加力量"]
+    },
+    {
+      "id": "boss_slime_boss",
+      "name": "史莱姆Boss",
+      "nameEn": "Slime Boss",
+      "act": 1,
+      "hp": { "min": 140, "max": 140 },
+      "description": "章节Boss。每3回合分裂成两个较小的史莱姆。",
+      "skills": [
+        { "name": "准备跳", "description": "下回合造成35点伤害", "intent": "buff" },
+        { "name": "重压", "description": "造成35点伤害", "intent": "attack" },
+        { "name": "分裂", "description": "分裂成两个史莱姆", "intent": "special" }
+      ],
+      "strategy": [
+        "在它分裂前尽量多打伤害。",
+        "分裂后的史莱姆更小但也需要处理。",
+        "AOE牌在分裂后非常有用。",
+        "毒流可以快速削减血量。",
+        "力量流在分裂前可以打出高额伤害。"
+      ],
+      "weaknesses": ["可以被快速击杀", "分裂后个体更弱"],
+      "threats": ["重压35点伤害", "分裂后数量多"]
+    },
+    {
+      "id": "boss_the_guardian",
+      "name": "守卫者",
+      "nameEn": "The Guardian",
+      "act": 1,
+      "hp": { "min": 240, "max": 240 },
+      "description": "章节Boss。可以切换攻击模式和防御模式。防御模式下受到伤害会反弹。",
+      "skills": [
+        { "name": "冲锋", "description": "造成32点伤害", "intent": "attack" },
+        { "name": "锋利肋骨", "description": "进入防御模式，反弹受到的伤害", "intent": "buff" },
+        { "name": "旋风", "description": "造成5点伤害4次", "intent": "attack" },
+        { "name": "折叠", "description": "获得20点护甲", "intent": "defend" }
+      ],
+      "strategy": [
+        "防御模式下不要攻击！会反弹伤害。",
+        "在攻击模式下全力输出。",
+        "防战流可以利用护甲安全度过防御模式。",
+        "毒流在防御模式下不会被反弹。",
+        "注意模式切换的节奏。"
+      ],
+      "weaknesses": ["防御模式不攻击", "可以被毒无视反弹"],
+      "threats": ["防御模式反弹伤害", "冲锋高伤"]
+    },
+    {
+      "id": "boss_collector",
+      "name": "收藏家",
+      "nameEn": "The Collector",
+      "act": 2,
+      "hp": { "min": 282, "max": 282 },
+      "description": "章节Boss。每回合召唤骷髅小兵，小兵死亡时获得护甲。",
+      "skills": [
+        { "name": "召唤", "description": "召唤2个骷髅", "intent": "summon" },
+        { "name": "火球", "description": "造成15点伤害", "intent": "attack" },
+        { "name": "强化", "description": "所有敌人获得3层力量", "intent": "buff" },
+        { "name": "大招", "description": "造成25点伤害", "intent": "attack" }
+      ],
+      "strategy": [
+        "优先击杀小兵，不要让小兵积累太多。",
+        "小兵死亡时收藏家获得护甲，但护甲可以被消耗。",
+        "AOE牌非常有用。",
+        "毒流可以同时对所有敌人施加中毒。",
+        "力量流需要快速击杀收藏家本体。"
+      ],
+      "weaknesses": ["本体血量不高", "小兵可以被AOE清理"],
+      "threats": ["小兵数量多", "强化增加力量", "持续召唤"]
+    },
+    {
+      "id": "boss_bronze_automaton",
+      "name": "青铜自动机",
+      "nameEn": "Bronze Automaton",
+      "act": 2,
+      "hp": { "min": 300, "max": 300 },
+      "description": "章节Boss。每回合获得护甲，护甲未被消耗时造成额外伤害。",
+      "skills": [
+        { "name": "增压", "description": "获得10点护甲", "intent": "defend" },
+        { "name": "光束", "description": "造成7点伤害3次", "intent": "attack" },
+        { "name": "重击", "description": "造成22点伤害", "intent": "attack" },
+        { "name": "超级增压", "description": "获得20点护甲+力量", "intent": "buff" }
+      ],
+      "strategy": [
+        "它每回合获得护甲，需要高伤害突破护甲。",
+        "护甲未被消耗时会造成额外伤害。",
+        "力量流可以突破护甲。",
+        "毒流可以无视护甲直接扣血。",
+        "防战流需要准备应对持续伤害。"
+      ],
+      "weaknesses": ["可以被毒无视护甲", "护甲不会累积到下一回合"],
+      "threats": ["高护甲", "多段攻击", "持续强化"]
+    },
+    {
+      "id": "boss_the_champ",
+      "name": "冠军",
+      "nameEn": "The Champ",
+      "act": 2,
+      "hp": { "min": 420, "max": 420 },
+      "description": "章节Boss。血量低于50%时进入狂暴状态，伤害大幅提升。",
+      "skills": [
+        { "name": "上勾拳", "description": "造成16点伤害，施加虚弱", "intent": "attack" },
+        { "name": "强化", "description": "获得3层力量", "intent": "buff" },
+        { "name": "防御", "description": "获得15点护甲", "intent": "defend" },
+        { "name": "狂暴", "description": "血量<50%时触发，移除所有debuff，获得力量", "intent": "buff" }
+      ],
+      "strategy": [
+        "血量低于50%会狂暴！要在狂暴前尽量削减血量。",
+        "狂暴时会移除所有debuff，毒流在狂暴后会失效。",
+        "尽量在狂暴前一波带走。",
+        "力量流可以在狂暴前打出高爆发。",
+        "防战流需要准备应对狂暴后的高伤害。"
+      ],
+      "weaknesses": ["狂暴前可以被debuff", "狂暴前血量不高"],
+      "threats": ["狂暴移除debuff", "狂暴后伤害爆炸", "持续叠加力量"]
+    },
+    {
+      "id": "boss_time_eater",
+      "name": "时间吞噬者",
+      "nameEn": "Time Eater",
+      "act": 3,
+      "hp": { "min": 456, "max": 456 },
+      "description": "章节Boss。每打出12张牌，回合强制结束。",
+      "skills": [
+        { "name": "劈砍", "description": "造成26点伤害", "intent": "attack" },
+        { "name": "重击", "description": "造成32点伤害", "intent": "attack" },
+        { "name": "时间扭曲", "description": "施加2层易伤和虚弱", "intent": "debuff" },
+        { "name": "强化", "description": "获得2层力量", "intent": "buff" }
+      ],
+      "strategy": [
+        "每打出12张牌回合强制结束！小刀流和弃牌流要特别注意。",
+        "尽量用少牌打出高伤害。",
+        "力量流用高伤单牌效果好。",
+        "毒流不受打牌数限制。",
+        "注意控制每回合出牌数量。"
+      ],
+      "weaknesses": ["可以被高单伤克制", "毒流不受限制"],
+      "threats": ["12张牌限制", "高伤害", "持续叠加力量"]
+    },
+    {
+      "id": "boss_donu_deca",
+      "name": "多努和德卡",
+      "nameEn": "Donu and Deca",
+      "act": 3,
+      "hp": { "min": 250, "max": 250 },
+      "description": "章节Boss。两个Boss同时出现，一个攻击一个防御。",
+      "skills": [
+        { "name": "圆形打击", "description": "造成12点伤害", "intent": "attack" },
+        { "name": "增益", "description": "所有敌人获得3层力量", "intent": "buff" },
+        { "name": "护甲", "description": "所有敌人获得16点护甲", "intent": "defend" }
+      ],
+      "strategy": [
+        "优先击杀Donu（提供力量的那个）。",
+        "Donu死后Deca会变得更容易。",
+        "AOE牌可以同时伤害两个Boss。",
+        "毒流可以同时对两个Boss施加中毒。",
+        "不要拖延太久，它们会持续叠加力量。"
+      ],
+      "weaknesses": ["击杀一个后另一个更弱", "可以被AOE克制"],
+      "threats": ["双Boss", "持续叠加力量", "互相提供护甲"]
+    },
+    {
+      "id": "boss_awakened_one",
+      "name": "觉醒者",
+      "nameEn": "Awakened One",
+      "act": 3,
+      "hp": { "min": 300, "max": 300 },
+      "description": "章节Boss。有两条命。第一条命死后复活并进入第二阶段，伤害大幅提升。",
+      "skills": [
+        { "name": "暗击", "description": "造成40点伤害", "intent": "attack" },
+        { "name": "虚空", "description": "施加2层虚弱", "intent": "debuff" },
+        { "name": "复活", "description": "死亡后复活，进入第二阶段", "intent": "special" },
+        { "name": "暗影打击", "description": "造成60点伤害", "intent": "attack" }
+      ],
+      "strategy": [
+        "有两条命！第二阶段伤害更高。",
+        "第一阶段尽量保存资源。",
+        "第二阶段需要全力输出。",
+        "力量流在第二阶段可以快速击杀。",
+        "防战流需要准备应对第二阶段的高伤害。"
+      ],
+      "weaknesses": ["第一阶段伤害不高", "可以被快速击杀"],
+      "threats": ["两条命", "第二阶段高伤", "虚弱debuff"]
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+[
+  {
+    "id": "ironclad_strength",
+    "name": "力量流",
+    "nameEn": "Strength Build",
+    "character": "ironclad",
+    "description": "通过叠加力量层数，使每一张攻击牌都能造成大量伤害。力量流是铁甲战士最经典也最容易上手的流派。",
+    "difficulty": "beginner",
+    "coreCards": [
+      { "cardId": "ironclad_inflame", "weight": 90, "isCore": true, "reason": "永久增加力量，是力量流的基石" },
+      { "cardId": "ironclad_demon_form", "weight": 85, "isCore": true, "reason": "每回合自动叠加力量，后期伤害爆炸" },
+      { "cardId": "ironclad_anger", "weight": 70, "isCore": true, "reason": "零费获得力量，效率极高" }
+    ],
+    "importantCards": [
+      { "cardId": "ironclad_heavy_blade", "weight": 80, "isCore": false, "reason": "力量加成 x3，是力量流的核心输出手段" },
+      { "cardId": "ironclad_sword_boomerang", "weight": 75, "isCore": false, "reason": "多次攻击，每次都能享受力量加成" },
+      { "cardId": "ironclad_pummel", "weight": 70, "isCore": false, "reason": "多次攻击，力量加成收益高" },
+      { "cardId": "ironclad_twin_strike", "weight": 65, "isCore": false, "reason": "两次攻击 + 过牌" }
+    ],
+    "supportCards": [
+      { "cardId": "ironclad_flex", "weight": 50, "isCore": false, "reason": "临时力量，配合重刃效果好" },
+      { "cardId": "ironclad_bash", "weight": 45, "isCore": false, "reason": "易伤使伤害翻倍" },
+      { "cardId": "ironclad_battle_trance", "weight": 40, "isCore": false, "reason": "过牌，找核心卡" }
+    ],
+    "preferredRatio": { "attack": 0.5, "skill": 0.3, "power": 0.2 },
+    "idealCostCurve": [0.15, 0.45, 0.30, 0.10, 0.00],
+    "scoringWeights": {
+      "coreCardMatch": 0.40,
+      "importantCardMatch": 0.25,
+      "supportCardMatch": 0.10,
+      "ratioMatch": 0.10,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.10
+    },
+    "combos": [
+      {
+        "id": "strength_heavy_blade",
+        "name": "力量重刃",
+        "cards": ["ironclad_inflame", "ironclad_heavy_blade"],
+        "description": "力量叠加 + 重刃的3倍力量加成 = 恐怖单体伤害",
+        "power": "high",
+        "setup": "先使用燃烧增加力量，再用重刃输出"
+      },
+      {
+        "id": "strength_multi_hit",
+        "name": "力量多段",
+        "cards": ["ironclad_demon_form", "ironclad_sword_boomerang", "ironclad_pummel"],
+        "description": "恶魔形态持续叠加力量，配合多段攻击打出海量伤害",
+        "power": "game_winning",
+        "setup": "需要2-3回合的 setup 时间，期间需要足够的防御"
+      }
+    ],
+    "guide": {
+      "overview": "力量流的核心思路是通过各种方式叠加力量，然后利用高力量配合攻击牌造成大量伤害。",
+      "coreStrategy": "优先拿取力量来源（燃烧、恶魔形态），然后补充多段攻击牌（回旋镖、连击）来最大化力量收益。",
+      "earlyGame": "前期基础牌足够应对，重点寻找燃烧和愤怒。如果遇到恶魔形态，即使费用高也值得拿。",
+      "midGame": "中期需要确定力量来源的优先级。如果有恶魔形态，可以走持续叠加路线；如果有燃烧，走爆发路线。",
+      "lateGame": "后期力量叠加上限后，伤害会非常恐怖。此时需要注意防御，避免在 setup 阶段被秒。",
+      "tips": [
+        "重刃是力量流的终极武器，力量越高收益越大",
+        "多段攻击牌（回旋镖、连击）比单次高伤牌更享受力量加成",
+        "恶魔形态虽然费用高，但长期收益远超其他力量来源",
+        "不要忽视防御，setup 阶段需要活下来"
+      ],
+      "commonMistakes": [
+        "只拿攻击牌不拿防御牌，导致 setup 阶段暴毙",
+        "拿太多力量来源但没有好的输出牌",
+        "在力量不够时就拿重刃，效率很低"
+      ]
+    }
+  },
+  {
+    "id": "ironclad_block",
+    "name": "防战流",
+    "nameEn": "Block Build",
+    "character": "ironclad",
+    "description": "通过大量护甲积累，配合身体撞击等卡牌将护甲转化为伤害。适合喜欢稳健打法的玩家。",
+    "difficulty": "intermediate",
+    "coreCards": [
+      { "cardId": "ironclad_barricade", "weight": 95, "isCore": true, "reason": "护甲不再消失，是防战流的核心" },
+      { "cardId": "ironclad_body_slam", "weight": 90, "isCore": true, "reason": "将护甲转化为伤害的核心输出" },
+      { "cardId": "ironclad_entrench", "weight": 80, "isCore": true, "reason": "护甲翻倍，快速积累护甲" }
+    ],
+    "importantCards": [
+      { "cardId": "ironclad_impervious", "weight": 80, "isCore": false, "reason": "单次获得大量护甲" },
+      { "cardId": "ironclad_flame_barrier", "weight": 70, "isCore": false, "reason": "护甲 + 反伤" },
+      { "cardId": "ironclad_shrug_it_off", "weight": 65, "isCore": false, "reason": "护甲 + 过牌" }
+    ],
+    "supportCards": [
+      { "cardId": "ironclad_metallicize", "weight": 55, "isCore": false, "reason": "每回合自动获得护甲" },
+      { "cardId": "ironclad_feel_no_pain", "weight": 50, "isCore": false, "reason": "消耗牌时获得护甲" },
+      { "cardId": "ironclad_juggernaut", "weight": 45, "isCore": false, "reason": "获得护甲时造成伤害" }
+    ],
+    "preferredRatio": { "attack": 0.25, "skill": 0.55, "power": 0.20 },
+    "idealCostCurve": [0.20, 0.40, 0.30, 0.10, 0.00],
+    "scoringWeights": {
+      "coreCardMatch": 0.35,
+      "importantCardMatch": 0.25,
+      "supportCardMatch": 0.10,
+      "ratioMatch": 0.10,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.15
+    },
+    "combos": [
+      {
+        "id": "block_body_slam",
+        "name": "护甲撞击",
+        "cards": ["ironclad_barricade", "ironclad_entrench", "ironclad_body_slam"],
+        "description": "堡垒保留护甲 → 壕沟翻倍 → 身体撞击一击必杀",
+        "power": "game_winning",
+        "setup": "需要先打出堡垒，然后积累护甲，最后用身体撞击输出"
+      }
+    ],
+    "guide": {
+      "overview": "防战流的核心是通过积累大量护甲，然后用身体撞击将护甲转化为伤害。堡垒是核心中的核心。",
+      "coreStrategy": "优先拿到堡垒，然后补充护甲来源，最后用身体撞击输出。",
+      "earlyGame": "前期比较弱，需要忍耐。优先拿护甲牌过渡。",
+      "midGame": "拿到堡垒后开始起飞，护甲不再消失意味着可以无限积累。",
+      "lateGame": "护甲积累到一定程度后，身体撞击可以一击秒杀大部分敌人。",
+      "tips": [
+        "堡垒是第一优先级，没有堡垒的防战流不完整",
+        "壕沟可以让护甲快速翻倍",
+        "身体撞击只需要1费，配合高护甲效率极高",
+        "主宰可以让护甲积累的同时也有输出"
+      ],
+      "commonMistakes": [
+        "没有堡垒就开始走防战流，护甲每回合消失",
+        "只拿护甲牌不拿输出牌，最后打不出伤害",
+        "忽视过牌，找不到核心卡"
+      ]
+    }
+  },
+  {
+    "id": "ironclad_exhaust",
+    "name": "消耗流",
+    "nameEn": "Exhaust Build",
+    "character": "ironclad",
+    "description": "利用消耗机制，将消耗牌转化为各种收益。高风险高回报的流派。",
+    "difficulty": "advanced",
+    "coreCards": [
+      { "cardId": "ironclad_corruption", "weight": 95, "isCore": true, "reason": "技能牌变为0费，配合消耗机制收益巨大" },
+      { "cardId": "ironclad_feel_no_pain", "weight": 85, "isCore": true, "reason": "消耗牌时获得护甲，提供防御" },
+      { "cardId": "ironclad_fiend_fire", "weight": 75, "isCore": true, "reason": "消耗手牌造成大量伤害" }
+    ],
+    "importantCards": [
+      { "cardId": "ironclad_second_wind", "weight": 75, "isCore": false, "reason": "消耗非攻击牌获得护甲" },
+      { "cardId": "ironclad_burning_pact", "weight": 65, "isCore": false, "reason": "消耗牌 + 过牌" },
+      { "cardId": "ironclad_true_grit", "weight": 55, "isCore": false, "reason": "消耗 + 护甲" }
+    ],
+    "supportCards": [
+      { "cardId": "ironclad_dark_pact", "weight": 50, "isCore": false, "reason": "消耗触发" },
+      { "cardId": "ironclad_disarm", "weight": 45, "isCore": false, "reason": "消耗 + 控制" }
+    ],
+    "preferredRatio": { "attack": 0.30, "skill": 0.45, "power": 0.25 },
+    "idealCostCurve": [0.25, 0.40, 0.25, 0.10, 0.00],
+    "scoringWeights": {
+      "coreCardMatch": 0.30,
+      "importantCardMatch": 0.25,
+      "supportCardMatch": 0.10,
+      "ratioMatch": 0.10,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.20
+    },
+    "combos": [
+      {
+        "id": "exhaust_cycle",
+        "name": "消耗循环",
+        "cards": ["ironclad_corruption", "ironclad_feel_no_pain", "ironclad_fiend_fire"],
+        "description": "腐败让技能牌0费 → 打出消耗获得护甲 → 恶魔之火消耗手牌造成伤害",
+        "power": "game_winning",
+        "setup": "先打出腐败和无痛，然后不断消耗牌获取收益"
+      }
+    ],
+    "guide": {
+      "overview": "消耗流的核心是利用消耗机制，将消耗行为本身转化为收益。腐败是核心引擎。",
+      "coreStrategy": "优先拿到腐败，然后补充消耗触发器（无痛），最后用恶魔之火等牌输出。",
+      "earlyGame": "前期消耗流组件不齐，用基础牌过渡。",
+      "midGame": "拿到腐败后，技能牌变0费，可以大量消耗获取收益。",
+      "lateGame": "消耗循环建立后，每回合都能获取大量护甲和伤害。",
+      "tips": [
+        "腐败是消耗流的核心，优先级最高",
+        "无痛让每次消耗都获得护甲，是防御的保障",
+        "恶魔之火是消耗流的终极输出手段",
+        "注意手牌管理，不要把关键牌消耗掉"
+      ],
+      "commonMistakes": [
+        "没有腐败就开始走消耗流",
+        "把核心牌消耗掉了",
+        "只关注消耗不关注输出"
+      ]
+    }
+  },
+  {
+    "id": "ironclad_bloodletting",
+    "name": "放血流",
+    "nameEn": "Bloodletting Build",
+    "character": "ironclad",
+    "description": "通过自伤获取能量和力量，利用放血、破裂等卡牌将生命值转化为战斗力。高风险高回报的极端流派。",
+    "difficulty": "advanced",
+    "coreCards": [
+      { "cardId": "ironclad_rupture", "weight": 95, "isCore": true, "reason": "每次自伤获得力量，是放血流的核心引擎" },
+      { "cardId": "ironclad_hemokinesis", "weight": 85, "isCore": true, "reason": "自伤 + 高伤害输出，触发破裂" },
+      { "cardId": "ironclad_bloodletting", "weight": 80, "isCore": true, "reason": "自伤获取能量，提供更多操作空间" }
+    ],
+    "importantCards": [
+      { "cardId": "ironclad_combust", "weight": 75, "isCore": false, "reason": "每回合自伤触发破裂 + AOE伤害" },
+      { "cardId": "ironclad_brutality", "weight": 70, "isCore": false, "reason": "每回合自伤 + 过牌，持续触发破裂" },
+      { "cardId": "ironclad_offering", "weight": 75, "isCore": false, "reason": "自伤获取能量和过牌" }
+    ],
+    "supportCards": [
+      { "cardId": "ironclad_reaper", "weight": 60, "isCore": false, "reason": "AOE伤害 + 回复，弥补自伤损失" },
+      { "cardId": "ironclad_inflame", "weight": 55, "isCore": false, "reason": "额外力量来源" },
+      { "cardId": "ironclad_shockwave", "weight": 45, "isCore": false, "reason": "AOE控制，保护setup阶段" }
+    ],
+    "preferredRatio": { "attack": 0.45, "skill": 0.30, "power": 0.25 },
+    "idealCostCurve": [0.20, 0.40, 0.30, 0.10, 0.00],
+    "scoringWeights": {
+      "coreCardMatch": 0.30,
+      "importantCardMatch": 0.25,
+      "supportCardMatch": 0.10,
+      "ratioMatch": 0.10,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.20
+    },
+    "combos": [
+      {
+        "id": "blood_rupture_cycle",
+        "name": "破裂循环",
+        "cards": ["ironclad_rupture", "ironclad_brutality", "ironclad_combust"],
+        "description": "残暴每回合自伤触发破裂获得力量 + 燃烧每回合自伤再触发破裂 = 力量指数增长",
+        "power": "game_winning",
+        "setup": "先打出破裂，再打出残暴和燃烧，力量会持续增长"
+      },
+      {
+        "id": "blood_reaper",
+        "name": "放血收割",
+        "cards": ["ironclad_hemokinesis", "ironclad_offering", "ironclad_reaper"],
+        "description": "通过放血和献祭大量自伤获取资源 → 死神AOE回复弥补生命损失",
+        "power": "high",
+        "setup": "前期积累自伤效果，关键时刻用死神回复"
+      }
+    ],
+    "guide": {
+      "overview": "放血流的核心是通过自伤来获取力量和能量，将生命值转化为战斗力。破裂是核心引擎。",
+      "coreStrategy": "优先拿到破裂，然后补充自伤来源（放血、燃烧、残暴），最后用高力量输出。",
+      "earlyGame": "放血术是前期最好的自伤卡，零费获取2能量。放血提供高伤害输出。",
+      "midGame": "拿到破裂后，每次自伤都能获得力量。残暴提供每回合稳定的自伤触发。",
+      "lateGame": "力量积累到很高后，配合多段攻击可以秒杀。死神提供AOE回复维持生命。",
+      "tips": [
+        "破裂是放血流的核心，优先级最高",
+        "残暴每回合自伤+过牌，是持续触发破裂的关键",
+        "燃烧每回合自伤+AOE，双重收益",
+        "死神是放血流的生命保障，AOE回复弥补自伤",
+        "注意生命值管理，自伤过度会暴毙"
+      ],
+      "commonMistakes": [
+        "没有破裂就走放血流，自伤没有收益",
+        "自伤太猛导致被小怪打死",
+        "忽视回复手段，纯靠自伤输出",
+        "忘记恶魔形态也可以配合放血流"
+      ]
+    }
+  },
+  {
+    "id": "ironclad_infinite",
+    "name": "无限流",
+    "nameEn": "Infinite Build",
+    "character": "ironclad",
+    "description": "通过精简牌组，实现每回合无限循环打牌。需要极端的牌组管理，但一旦成型几乎无敌。",
+    "difficulty": "advanced",
+    "coreCards": [
+      { "cardId": "ironclad_pommel_strike", "weight": 90, "isCore": true, "reason": "剑柄打击：攻击+过牌，无限循环的核心输出+过牌" },
+      { "cardId": "ironclad_shrug_it_off", "weight": 85, "isCore": true, "reason": "耸肩无视：护甲+过牌，循环核心防御+过牌" },
+      { "cardId": "ironclad_burning_pact", "weight": 80, "isCore": true, "reason": "燃烧契约：消耗+过牌，精简牌组+循环" }
+    ],
+    "importantCards": [
+      { "cardId": "ironclad_burning_pact", "weight": 75, "isCore": false, "reason": "消耗+过牌，精简牌组" },
+      { "cardId": "ironclad_second_wind", "weight": 70, "isCore": false, "reason": "消耗非攻击牌精简牌组" },
+      { "cardId": "ironclad_true_grit", "weight": 65, "isCore": false, "reason": "消耗+护甲，精简牌组" },
+      { "cardId": "ironclad_battle_trance", "weight": 70, "isCore": false, "reason": "零费过牌3张" }
+    ],
+    "supportCards": [
+      { "cardId": "ironclad_flex", "weight": 55, "isCore": false, "reason": "零费力量，循环中使用" },
+      { "cardId": "ironclad_anger", "weight": 50, "isCore": false, "reason": "零费攻击，自复制" },
+      { "cardId": "ironclad_body_slam", "weight": 45, "isCore": false, "reason": "1费输出，护甲转化为伤害" }
+    ],
+    "preferredRatio": { "attack": 0.35, "skill": 0.45, "power": 0.20 },
+    "idealCostCurve": [0.30, 0.45, 0.20, 0.05, 0.00],
+    "scoringWeights": {
+      "coreCardMatch": 0.25,
+      "importantCardMatch": 0.20,
+      "supportCardMatch": 0.10,
+      "ratioMatch": 0.10,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.30
+    },
+    "combos": [
+      {
+        "id": "infinite_cycle",
+        "name": "无限循环",
+        "cards": ["ironclad_pommel_strike", "ironclad_shrug_it_off", "ironclad_flex"],
+        "description": "精简牌组至5张以内 → 剑柄打击+耸肩无视频繁洗牌 → 日跟能量回补 → 无限循环",
+        "power": "game_winning",
+        "setup": "需要在前期大量消耗/移除多余牌，将牌组精简到核心几张"
+      }
+    ],
+    "guide": {
+      "overview": "无限流的核心是将牌组精简到极少数量，通过低费过牌实现无限循环。",
+      "coreStrategy": "前期疯狂消耗移除多余牌，只保留核心过牌和输出牌。目标是牌组≤5张。",
+      "earlyGame": "优先拿消耗类牌（燃烧契约、回气、真汉子）来精简牌组。",
+      "midGame": "牌组开始变薄，循环开始成型。注意不要拿新牌破坏精简。",
+      "lateGame": "牌组极薄后，每回合可以循环多次，输出和防御都无限。",
+      "tips": [
+        "无限流的核心是牌组管理，不是卡牌强度",
+        "每拿一张新牌都要考虑是否破坏循环",
+        "日晷是无限循环的能量保障",
+        "虚无牌（幽灵护甲）自动消耗，有助于精简",
+        "升级优先给过牌牌"
+      ],
+      "commonMistakes": [
+        "舍不得消耗好牌，牌组太厚",
+        "拿了太多高费牌破坏循环",
+        "没有足够的过牌手段",
+        "太早尝试无限流，组件不齐"
+      ]
+    }
+  }
+]

@@ -1,0 +1,282 @@
+/* 卡牌卡片样式 - 模拟游戏内卡牌外观 */
+
+.card-display {
+    position: relative;
+    width: 200px;
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-display:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* 卡牌类型颜色 */
+.card-display.attack {
+    background: linear-gradient(145deg, #ff6b6b 0%, #c0392b 100%);
+}
+
+.card-display.skill {
+    background: linear-gradient(145deg, #4ecdc4 0%, #1abc9c 100%);
+}
+
+.card-display.power {
+    background: linear-gradient(145deg, #a855f7 0%, #7c3aed 100%);
+}
+
+/* 卡牌边框 */
+.card-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    pointer-events: none;
+}
+
+/* 稀有度边框 */
+.card-display.rare .card-border {
+    border-color: #ffd700;
+    box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.card-display.uncommon .card-border {
+    border-color: #3498db;
+}
+
+.card-display.common .card-border {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 卡牌头部 */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.card-name {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-cost {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(145deg, #2c3e50 0%, #1a252f 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin-left: 8px;
+}
+
+.card-cost.x-cost {
+    background: linear-gradient(145deg, #8e44ad 0%, #5b2c6f 100%);
+}
+
+/* 卡牌图片区域 */
+.card-image-area {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.card-image-placeholder {
+    font-size: 3em;
+    opacity: 0.5;
+}
+
+.card-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* 卡牌效果区域 */
+.card-effect {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-effect-text {
+    font-size: 0.85em;
+    color: #fff;
+    text-align: center;
+    line-height: 1.4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 卡牌底部 */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 0.75em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.card-type {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-rarity {
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 卡牌选中状态 */
+.card-display.selected {
+    box-shadow: 0 0 0 4px #6bcb77, 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card-display.selected::after {
+    content: "✓";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: #6bcb77;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 卡牌网格布局 */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* 卡牌详情弹窗 */
+.card-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.card-detail-content {
+    max-width: 500px;
+    background: #1a1a2e;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+}
+
+.card-detail-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* 关键字高亮 */
+.keyword {
+    color: #ffd93d;
+    font-weight: 600;
+    cursor: help;
+    border-bottom: 1px dotted #ffd93d;
+}
+
+/* 数值高亮 */
+.value {
+    color: #6bcb77;
+    font-weight: 600;
+}
+
+/* 升级版本标记 */
+.upgraded {
+    position: relative;
+}
+
+.upgraded::before {
+    content: "+";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: #6bcb77;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 卡牌图标 */
+.card-icon {
+    font-size: 1.5em;
+    margin-right: 5px;
+}
+
+/* 响应式 */
+@media (max-width: 600px) {
+    .card-display {
+        width: 160px;
+        height: 224px;
+    }
+    
+    .card-name {
+        font-size: 0.8em;
+    }
+    
+    .card-effect-text {
+        font-size: 0.75em;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+}

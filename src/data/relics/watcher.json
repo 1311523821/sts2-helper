@@ -1,0 +1,37 @@
+{
+  "relics": [
+    {
+      "id": "watcher_pure_water",
+      "name": "纯净之水",
+      "nameEn": "Pure Water",
+      "rarity": "starter",
+      "character": "watcher",
+      "description": "每场战斗开始时将1张宁静加入手牌。",
+      "effects": [{ "trigger": "on_combat_start", "description": "获得宁静", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["姿态"]
+    },
+    {
+      "id": "watcher_damaru",
+      "name": "达玛鲁",
+      "nameEn": "Damaru",
+      "rarity": "uncommon",
+      "character": "watcher",
+      "description": "每场战斗开始时获得1层神格。",
+      "effects": [{ "trigger": "on_combat_start", "description": "神格+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["神格"]
+    },
+    {
+      "id": "watcher_violet_lotos",
+      "name": "紫莲",
+      "nameEn": "Violet Lotus",
+      "rarity": "rare",
+      "character": "watcher",
+      "description": "退出平静姿态时额外获得1点能量。",
+      "effects": [{ "trigger": "passive", "description": "退出平静能量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["能量", "姿态"]
+    }
+  ]
+}

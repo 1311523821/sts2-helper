@@ -1,0 +1,114 @@
+{
+  "relics": [
+    {
+      "id": "face_of_cleric",
+      "name": "牧师面具",
+      "nameEn": "Face of Cleric",
+      "rarity": "event",
+      "character": "common",
+      "description": "你每拥有25金币，在战斗开始时恢复1点生命。",
+      "effects": [{ "trigger": "on_combat_start", "description": "每25金币恢复1HP", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["回复", "经济"]
+    },
+    {
+      "id": "n_loth",
+      "name": "恩洛斯的礼物",
+      "nameEn": "N'loth's Gift",
+      "rarity": "event",
+      "character": "common",
+      "description": "如果从事件中获得此遗物，它会在进入商店时让你获得额外金币。",
+      "effects": [{ "trigger": "passive", "description": "商店额外金币", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["经济"]
+    },
+    {
+      "id": "neows_lament",
+      "name": "涅奥的悲叹",
+      "nameEn": "Neow's Lament",
+      "rarity": "event",
+      "character": "common",
+      "description": "你前3场战斗的敌人生命值降为1。",
+      "effects": [{ "trigger": "passive", "description": "前3场战斗敌人1血", "power": 3 }],
+      "dataSource": "manual",
+      "tags": ["战斗"]
+    },
+    {
+      "id": "wing_boots",
+      "name": "翼靴",
+      "nameEn": "Wing Boots",
+      "rarity": "event",
+      "character": "common",
+      "description": "你可以无视地图上的第3次路线选择。",
+      "effects": [{ "trigger": "passive", "description": "第3次免战", "power": 0 }],
+      "dataSource": "manual",
+      "tags": ["移动"]
+    },
+    {
+      "id": "bloody_idol",
+      "name": "染血神像",
+      "nameEn": "Bloody Idol",
+      "rarity": "event",
+      "character": "common",
+      "description": "每当你获得金币时，恢复5点生命。",
+      "effects": [{ "trigger": "passive", "description": "获得金币时回复5HP", "power": 5 }],
+      "dataSource": "manual",
+      "tags": ["回复", "经济"]
+    },
+    {
+      "id": "golden_idol",
+      "name": "黄金神像",
+      "nameEn": "Golden Idol",
+      "rarity": "event",
+      "character": "common",
+      "description": "敌人掉落金币增加25%。",
+      "effects": [{ "trigger": "passive", "description": "金币+25%", "power": 25 }],
+      "dataSource": "manual",
+      "tags": ["经济"]
+    },
+    {
+      "id": "spirit_poop",
+      "name": "精神粪便",
+      "nameEn": "Spirit Poop",
+      "rarity": "event",
+      "character": "common",
+      "description": "没什么用...但也许将来会有用？",
+      "effects": [{ "trigger": "passive", "description": "无用遗物", "power": 0 }],
+      "dataSource": "manual",
+      "tags": ["特殊"]
+    },
+    {
+      "id": "war_paint",
+      "name": "战争涂装",
+      "nameEn": "War Paint",
+      "rarity": "event",
+      "character": "common",
+      "description": "随机升级2张技能牌。",
+      "effects": [{ "trigger": "passive", "description": "升级2张技能牌", "power": 2 }],
+      "dataSource": "manual",
+      "tags": ["升级"]
+    },
+    {
+      "id": "whetstone",
+      "name": "磨刀石",
+      "nameEn": "Whetstone",
+      "rarity": "event",
+      "character": "common",
+      "description": "随机升级2张攻击牌。",
+      "effects": [{ "trigger": "passive", "description": "升级2张攻击牌", "power": 2 }],
+      "dataSource": "manual",
+      "tags": ["升级"]
+    },
+    {
+      "id": "omamori",
+      "name": "护身符",
+      "nameEn": "Omamori",
+      "rarity": "event",
+      "character": "common",
+      "description": "防止你获得下2张诅咒牌。",
+      "effects": [{ "trigger": "passive", "description": "防止2张诅咒", "power": 2 }],
+      "dataSource": "manual",
+      "tags": ["防御"]
+    }
+  ]
+}

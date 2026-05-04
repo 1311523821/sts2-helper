@@ -1,0 +1,117 @@
+{
+  "relics": [
+    {
+      "id": "pandoras_box",
+      "name": "潘多拉魔盒",
+      "nameEn": "Pandora's Box",
+      "rarity": "boss",
+      "character": "common",
+      "description": "消耗你牌组中的所有打击和防御。获得3张随机稀有卡牌。",
+      "effects": [{ "trigger": "on_combat_start", "description": "消耗初始牌，获得随机稀有卡", "power": 3 }],
+      "dataSource": "manual",
+      "tags": ["转换", "稀有"]
+    },
+    {
+      "id": "cursed_key",
+      "name": "诅咒钥匙",
+      "nameEn": "Cursed Key",
+      "rarity": "boss",
+      "character": "common",
+      "description": "每回合获得1点额外能量。每打开一个非Boss宝箱获得1张诅咒。",
+      "effects": [
+        { "trigger": "on_turn_start", "description": "能量+1", "power": 1 },
+        { "trigger": "on_pick_reward", "description": "打开宝箱获得诅咒", "power": -1 }
+      ],
+      "dataSource": "manual",
+      "tags": ["能量"]
+    },
+    {
+      "id": "black_star",
+      "name": "黑星",
+      "nameEn": "Black Star",
+      "rarity": "boss",
+      "character": "common",
+      "description": "精英敌人现在额外掉落1件遗物。",
+      "effects": [{ "trigger": "passive", "description": "精英额外遗物", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["遗物"]
+    },
+    {
+      "id": "ectoplasm",
+      "name": "灵体外质",
+      "nameEn": "Ectoplasm",
+      "rarity": "boss",
+      "character": "common",
+      "description": "每回合获得1点额外能量。你不能再获得金币。",
+      "effects": [{ "trigger": "on_turn_start", "description": "能量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["能量"]
+    },
+    {
+      "id": "runic_dome",
+      "name": "符文圆顶",
+      "nameEn": "Runic Dome",
+      "rarity": "boss",
+      "character": "common",
+      "description": "每回合获得1点额外能量。你不再能看到敌人的意图。",
+      "effects": [{ "trigger": "on_turn_start", "description": "能量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["能量"]
+    },
+    {
+      "id": "sozu",
+      "name": "灵体",
+      "nameEn": "Sozu",
+      "rarity": "boss",
+      "character": "common",
+      "description": "每回合获得1点额外能量。你不能再获得药水。",
+      "effects": [{ "trigger": "on_turn_start", "description": "能量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["能量"]
+    },
+    {
+      "id": "philosopher_stone",
+      "name": "贤者之石",
+      "nameEn": "Philosopher's Stone",
+      "rarity": "boss",
+      "character": "common",
+      "description": "每回合获得1点额外能量。所有敌人获得1层力量。",
+      "effects": [{ "trigger": "on_turn_start", "description": "能量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["能量"]
+    },
+    {
+      "id": "fusion_hammer",
+      "name": "融合之锤",
+      "nameEn": "Fusion Hammer",
+      "rarity": "boss",
+      "character": "common",
+      "description": "每回合获得1点额外能量。你不能再在篝火处升级卡牌。",
+      "effects": [{ "trigger": "on_turn_start", "description": "能量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["能量"]
+    },
+    {
+      "id": "coffee_dripper",
+      "name": "咖啡滤滴器",
+      "nameEn": "Coffee Dripper",
+      "rarity": "boss",
+      "character": "common",
+      "description": "每回合获得1点额外能量。你不能再在篝火处休息。",
+      "effects": [{ "trigger": "on_turn_start", "description": "能量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["能量"]
+    },
+    {
+      "id": "runic_pyramid",
+      "name": "符文金字塔",
+      "nameEn": "Runic Pyramid",
+      "rarity": "boss",
+      "character": "common",
+      "description": "每回合结束时不再弃牌。保留所有手牌到下一回合。",
+      "effects": [{ "trigger": "on_turn_end", "description": "保留所有手牌", "power": 0 }],
+      "dataSource": "manual",
+      "tags": ["保留"]
+    }
+  ]
+}

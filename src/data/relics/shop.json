@@ -1,0 +1,81 @@
+{
+  "relics": [
+    {
+      "id": "membership_card",
+      "name": "会员卡",
+      "nameEn": "Membership Card",
+      "rarity": "shop",
+      "character": "common",
+      "description": "商店中的所有商品价格降低50%。",
+      "effects": [{ "trigger": "passive", "description": "商店半价", "power": 50 }],
+      "dataSource": "manual",
+      "tags": ["经济"]
+    },
+    {
+      "id": "smiling_mask",
+      "name": "微笑面具",
+      "nameEn": "Smiling Mask",
+      "rarity": "shop",
+      "character": "common",
+      "description": "在商店移除卡牌的费用降低50金币。",
+      "effects": [{ "trigger": "passive", "description": "移除牌费用-50", "power": 50 }],
+      "dataSource": "manual",
+      "tags": ["经济"]
+    },
+    {
+      "id": "the_specimen",
+      "name": "标本",
+      "nameEn": "The Specimen",
+      "rarity": "shop",
+      "character": "common",
+      "description": "当一名敌人死亡时，将其身上的中毒层数转移到另一名随机敌人身上。",
+      "effects": [{ "trigger": "on_kill", "description": "转移中毒层数", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["中毒"]
+    },
+    {
+      "id": "dollys_mirror",
+      "name": "多莉的镜子",
+      "nameEn": "Dolly's Mirror",
+      "rarity": "shop",
+      "character": "common",
+      "description": "选择一张牌，将其复制品加入你的牌组。",
+      "effects": [{ "trigger": "passive", "description": "复制1张牌", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["复制"]
+    },
+    {
+      "id": "orichalcum",
+      "name": "山铜",
+      "nameEn": "Orichalcum",
+      "rarity": "shop",
+      "character": "common",
+      "description": "如果你的回合结束时没有护甲，获得6点护甲。",
+      "effects": [{ "trigger": "on_turn_end", "description": "无护甲时获得6点", "power": 6 }],
+      "dataSource": "manual",
+      "tags": ["护甲"]
+    },
+    {
+      "id": "preserved_insect",
+      "name": "昆虫标本",
+      "nameEn": "Preserved Insect",
+      "rarity": "shop",
+      "character": "common",
+      "description": "精英敌人的生命值降低25%。",
+      "effects": [{ "trigger": "passive", "description": "精英血量-25%", "power": 25 }],
+      "dataSource": "manual",
+      "tags": ["战斗"]
+    },
+    {
+      "id": "meat_on_the_bone",
+      "name": "骨头上的肉",
+      "nameEn": "Meat on the Bone",
+      "rarity": "shop",
+      "character": "common",
+      "description": "如果一场战斗结束时你的生命值低于等于50%，恢复12点生命。",
+      "effects": [{ "trigger": "passive", "description": "低血量时战斗结束回复12HP", "power": 12 }],
+      "dataSource": "manual",
+      "tags": ["回复"]
+    }
+  ]
+}

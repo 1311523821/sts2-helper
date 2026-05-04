@@ -1,0 +1,190 @@
+[
+  {
+    "id": "silent_poison",
+    "name": "毒流",
+    "nameEn": "Poison Build",
+    "character": "silent",
+    "description": "通过叠加中毒层数，让敌人持续掉血。催化剂可以将中毒翻倍，瞬间造成海量伤害。",
+    "difficulty": "beginner",
+    "coreCards": [
+      { "cardId": "silent_noxious_fumes", "weight": 90, "isCore": true, "reason": "每回合自动对所有敌人施加中毒" },
+      { "cardId": "silent_catalyst", "weight": 85, "isCore": true, "reason": "中毒翻倍，瞬间爆发" },
+      { "cardId": "silent_envenom", "weight": 75, "isCore": true, "reason": "每次攻击都施加中毒" }
+    ],
+    "importantCards": [
+      { "cardId": "silent_poisoned_stab", "weight": 70, "isCore": false, "reason": "攻击 + 中毒" },
+      { "cardId": "silent_crippling_cloud", "weight": 75, "isCore": false, "reason": "AOE 中毒" },
+      { "cardId": "silent_catalyst_power", "weight": 80, "isCore": false, "reason": "每回合中毒翻倍" }
+    ],
+    "supportCards": [
+      { "cardId": "silent_bouncing_flask", "weight": 55, "isCore": false, "reason": "随机施加中毒" },
+      { "cardId": "silent_deadly_poison", "weight": 50, "isCore": false, "reason": "直接施加中毒" },
+      { "cardId": "silent_corpse_explosion", "weight": 60, "isCore": false, "reason": "敌人死亡时AOE爆发" }
+    ],
+    "preferredRatio": { "attack": 0.35, "skill": 0.40, "power": 0.25 },
+    "idealCostCurve": [0.20, 0.45, 0.25, 0.10, 0.00],
+    "scoringWeights": { "coreCardMatch": 0.40, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.10 },
+    "combos": [
+      {
+        "id": "poison_catalyst",
+        "name": "毒爆",
+        "cards": ["silent_noxious_fumes", "silent_catalyst"],
+        "description": "毒雾持续叠加中毒 → 催化剂翻倍 → 瞬间秒杀",
+        "power": "game_winning",
+        "setup": "先用毒雾积累中毒层数，然后用催化剂翻倍"
+      },
+      {
+        "id": "poison_catalyst_power_combo",
+        "name": "持续毒爆",
+        "cards": ["silent_noxious_fumes", "silent_catalyst_power", "silent_envenom"],
+        "description": "毒雾+能力催化剂双重翻倍 + 涂毒持续叠加 = 中毒指数增长",
+        "power": "game_winning",
+        "setup": "先打出毒雾和能力催化剂，再用涂毒配合攻击持续叠加"
+      }
+    ],
+    "guide": {
+      "overview": "毒流的核心是通过各种方式叠加中毒，然后用催化剂翻倍造成海量伤害。",
+      "coreStrategy": "优先拿毒雾和催化剂，补充中毒来源，然后等待时机一波带走。",
+      "earlyGame": "毒刺是前期最好的中毒来源。",
+      "midGame": "拿到毒雾后开始稳定输出，催化剂是爆发点。",
+      "lateGame": "催化剂可以让中毒层数瞬间翻倍，配合高层数中毒可以秒杀Boss。",
+      "tips": [
+        "催化剂是毒流的关键，优先级最高",
+        "毒雾提供持续的中毒来源",
+        "涂毒让每次攻击都带中毒",
+        "尸爆配合毒流可以在群战中造成连锁爆炸"
+      ],
+      "commonMistakes": [
+        "没有催化剂就走毒流",
+        "中毒层数不够就用催化剂",
+        "忽视防御，毒流也需要活到毒生效"
+      ]
+    }
+  },
+  {
+    "id": "silent_blade",
+    "name": "小刀流",
+    "nameEn": "Blade Build",
+    "character": "silent",
+    "description": "通过大量小刀牌打出高频攻击，配合精准增加伤害。",
+    "difficulty": "intermediate",
+    "coreCards": [
+      { "cardId": "silent_blade_dance", "weight": 90, "isCore": true, "reason": "生成3张小刀" },
+      { "cardId": "silent_accuracy", "weight": 85, "isCore": true, "reason": "小刀伤害+4" },
+      { "cardId": "silent_infinite_blades", "weight": 80, "isCore": true, "reason": "每回合生成1张小刀" }
+    ],
+    "importantCards": [
+      { "cardId": "silent_cloak_and_dagger", "weight": 70, "isCore": false, "reason": "小刀 + 护甲" },
+      { "cardId": "silent_storm_of_steel", "weight": 65, "isCore": false, "reason": "弃牌生成小刀" },
+      { "cardId": "silent_after_image", "weight": 60, "isCore": false, "reason": "每次打牌获得护甲" }
+    ],
+    "supportCards": [
+      { "cardId": "silent_acrobatics", "weight": 50, "isCore": false, "reason": "过牌找小刀" },
+      { "cardId": "silent_backflip", "weight": 45, "isCore": false, "reason": "护甲 + 过牌" },
+      { "cardId": "silent_phantasmal_killer", "weight": 55, "isCore": false, "reason": "下回合攻击双倍，小刀爆发" }
+    ],
+    "preferredRatio": { "attack": 0.45, "skill": 0.35, "power": 0.20 },
+    "idealCostCurve": [0.30, 0.40, 0.20, 0.10, 0.00],
+    "scoringWeights": { "coreCardMatch": 0.35, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.15 },
+    "combos": [
+      {
+        "id": "blade_accuracy",
+        "name": "精准小刀",
+        "cards": ["silent_blade_dance", "silent_accuracy"],
+        "description": "刀舞生成大量小刀 → 精准增加每把小刀伤害 → 高频输出",
+        "power": "high",
+        "setup": "先打出精准，再用刀舞生成小刀"
+      },
+      {
+        "id": "blade_phantasmal",
+        "name": "幻影小刀",
+        "cards": ["silent_blade_dance", "silent_infinite_blades", "silent_phantasmal_killer"],
+        "description": "无限刀刃持续生成小刀 → 刀舞补充 → 幻影杀手下回合双倍 → 小刀雨",
+        "power": "game_winning",
+        "setup": "先打出无限刀刃和幻影杀手，下回合用刀舞+小刀爆发"
+      }
+    ],
+    "guide": {
+      "overview": "小刀流通过大量小刀牌打出高频攻击，精准是核心增伤手段。",
+      "coreStrategy": "优先拿精准和刀舞，补充小刀来源，然后高频输出。",
+      "earlyGame": "刀舞和暗器是前期小刀来源。",
+      "midGame": "拿到精准后小刀伤害大幅提升。",
+      "lateGame": "无限刀刃提供每回合稳定小刀来源。",
+      "tips": [
+        "精准是小刀流的核心增伤",
+        "小刀数量越多收益越高",
+        "残影配合高频攻击提供防御",
+        "幻影杀手让下回合所有攻击双倍，配合小刀雨伤害爆炸"
+      ],
+      "commonMistakes": [
+        "没有精准就走小刀流",
+        "小刀数量不够",
+        "忽视过牌，小刀需要大量手牌"
+      ]
+    }
+  },
+  {
+    "id": "silent_discard",
+    "name": "弃牌流",
+    "nameEn": "Discard Build",
+    "character": "silent",
+    "description": "利用弃牌触发各种效果，通过频繁弃牌获取能量、护甲和输出。需要大量过牌配合。",
+    "difficulty": "intermediate",
+    "coreCards": [
+      { "cardId": "silent_concentrate", "weight": 90, "isCore": true, "reason": "弃3张牌获得2能量，弃牌流的能量引擎" },
+      { "cardId": "silent_acrobatics", "weight": 85, "isCore": true, "reason": "抽3弃1，大量过牌+弃牌触发" },
+      { "cardId": "silent_calculated_gamble", "weight": 80, "isCore": true, "reason": "弃全部手牌抽等量，极致弃牌" }
+    ],
+    "importantCards": [
+      { "cardId": "silent_sneaky_strike", "weight": 75, "isCore": false, "reason": "弃牌后抽2张，弃牌收益" },
+      { "cardId": "silent_dagger_throw", "weight": 70, "isCore": false, "reason": "攻击+过牌+弃牌" },
+      { "cardId": "silent_prepared", "weight": 65, "isCore": false, "reason": "零费过牌+弃牌" },
+      { "cardId": "silent_dodge_and_roll", "weight": 60, "isCore": false, "reason": "弃牌后额外护甲" }
+    ],
+    "supportCards": [
+      { "cardId": "silent_backflip", "weight": 55, "isCore": false, "reason": "护甲+过牌" },
+      { "cardId": "silent_expertise", "weight": 50, "isCore": false, "reason": "补充手牌" },
+      { "cardId": "silent_bullet_time", "weight": 45, "isCore": false, "reason": "所有牌0费，弃牌流爆发" }
+    ],
+    "preferredRatio": { "attack": 0.35, "skill": 0.45, "power": 0.20 },
+    "idealCostCurve": [0.25, 0.45, 0.20, 0.10, 0.00],
+    "scoringWeights": { "coreCardMatch": 0.30, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.20 },
+    "combos": [
+      {
+        "id": "discard_energy_cycle",
+        "name": "弃牌能量循环",
+        "cards": ["silent_concentrate", "silent_acrobatics", "silent_sneaky_strike"],
+        "description": "杂技抽牌 → 集中弃牌获能量 → 偷袭弃牌后抽牌 → 循环",
+        "power": "high",
+        "setup": "保持手牌数量，用杂技和准备不断过牌弃牌"
+      },
+      {
+        "id": "discard_bullet_time",
+        "name": "子弹时间爆发",
+        "cards": ["silent_calculated_gamble", "silent_bullet_time", "silent_acrobatics"],
+        "description": "计算赌注弃牌过牌 → 子弹时间全手牌0费 → 一波打出所有牌",
+        "power": "game_winning",
+        "setup": "先用计算赌注大量过牌，再用子弹时间让所有牌0费"
+      }
+    ],
+    "guide": {
+      "overview": "弃牌流通过频繁弃牌触发各种效果，集中提供能量，偷袭提供过牌。",
+      "coreStrategy": "优先拿集中和杂技，补充弃牌触发器，利用弃牌获取能量和过牌。",
+      "earlyGame": "准备和飞刀投掷是前期弃牌手段。",
+      "midGame": "拿到集中后弃牌开始产生能量收益。",
+      "lateGame": "计算赌注+子弹时间可以实现一波大量出牌。",
+      "tips": [
+        "集中是弃牌流的能量引擎",
+        "杂技是最好的过牌+弃牌牌",
+        "偷袭弃牌后抽2张，形成过牌循环",
+        "子弹时间让所有牌0费，配合弃牌流的大量手牌",
+        "闪避翻滚弃牌后额外护甲，提供防御"
+      ],
+      "commonMistakes": [
+        "弃牌太多导致手牌不足",
+        "没有集中就走弃牌流，弃牌没有能量收益",
+        "忽视防御，弃牌流需要活到循环成型"
+      ]
+    }
+  }
+]

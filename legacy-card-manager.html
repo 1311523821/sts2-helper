@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡牌图片管理 - 杀戮尖塔流派助手</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <style>
+        .upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            transition: all 0.3s;
+        }
+        
+        .upload-area:hover {
+            border-color: #ffd93d;
+            background: rgba(255, 217, 61, 0.05);
+        }
+        
+        .upload-area.dragover {
+            border-color: #6bcb77;
+            background: rgba(107, 203, 119, 0.1);
+        }
+        
+        .upload-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .upload-text {
+            color: #888;
+            margin-bottom: 15px;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .upload-btn {
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #6bcb77, #4ecdc4);
+            border: none;
+            border-radius: 25px;
+            color: #1a1a2e;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .upload-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .images-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .image-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-item .filename {
+            padding: 8px;
+            font-size: 0.8em;
+            color: #aaa;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .image-item .remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 107, 107, 0.9);
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .instructions {
+            background: rgba(168, 85, 247, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .instructions h3 {
+            color: #a855f7;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            color: #bbb;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+        
+        .instructions code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #ffd93d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖼️ 卡牌图片管理</h1>
+            <p class="subtitle">上传和管理杀戮尖塔卡牌图片</p>
+        </header>
+
+        <div class="instructions">
+            <h3>📋 使用说明</h3>
+            <ol>
+                <li>在游戏中截图卡牌（建议使用Steam截图功能）</li>
+                <li>裁剪图片，只保留卡牌部分</li>
+                <li>将图片命名为卡牌英文名（如 <code>strike.png</code>）</li>
+                <li>拖拽或点击下方区域上传</li>
+                <li>图片会自动保存到浏览器本地存储</li>
+            </ol>
+        </div>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📤</div>
+            <div class="upload-text">
+                拖拽图片到这里<br>
+                或点击选择文件
+            </div>
+            <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                选择图片
+            </button>
+        </div>
+
+        <div class="images-preview" id="imagesPreview"></div>
+
+        <div style="margin-top: 30px; text-align: center;">
+            <button class="analyze-btn" onclick="exportImages()">导出所有图片</button>
+            <button class="analyze-btn" style="background: #ff6b6b;" onclick="clearAllImages()">清除所有图片</button>
+        </div>
+    </div>
+
+    <script>
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const imagesPreview = document.getElementById('imagesPreview');
+        
+        // 拖拽事件
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            handleFiles(e.dataTransfer.files);
+        });
+        
+        // 文件选择
+        fileInput.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+        
+        // 处理文件
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                if (!file.type.startsWith('image/')) return;
+                
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const imgData = {
+                        name: file.name.replace(/\.[^/.]+$/, ''),
+                        data: e.target.result,
+                        timestamp: Date.now()
+                    };
+                    
+                    saveImage(imgData);
+                    renderPreview();
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+        
+        // 保存图片到本地存储
+        function saveImage(imgData) {
+            let images = JSON.parse(localStorage.getItem('sts_card_images') || '{}');
+            images[imgData.name] = imgData;
+            localStorage.setItem('sts_card_images', JSON.stringify(images));
+        }
+        
+        // 渲染预览
+        function renderPreview() {
+            const images = JSON.parse(localStorage.getItem('sts_card_images') || '{}');
+            imagesPreview.innerHTML = '';
+            
+            Object.entries(images).forEach(([name, data]) => {
+                const item = document.createElement('div');
+                item.className = 'image-item';
+                item.innerHTML = `
+                    <img src="${data.data}" alt="${name}">
+                    <div class="filename">${name}</div>
+                    <button class="remove-btn" onclick="removeImage('${name}')">✕</button>
+                `;
+                imagesPreview.appendChild(item);
+            });
+        }
+        
+        // 删除图片
+        function removeImage(name) {
+            let images = JSON.parse(localStorage.getItem('sts_card_images') || '{}');
+            delete images[name];
+            localStorage.setItem('sts_card_images', JSON.stringify(images));
+            renderPreview();
+        }
+        
+        // 导出图片
+        function exportImages() {
+            const images = JSON.parse(localStorage.getItem('sts_card_images') || '{}');
+            const blob = new Blob([JSON.stringify(images, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'card_images.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        // 清除所有图片
+        function clearAllImages() {
+            if (confirm('确定要清除所有图片吗？此操作不可恢复。')) {
+                localStorage.removeItem('sts_card_images');
+                renderPreview();
+            }
+        }
+        
+        // 初始化
+        renderPreview();
+    </script>
+</body>
+</html>

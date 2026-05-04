@@ -1,0 +1,70 @@
+{
+  "relics": [
+    {
+      "id": "burning_blood",
+      "name": "燃烧之血",
+      "nameEn": "Burning Blood",
+      "rarity": "starter",
+      "character": "ironclad",
+      "description": "每场战斗结束时恢复6点生命。",
+      "effects": [{ "trigger": "on_combat_start", "description": "战斗结束恢复6HP", "power": 6 }],
+      "dataSource": "manual",
+      "tags": ["回复"]
+    },
+    {
+      "id": "ring_of_the_snake",
+      "name": "蛇之戒指",
+      "nameEn": "Ring of the Snake",
+      "rarity": "starter",
+      "character": "silent",
+      "description": "每场战斗开始时额外抽2张牌。",
+      "effects": [{ "trigger": "on_combat_start", "description": "抽2张牌", "power": 2 }],
+      "dataSource": "manual",
+      "tags": ["过牌"]
+    },
+    {
+      "id": "cracked_core",
+      "name": "碎裂核心",
+      "nameEn": "Cracked Core",
+      "rarity": "starter",
+      "character": "defect",
+      "description": "每场战斗开始时生成1个闪电球。",
+      "effects": [{ "trigger": "on_combat_start", "description": "生成闪电球", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["电球"]
+    },
+    {
+      "id": "pure_water",
+      "name": "纯净之水",
+      "nameEn": "Pure Water",
+      "rarity": "starter",
+      "character": "watcher",
+      "description": "每场战斗开始时将1张宁静加入手牌。",
+      "effects": [{ "trigger": "on_combat_start", "description": "获得宁静", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["姿态"]
+    },
+    {
+      "id": "hollow_heart",
+      "name": "空洞之心",
+      "nameEn": "Hollow Heart",
+      "rarity": "starter",
+      "character": "necromancer",
+      "description": "每场战斗开始时获得1层亡灵之力。",
+      "effects": [{ "trigger": "on_combat_start", "description": "亡灵之力+1", "power": 1 }],
+      "dataSource": "community",
+      "tags": ["亡灵"]
+    },
+    {
+      "id": "royal_signet",
+      "name": "皇家印戒",
+      "nameEn": "Royal Signet",
+      "rarity": "starter",
+      "character": "prince",
+      "description": "每场战斗开始时获得1层王权。",
+      "effects": [{ "trigger": "on_combat_start", "description": "王权+1", "power": 1 }],
+      "dataSource": "community",
+      "tags": ["王权"]
+    }
+  ]
+}

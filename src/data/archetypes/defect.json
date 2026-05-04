@@ -1,0 +1,238 @@
+[
+  {
+    "id": "defect_lightning",
+    "name": "电球流",
+    "nameEn": "Lightning Build",
+    "character": "defect",
+    "description": "通过生成大量闪电球，配合电动力学实现AOE输出。",
+    "difficulty": "beginner",
+    "coreCards": [
+      { "cardId": "defect_electrodynamics", "weight": 95, "isCore": true, "reason": "闪电球攻击所有敌人，AOE核心" },
+      { "cardId": "defect_ball_lightning", "weight": 80, "isCore": true, "reason": "攻击 + 生成闪电球" },
+      { "cardId": "defect_storm", "weight": 75, "isCore": true, "reason": "打能力牌生成闪电球" }
+    ],
+    "importantCards": [
+      { "cardId": "defect_static_discharge", "weight": 70, "isCore": false, "reason": "受伤生成闪电球" },
+      { "cardId": "defect_capacitor", "weight": 75, "isCore": false, "reason": "增加球位" },
+      { "cardId": "defect_zap", "weight": 60, "isCore": false, "reason": "基础闪电球来源" }
+    ],
+    "supportCards": [
+      { "cardId": "defect_defragment", "weight": 60, "isCore": false, "reason": "增加专注，提升球伤害" },
+      { "cardId": "defect_compile_driver", "weight": 50, "isCore": false, "reason": "攻击 + 按球数过牌" }
+    ],
+    "preferredRatio": { "attack": 0.30, "skill": 0.40, "power": 0.30 },
+    "idealCostCurve": [0.15, 0.45, 0.30, 0.10, 0.00],
+    "scoringWeights": { "coreCardMatch": 0.40, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.10 },
+    "combos": [
+      {
+        "id": "lightning_aoe",
+        "name": "闪电风暴",
+        "cards": ["defect_electrodynamics", "defect_ball_lightning", "defect_storm"],
+        "description": "电动力学让闪电球攻击所有敌人，配合大量闪电球来源实现AOE清场",
+        "power": "game_winning",
+        "setup": "先打出电动力学，然后不断生成闪电球"
+      },
+      {
+        "id": "lightning_static",
+        "name": "静电连锁",
+        "cards": ["defect_static_discharge", "defect_electrodynamics", "defect_capacitor"],
+        "description": "静电放电受伤生成闪电球 + 电动力学AOE + 电容器增加球位 = 受伤越多伤害越高",
+        "power": "high",
+        "setup": "先打出电容器和电动力学，受伤时自动触发"
+      }
+    ],
+    "guide": {
+      "overview": "电球流通过生成大量闪电球进行输出，电动力学让闪电球变成AOE。",
+      "coreStrategy": "优先拿电动力学，补充闪电球来源，增加球位和专注。",
+      "earlyGame": "电击和球状闪电是前期闪电球来源。",
+      "midGame": "拿到电动力学后AOE能力大幅提升。",
+      "lateGame": "大量闪电球 + 高专注 = 每回合海量伤害。",
+      "tips": [
+        "电动力学是电球流的核心",
+        "电容器增加球位",
+        "碎片整理增加专注提升球伤害",
+        "风暴打能力牌生成闪电球，能力越多球越多"
+      ],
+      "commonMistakes": [
+        "没有电动力学就走电球流",
+        "忽视专注的作用",
+        "球位不够导致球被挤掉"
+      ]
+    }
+  },
+  {
+    "id": "defect_frost",
+    "name": "冰球流",
+    "nameEn": "Frost Build",
+    "character": "defect",
+    "description": "通过生成大量冰霜球，每回合获得大量护甲。稳健的防御流派。",
+    "difficulty": "intermediate",
+    "coreCards": [
+      { "cardId": "defect_glacier", "weight": 90, "isCore": true, "reason": "护甲 + 生成2个冰霜球" },
+      { "cardId": "defect_cold_snap", "weight": 75, "isCore": true, "reason": "攻击 + 生成冰霜球" },
+      { "cardId": "defect_defragment", "weight": 80, "isCore": true, "reason": "专注增加冰霜球护甲" }
+    ],
+    "importantCards": [
+      { "cardId": "defect_capacitor", "weight": 75, "isCore": false, "reason": "增加球位" },
+      { "cardId": "defect_self_repair", "weight": 60, "isCore": false, "reason": "每回合回复生命" },
+      { "cardId": "defect_buffer", "weight": 65, "isCore": false, "reason": "阻止一次伤害" }
+    ],
+    "supportCards": [
+      { "cardId": "defect_auto_shields", "weight": 50, "isCore": false, "reason": "自动护甲" },
+      { "cardId": "defect_charge_battery", "weight": 45, "isCore": false, "reason": "能量 + 护甲" }
+    ],
+    "preferredRatio": { "attack": 0.20, "skill": 0.50, "power": 0.30 },
+    "idealCostCurve": [0.20, 0.40, 0.30, 0.10, 0.00],
+    "scoringWeights": { "coreCardMatch": 0.35, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.15 },
+    "combos": [
+      {
+        "id": "frost_defense",
+        "name": "冰霜壁垒",
+        "cards": ["defect_glacier", "defect_defragment", "defect_capacitor"],
+        "description": "冰川生成冰霜球 → 碎片整理增加专注 → 电容器增加球位 → 每回合大量护甲",
+        "power": "high",
+        "setup": "优先增加球位和专注，然后生成冰霜球"
+      }
+    ],
+    "guide": {
+      "overview": "冰球流通过大量冰霜球每回合获取护甲，是稳健的防御流派。",
+      "coreStrategy": "优先增加球位和专注，然后生成冰霜球获取护甲。",
+      "earlyGame": "寒潮是前期冰霜球来源。",
+      "midGame": "冰川提供大量冰霜球和护甲。",
+      "lateGame": "高专注 + 大量冰霜球 = 每回合海量护甲。",
+      "tips": [
+        "专注对冰霜球护甲有加成",
+        "电容器增加球位可以放更多冰霜球",
+        "自我修复提供持续回复"
+      ],
+      "commonMistakes": [
+        "忽视专注的作用",
+        "球位不够"
+      ]
+    }
+  },
+  {
+    "id": "defect_dark",
+    "name": "黑暗球流",
+    "nameEn": "Dark Orb Build",
+    "character": "defect",
+    "description": "利用黑暗球的蓄力机制，黑暗球每回合自动增加伤害，引爆时造成巨额单体伤害。",
+    "difficulty": "advanced",
+    "coreCards": [
+      { "cardId": "defect_darkness", "weight": 90, "isCore": true, "reason": "生成黑暗球，黑暗球流的基础" },
+      { "cardId": "defect_recursion", "weight": 85, "isCore": true, "reason": "消耗：将最前方的球移到最后方并重新触发，让黑暗球继续蓄力" },
+      { "cardId": "defect_defragment", "weight": 80, "isCore": true, "reason": "专注增加黑暗球每回合蓄力值" }
+    ],
+    "importantCards": [
+      { "cardId": "defect_capacitor", "weight": 75, "isCore": false, "reason": "增加球位，放更多球" },
+      { "cardId": "defect_doom_and_gloom", "weight": 70, "isCore": false, "reason": "AOE + 生成黑暗球" },
+      { "cardId": "defect_glacier", "weight": 65, "isCore": false, "reason": "冰霜球提供防御，让黑暗球有时间蓄力" }
+    ],
+    "supportCards": [
+      { "cardId": "defect_biased_cognition", "weight": 60, "isCore": false, "reason": "大量专注加速黑暗球蓄力" },
+      { "cardId": "defect_compile_driver", "weight": 50, "isCore": false, "reason": "按球数过牌" },
+      { "cardId": "defect_self_repair", "weight": 45, "isCore": false, "reason": "战斗回复" }
+    ],
+    "preferredRatio": { "attack": 0.25, "skill": 0.45, "power": 0.30 },
+    "idealCostCurve": [0.15, 0.40, 0.35, 0.10, 0.00],
+    "scoringWeights": { "coreCardMatch": 0.30, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.20 },
+    "combos": [
+      {
+        "id": "dark_recursion",
+        "name": "黑暗循环",
+        "cards": ["defect_darkness", "defect_recursion", "defect_defragment"],
+        "description": "生成黑暗球 → 碎片整理增加专注 → 循环将黑暗球移到后方继续蓄力 → 引爆秒杀",
+        "power": "game_winning",
+        "setup": "先生成黑暗球并增加专注，用循环保持黑暗球蓄力位置"
+      },
+      {
+        "id": "dark_biased",
+        "name": "偏见黑暗",
+        "cards": ["defect_darkness", "defect_biased_cognition", "defect_capacitor"],
+        "description": "偏见认知+4专注 → 黑暗球每回合蓄力爆炸增长 → 电容器保证球位",
+        "power": "high",
+        "setup": "先打出偏见认知和电容器，再生成黑暗球"
+      }
+    ],
+    "guide": {
+      "overview": "黑暗球流利用黑暗球每回合自动蓄力的机制，通过专注加速蓄力，最终引爆造成巨额伤害。",
+      "coreStrategy": "优先生成黑暗球并增加专注，用循环保持黑暗球蓄力位置，最终引爆。",
+      "earlyGame": "黑暗球是基础来源，注意配合冰霜球防御。",
+      "midGame": "碎片整理增加专注，黑暗球蓄力速度加快。",
+      "lateGame": "高专注+长时间蓄力的黑暗球可以一击秒杀Boss。",
+      "tips": [
+        "黑暗球每回合自动增加等同于专注值的伤害",
+        "循环可以将黑暗球移到后方，让它继续蓄力而非被引爆",
+        "偏见认知提供大量专注但每回合减1，需要快速击杀",
+        "电容器增加球位，保证黑暗球不被新球挤掉"
+      ],
+      "commonMistakes": [
+        "没有专注就走黑暗球流，蓄力太慢",
+        "黑暗球被挤到前方自动引爆，浪费蓄力",
+        "没有足够的防御手段，蓄力阶段被秒"
+      ]
+    }
+  },
+  {
+    "id": "defect_focus",
+    "name": "专注流",
+    "nameEn": "Focus Build",
+    "character": "defect",
+    "description": "通过叠加专注层数，全面提升所有球的效果。专注越高，冰霜球护甲越多、闪电球伤害越高、黑暗球蓄力越快。",
+    "difficulty": "intermediate",
+    "coreCards": [
+      { "cardId": "defect_defragment", "weight": 90, "isCore": true, "reason": "碎片整理：永久增加专注" },
+      { "cardId": "defect_biased_cognition", "weight": 85, "isCore": true, "reason": "偏见认知：+4专注，快速起飞" },
+      { "cardId": "defect_core_memory", "weight": 80, "isCore": true, "reason": "核心记忆：打能力牌获得专注" }
+    ],
+    "importantCards": [
+      { "cardId": "defect_capacitor", "weight": 75, "isCore": false, "reason": "增加球位" },
+      { "cardId": "defect_glacier", "weight": 70, "isCore": false, "reason": "冰霜球享受专注加成" },
+      { "cardId": "defect_ball_lightning", "weight": 65, "isCore": false, "reason": "闪电球享受专注加成" }
+    ],
+    "supportCards": [
+      { "cardId": "defect_creative_ai", "weight": 55, "isCore": false, "reason": "每回合获得能力牌，触发核心记忆" },
+      { "cardId": "defect_echo_form", "weight": 60, "isCore": false, "reason": "能力牌打两次，专注翻倍" },
+      { "cardId": "defect_storm", "weight": 50, "isCore": false, "reason": "打能力牌生成闪电球" }
+    ],
+    "preferredRatio": { "attack": 0.25, "skill": 0.40, "power": 0.35 },
+    "idealCostCurve": [0.15, 0.40, 0.35, 0.10, 0.00],
+    "scoringWeights": { "coreCardMatch": 0.35, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.15 },
+    "combos": [
+      {
+        "id": "focus_echo",
+        "name": "回声专注",
+        "cards": ["defect_defragment", "defect_echo_form", "defect_biased_cognition"],
+        "description": "回声形态让能力牌打两次 → 碎片整理打两次+2专注 → 偏见认知打两次+8专注",
+        "power": "game_winning",
+        "setup": "先打出回声形态，再用碎片整理和偏见认知叠加专注"
+      },
+      {
+        "id": "focus_core_memory",
+        "name": "记忆引擎",
+        "cards": ["defect_core_memory", "defect_creative_ai", "defect_storm"],
+        "description": "创造AI每回合给能力牌 → 打能力牌触发核心记忆+专注 → 风暴生成闪电球",
+        "power": "high",
+        "setup": "先打出创造AI和核心记忆，后续回合持续收益"
+      }
+    ],
+    "guide": {
+      "overview": "专注流通过叠加专注层数，全面提升所有球的效果。专注是故障机器人最重要的属性。",
+      "coreStrategy": "优先拿碎片整理和偏见认知，快速叠加专注，然后利用各种球享受加成。",
+      "earlyGame": "碎片整理是基础专注来源。",
+      "midGame": "偏见认知快速提升专注，配合各种球输出。",
+      "lateGame": "高专注下所有球效果翻倍，冰霜球护甲极高，闪电球伤害极高。",
+      "tips": [
+        "专注对所有球都有加成，是最通用的属性",
+        "偏见认知虽然每回合减1专注，但+4的收益远大于损失",
+        "回声形态让能力牌打两次，专注叠加速度翻倍",
+        "核心记忆配合创造AI可以持续获取专注"
+      ],
+      "commonMistakes": [
+        "偏见认知使用时机不对，专注被减到负数",
+        "只关注专注不关注球的数量",
+        "没有足够的球来享受专注加成"
+      ]
+    }
+  }
+]

@@ -1,0 +1,177 @@
+[
+  {
+    "id": "necromancer_undead",
+    "name": "亡灵流",
+    "nameEn": "Undead Build",
+    "character": "necromancer",
+    "description": "通过召唤亡灵生物进行战斗，利用亡灵数量触发各种效果。",
+    "difficulty": "intermediate",
+    "coreCards": [
+      { "cardId": "necromancer_bone_guard", "weight": 90, "isCore": true, "reason": "召唤骷髅战士" },
+      { "cardId": "necromancer_countdown", "weight": 85, "isCore": true, "reason": "每回合自动召唤骷髅" },
+      { "cardId": "necromancer_doom_robe", "weight": 70, "isCore": true, "reason": "亡灵越多护甲越高" }
+    ],
+    "importantCards": [
+      { "cardId": "necromancer_doom_comes", "weight": 75, "isCore": false, "reason": "按亡灵数量AOE" },
+      { "cardId": "necromancer_sacrifice", "weight": 65, "isCore": false, "reason": "牺牲亡灵获取资源" },
+      { "cardId": "necromancer_reap", "weight": 60, "isCore": false, "reason": "攻击 + 回复" }
+    ],
+    "supportCards": [
+      { "cardId": "necromancer_friendship", "weight": 50, "isCore": false, "reason": "消耗获取亡灵之力" },
+      { "cardId": "necromancer_dredge", "weight": 45, "isCore": false, "reason": "回收消耗牌" }
+    ],
+    "preferredRatio": { "attack": 0.30, "skill": 0.45, "power": 0.25 },
+    "idealCostCurve": [0.15, 0.45, 0.30, 0.10, 0.00],
+    "scoringWeights": { "coreCardMatch": 0.40, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.10 },
+    "combos": [
+      {
+        "id": "undead_army",
+        "name": "亡灵大军",
+        "cards": ["necromancer_countdown", "necromancer_doom_comes"],
+        "description": "亡灵军团每回合召唤骷髅 → 白骨风暴按数量AOE",
+        "power": "game_winning",
+        "setup": "先打出亡灵军团积累骷髅数量"
+      },
+      {
+        "id": "undead_sacrifice_cycle",
+        "name": "献祭循环",
+        "cards": ["necromancer_bone_guard", "necromancer_sacrifice", "necromancer_doom_comes"],
+        "description": "复活亡灵 → 献祭获取能量和过牌 → 白骨风暴AOE → 循环",
+        "power": "high",
+        "setup": "不断召唤亡灵并献祭获取资源"
+      }
+    ],
+    "guide": {
+      "overview": "亡灵流通过召唤亡灵生物进行战斗，亡灵数量越多越强。",
+      "coreStrategy": "优先拿复活亡灵和亡灵军团，补充亡灵相关卡牌。",
+      "earlyGame": "复活亡灵是基础召唤手段。",
+      "midGame": "亡灵军团提供稳定骷髅来源。",
+      "lateGame": "大量骷髅 + 白骨风暴 = AOE清场。",
+      "tips": [
+        "亡灵数量是核心",
+        "骨甲提供防御",
+        "献祭可以牺牲亡灵获取资源",
+        "白骨风暴是亡灵流的终极AOE"
+      ],
+      "commonMistakes": [
+        "亡灵数量不够",
+        "忽视防御"
+      ]
+    }
+  },
+  {
+    "id": "necromancer_contract",
+    "name": "契约流",
+    "nameEn": "Contract Build",
+    "character": "necromancer",
+    "description": "利用黑暗契约等消耗牌获取亡灵之力，通过消耗手牌来触发各种效果。消耗流的亡灵版本。",
+    "difficulty": "advanced",
+    "coreCards": [
+      { "cardId": "necromancer_friendship", "weight": 95, "isCore": true, "reason": "消耗手牌获取亡灵之力，契约流核心引擎" },
+      { "cardId": "necromancer_dredge", "weight": 85, "isCore": true, "reason": "从消耗堆回收牌，契约循环的关键" },
+      { "cardId": "necromancer_sacrifice", "weight": 80, "isCore": true, "reason": "牺牲亡灵获取能量和过牌" }
+    ],
+    "importantCards": [
+      { "cardId": "necromancer_suffering", "weight": 75, "isCore": false, "reason": "高伤害输出，中毒翻倍" },
+      { "cardId": "necromancer_reap", "weight": 70, "isCore": false, "reason": "攻击+回复，弥补消耗损失" },
+      { "cardId": "necromancer_bone_guard", "weight": 65, "isCore": false, "reason": "召唤亡灵供献祭" }
+    ],
+    "supportCards": [
+      { "cardId": "necromancer_doom_robe", "weight": 55, "isCore": false, "reason": "防御" },
+      { "cardId": "necromancer_ash_spirit", "weight": 50, "isCore": false, "reason": "死亡复活保命" }
+    ],
+    "preferredRatio": { "attack": 0.30, "skill": 0.50, "power": 0.20 },
+    "idealCostCurve": [0.20, 0.45, 0.25, 0.10, 0.00],
+    "scoringWeights": { "coreCardMatch": 0.30, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.20 },
+    "combos": [
+      {
+        "id": "contract_cycle",
+        "name": "契约循环",
+        "cards": ["necromancer_friendship", "necromancer_dredge", "necromancer_sacrifice"],
+        "description": "黑暗契约消耗牌获亡灵之力 → 墓地轮班回收消耗牌 → 献祭亡灵获能量 → 循环",
+        "power": "game_winning",
+        "setup": "先有亡灵，然后不断契约消耗+墓地回收"
+      }
+    ],
+    "guide": {
+      "overview": "契约流通过消耗手牌获取亡灵之力，墓地轮班回收消耗牌形成循环。",
+      "coreStrategy": "优先拿黑暗契约和墓地轮班，形成消耗-回收循环。",
+      "earlyGame": "黑暗契约是基础消耗手段。",
+      "midGame": "墓地轮班开始回收消耗牌，循环成型。",
+      "lateGame": "循环稳定后，亡灵之力持续增长，配合各种亡灵牌输出。",
+      "tips": [
+        "墓地轮班是契约流循环的关键",
+        "黑暗契约消耗的牌可以通过墓地轮班回收",
+        "献祭亡灵获取能量，支持更多操作",
+        "命匣是契约流的保命手段"
+      ],
+      "commonMistakes": [
+        "没有墓地轮班就走契约流，消耗的牌回不来",
+        "消耗太猛导致手牌不足",
+        "忽视亡灵数量，契约流也需要亡灵"
+      ]
+    }
+  },
+  {
+    "id": "necromancer_ash",
+    "name": "骨灰流",
+    "nameEn": "Ash Build",
+    "character": "necromancer",
+    "description": "利用亡灵死亡时触发的各种效果，通过不断召唤和牺牲亡灵来获取收益。将亡灵的死亡转化为力量。",
+    "difficulty": "advanced",
+    "coreCards": [
+      { "cardId": "necromancer_sacrifice", "weight": 95, "isCore": true, "reason": "牺牲亡灵获取能量和过牌，骨灰流核心" },
+      { "cardId": "necromancer_bone_guard", "weight": 85, "isCore": true, "reason": "不断召唤亡灵供牺牲" },
+      { "cardId": "necromancer_doom_comes", "weight": 80, "isCore": true, "reason": "按亡灵数量AOE，亡灵越多伤害越高" }
+    ],
+    "importantCards": [
+      { "cardId": "necromancer_countdown", "weight": 75, "isCore": false, "reason": "每回合自动补充亡灵" },
+      { "cardId": "necromancer_reap", "weight": 70, "isCore": false, "reason": "攻击+回复" },
+      { "cardId": "necromancer_friendship", "weight": 65, "isCore": false, "reason": "消耗获取亡灵之力" }
+    ],
+    "supportCards": [
+      { "cardId": "necromancer_doom_robe", "weight": 55, "isCore": false, "reason": "亡灵越多护甲越高" },
+      { "cardId": "necromancer_dredge", "weight": 50, "isCore": false, "reason": "回收消耗牌" },
+      { "cardId": "necromancer_ash_spirit", "weight": 45, "isCore": false, "reason": "死亡复活保命" }
+    ],
+    "preferredRatio": { "attack": 0.35, "skill": 0.40, "power": 0.25 },
+    "idealCostCurve": [0.15, 0.45, 0.30, 0.10, 0.00],
+    "scoringWeights": { "coreCardMatch": 0.30, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.20 },
+    "combos": [
+      {
+        "id": "ash_summon_sacrifice",
+        "name": "召唤献祭",
+        "cards": ["necromancer_bone_guard", "necromancer_sacrifice", "necromancer_countdown"],
+        "description": "亡灵军团自动补充 → 复活亡灵补充 → 献祭获取资源 → 循环利用亡灵死亡",
+        "power": "game_winning",
+        "setup": "先打出亡灵军团，然后不断召唤+献祭"
+      },
+      {
+        "id": "ash_bone_storm",
+        "name": "骨灰风暴",
+        "cards": ["necromancer_countdown", "necromancer_bone_guard", "necromancer_doom_comes"],
+        "description": "大量召唤亡灵 → 白骨风暴按数量AOE清场 → 亡灵死亡后继续召唤",
+        "power": "high",
+        "setup": "积累大量亡灵后一波白骨风暴"
+      }
+    ],
+    "guide": {
+      "overview": "骨灰流利用亡灵死亡时的收益，通过不断召唤和牺牲亡灵来获取资源和输出。",
+      "coreStrategy": "优先拿献祭和复活亡灵，形成召唤-牺牲循环。",
+      "earlyGame": "复活亡灵是基础召唤手段。",
+      "midGame": "献祭开始产生收益，亡灵军团提供稳定补充。",
+      "lateGame": "循环成型后，每回合都能获取大量资源。",
+      "tips": [
+        "献祭是骨灰流的核心引擎",
+        "亡灵军团自动补充亡灵，保证献祭有材料",
+        "白骨风暴是骨灰流的终极AOE",
+        "墓地轮班可以回收消耗的牌"
+      ],
+      "commonMistakes": [
+        "没有献祭就走骨灰流",
+        "亡灵补充速度跟不上牺牲速度",
+        "忽视防御，骨灰流需要活到循环成型"
+      ]
+    }
+  }
+]

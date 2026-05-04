@@ -1,0 +1,114 @@
+{
+  "relics": [
+    {
+      "id": "unceasing_top",
+      "name": "永动陀螺",
+      "nameEn": "Unceasing Top",
+      "rarity": "uncommon",
+      "character": "common",
+      "description": "每当手牌为空时，抽1张牌。",
+      "effects": [{ "trigger": "on_draw", "description": "手牌为空时抽1牌", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["过牌"]
+    },
+    {
+      "id": "sundial",
+      "name": "日晷",
+      "nameEn": "Sundial",
+      "rarity": "uncommon",
+      "character": "common",
+      "description": "每洗牌2次，获得2点能量。",
+      "effects": [{ "trigger": "passive", "description": "洗牌2次后能量+2", "power": 2 }],
+      "dataSource": "manual",
+      "tags": ["能量"]
+    },
+    {
+      "id": "letter_opener",
+      "name": "开信刀",
+      "nameEn": "Letter Opener",
+      "rarity": "uncommon",
+      "character": "common",
+      "description": "每回合打出3张技能牌时，对所有敌人造成5点伤害。",
+      "effects": [{ "trigger": "on_play_skill", "description": "3技能牌后AOE5", "power": 5 }],
+      "dataSource": "manual",
+      "tags": ["攻击"]
+    },
+    {
+      "id": "mercury_hourglass",
+      "name": "水银沙漏",
+      "nameEn": "Mercury Hourglass",
+      "rarity": "uncommon",
+      "character": "common",
+      "description": "每回合开始时对所有敌人造成3点伤害。",
+      "effects": [{ "trigger": "on_turn_start", "description": "AOE3", "power": 3 }],
+      "dataSource": "manual",
+      "tags": ["攻击"]
+    },
+    {
+      "id": "shuriken",
+      "name": "手里剑",
+      "nameEn": "Shuriken",
+      "rarity": "uncommon",
+      "character": "common",
+      "description": "每回合打出3张攻击牌时，获得1层力量。",
+      "effects": [{ "trigger": "on_play_attack", "description": "3攻击牌后力量+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["力量", "攻击"]
+    },
+    {
+      "id": "kunai",
+      "name": "苦无",
+      "nameEn": "Kunai",
+      "rarity": "uncommon",
+      "character": "common",
+      "description": "每回合打出3张攻击牌时，获得1层敏捷。",
+      "effects": [{ "trigger": "on_play_attack", "description": "3攻击牌后敏捷+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["敏捷", "攻击"]
+    },
+    {
+      "id": "ornamental_dagger",
+      "name": "装饰匕首",
+      "nameEn": "Ornamental Dagger",
+      "rarity": "uncommon",
+      "character": "common",
+      "description": "每当你消耗一张牌时，对随机敌人造成10点伤害。",
+      "effects": [{ "trigger": "on_exhaust", "description": "消耗时伤害10", "power": 10 }],
+      "dataSource": "manual",
+      "tags": ["消耗", "攻击"]
+    },
+    {
+      "id": "meat_on_the_bone",
+      "name": "骨头上的肉",
+      "nameEn": "Meat on the Bone",
+      "rarity": "uncommon",
+      "character": "common",
+      "description": "如果你在战斗结束时生命值低于50%，恢复12点生命。",
+      "effects": [{ "trigger": "passive", "description": "低血量恢复12HP", "power": 12 }],
+      "dataSource": "manual",
+      "tags": ["回复"]
+    },
+    {
+      "id": "horn_cleat",
+      "name": "角楔",
+      "nameEn": "Horn Cleat",
+      "rarity": "uncommon",
+      "character": "common",
+      "description": "每场战斗第二回合获得14点护甲。",
+      "effects": [{ "trigger": "on_turn_start", "description": "第二回合护甲+14", "power": 14 }],
+      "dataSource": "manual",
+      "tags": ["护甲"]
+    },
+    {
+      "id": "captains_wheel",
+      "name": "船长之轮",
+      "nameEn": "Captain's Wheel",
+      "rarity": "uncommon",
+      "character": "common",
+      "description": "每场战斗第三回合获得18点护甲。",
+      "effects": [{ "trigger": "on_turn_start", "description": "第三回合护甲+18", "power": 18 }],
+      "dataSource": "manual",
+      "tags": ["护甲"]
+    }
+  ]
+}

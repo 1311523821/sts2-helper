@@ -1,0 +1,1206 @@
+{
+  "character": "prince",
+  "version": "0.3.0",
+  "dataSource": "游侠网(ali213.net)、游民星空(gamersky.com)数据",
+  "cards": [
+    {
+      "id": "prince_strike",
+      "name": "打击",
+      "nameEn": "Strike",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "basic",
+      "cost": 1,
+      "description": "造成6点伤害。",
+      "keywords": [],
+      "tags": [
+        "基础",
+        "攻击"
+      ],
+      "upgradedDescription": "造成9点伤害。"
+    },
+    {
+      "id": "prince_defend",
+      "name": "防御",
+      "nameEn": "Defend",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "basic",
+      "cost": 1,
+      "description": "获得5点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "基础",
+        "防御"
+      ],
+      "upgradedDescription": "获得8点格挡。"
+    },
+    {
+      "id": "prince_worship",
+      "name": "崇拜",
+      "nameEn": "Worship",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "basic",
+      "cost": 1,
+      "description": "获得辉星。",
+      "keywords": [
+        "star"
+      ],
+      "tags": [
+        "基础",
+        "辉星"
+      ]
+    },
+    {
+      "id": "prince_astral_pulse",
+      "name": "星界脉冲",
+      "nameEn": "Astral Pulse",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 0,
+      "description": "对所有敌人造成5点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "AOE",
+        "零费"
+      ],
+      "upgradedDescription": "对所有敌人造成8点伤害。"
+    },
+    {
+      "id": "prince_collision_course",
+      "name": "碰撞轨迹",
+      "nameEn": "Collision Course",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 0,
+      "description": "造成9点伤害。将一张碎屑添加至你的手牌。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "零费"
+      ],
+      "upgradedDescription": "造成12点伤害。"
+    },
+    {
+      "id": "prince_get_down",
+      "name": "下去！",
+      "nameEn": "Get Down!",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 2,
+      "description": "造成17点伤害。消耗1张状态牌。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "造成22点伤害。消耗1张状态牌。"
+    },
+    {
+      "id": "prince_meteor",
+      "name": "陨星",
+      "nameEn": "Meteor",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 0,
+      "description": "造成8点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "零费"
+      ],
+      "upgradedDescription": "造成11点伤害。"
+    },
+    {
+      "id": "prince_bright_strike",
+      "name": "明耀打击",
+      "nameEn": "Bright Strike",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成8点伤害。获得1层辉星。",
+      "keywords": [
+        "star"
+      ],
+      "tags": [
+        "攻击",
+        "辉星"
+      ],
+      "upgradedDescription": "造成11点伤害。获得1层辉星。"
+    },
+    {
+      "id": "prince_star_cloak",
+      "name": "群星斗篷",
+      "nameEn": "Star Cloak",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 0,
+      "description": "获得7点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御",
+        "零费"
+      ],
+      "upgradedDescription": "获得10点格挡。"
+    },
+    {
+      "id": "prince_cosmic_apathy",
+      "name": "宇宙冷漠",
+      "nameEn": "Cosmic Apathy",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得6点格挡。将弃牌堆中的一张牌放到你的抽牌堆的顶部。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御",
+        "操控"
+      ],
+      "upgradedDescription": "获得9点格挡。"
+    },
+    {
+      "id": "prince_collection",
+      "name": "收集光辉",
+      "nameEn": "Collection",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成6点伤害。获得6点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "攻击",
+        "防御"
+      ],
+      "upgradedDescription": "造成9点伤害。获得6点格挡。"
+    },
+    {
+      "id": "prince_starlight",
+      "name": "星星点点",
+      "nameEn": "Starlight",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得8点格挡。获得1层辉星。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御"
+      ],
+      "upgradedDescription": "获得11点格挡。获得1层辉星。"
+    },
+    {
+      "id": "prince_forge_wall",
+      "name": "铸墙",
+      "nameEn": "Forge Wall",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得8点格挡。获得1层铸造。",
+      "keywords": [
+        "block",
+        "forge"
+      ],
+      "tags": [
+        "防御",
+        "铸造"
+      ],
+      "upgradedDescription": "获得11点格挡。获得1层铸造。"
+    },
+    {
+      "id": "prince_flow_light",
+      "name": "流光溢彩",
+      "nameEn": "Flow Light",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 2,
+      "description": "获得15点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御"
+      ],
+      "upgradedDescription": "获得18点格挡。"
+    },
+    {
+      "id": "prince_kings_kick",
+      "name": "王者之踢",
+      "nameEn": "King's Kick",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成4点伤害4次。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "造成7点伤害4次。"
+    },
+    {
+      "id": "prince_kings_fist",
+      "name": "王者之拳",
+      "nameEn": "King's Fist",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成12点伤害。给予1层虚弱。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "造成15点伤害。给予1层虚弱。"
+    },
+    {
+      "id": "prince_charge",
+      "name": "冲锋！！",
+      "nameEn": "Charge!!",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "对所有敌人造成8点伤害。消耗所有状态牌，每消耗一张额外造成4点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "对所有敌人造成11点伤害。消耗所有状态牌，每消耗一张额外造成7点伤害。"
+    },
+    {
+      "id": "prince_gamma_blast",
+      "name": "伽马爆破",
+      "nameEn": "Gamma Blast",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "造成14点伤害。给予2层易伤和2层虚弱。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "造成17点伤害。给予2层易伤和2层虚弱。"
+    },
+    {
+      "id": "prince_radiation",
+      "name": "辐射",
+      "nameEn": "Radiation",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 0,
+      "description": "造成6点伤害。将此牌洗入你的抽牌堆。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "零费"
+      ],
+      "upgradedDescription": "造成9点伤害。将此牌洗入你的抽牌堆。"
+    },
+    {
+      "id": "prince_terrain_transformation",
+      "name": "地形改造",
+      "nameEn": "Terrain Transformation",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "多段输出的好牌。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "prince_war_trophy",
+      "name": "战利品",
+      "nameEn": "War Trophy",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成8点伤害。获得1层铸造。",
+      "keywords": [
+        "forge"
+      ],
+      "tags": [
+        "攻击",
+        "铸造"
+      ],
+      "upgradedDescription": "造成11点伤害。获得1层铸造。"
+    },
+    {
+      "id": "prince_forged_in_war",
+      "name": "战火铸就",
+      "nameEn": "Forged in War",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成9点伤害。获得1层铸造。",
+      "keywords": [
+        "forge"
+      ],
+      "tags": [
+        "攻击",
+        "铸造"
+      ],
+      "upgradedDescription": "造成12点伤害。获得1层铸造。"
+    },
+    {
+      "id": "prince_new_moon_spear",
+      "name": "新月长矛",
+      "nameEn": "New Moon Spear",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成10点伤害。每有1层辉星，额外造成2点伤害。",
+      "keywords": [
+        "star"
+      ],
+      "tags": [
+        "攻击",
+        "辉星"
+      ],
+      "upgradedDescription": "造成13点伤害。每有1层辉星，额外造成5点伤害。"
+    },
+    {
+      "id": "prince_parry",
+      "name": "招架",
+      "nameEn": "Parry",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "狙？",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "prince_entomb",
+      "name": "葬送",
+      "nameEn": "Entomb",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "拿了这玩意连续三场战斗首回合上手卡着出不去。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "prince_usurper",
+      "name": "何人僭越",
+      "nameEn": "Usurper",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 0,
+      "description": "零费自动消耗又很牛逼。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "攻击",
+        "消耗",
+        "零费"
+      ]
+    },
+    {
+      "id": "prince_stardust",
+      "name": "星尘",
+      "nameEn": "Stardust",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "清库存专用，循环的另一个终端。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "prince_lunar_shot",
+      "name": "月面射击",
+      "nameEn": "Lunar Shot",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成12点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "造成15点伤害。"
+    },
+    {
+      "id": "prince_bombardment",
+      "name": "轰击",
+      "nameEn": "Bombardment",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "对所有敌人造成10点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "对所有敌人造成13点伤害。"
+    },
+    {
+      "id": "prince_meteor_shower",
+      "name": "流星雨",
+      "nameEn": "Meteor Shower",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "对所有敌人造成6点伤害3次。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "对所有敌人造成9点伤害3次。"
+    },
+    {
+      "id": "prince_forge_shape",
+      "name": "锻打成型",
+      "nameEn": "Forge Shape",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得3层铸造。",
+      "keywords": [
+        "forge"
+      ],
+      "tags": [
+        "铸造"
+      ]
+    },
+    {
+      "id": "prince_conqueror",
+      "name": "征服者",
+      "nameEn": "Conqueror",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "铸造3。君王之剑在本回合对敌人造成双倍伤害。",
+      "keywords": [
+        "forge"
+      ],
+      "tags": [
+        "铸造"
+      ],
+      "upgradedDescription": "铸造5。"
+    },
+    {
+      "id": "prince_confluence",
+      "name": "汇流",
+      "nameEn": "Confluence",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "在本回合保留你的手牌。在下个回合，获得能量与星标。",
+      "keywords": [
+        "retain",
+        "star"
+      ],
+      "tags": [
+        "保留",
+        "辉星",
+        "能量"
+      ]
+    },
+    {
+      "id": "prince_hegemony",
+      "name": "霸权",
+      "nameEn": "Hegemony",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "在下个回合获得2点能量。",
+      "keywords": [],
+      "tags": [
+        "技能"
+      ]
+    },
+    {
+      "id": "prince_particle_wall",
+      "name": "粒子墙",
+      "nameEn": "Particle Wall",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "获得22点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御"
+      ],
+      "upgradedDescription": "获得28点格挡。"
+    },
+    {
+      "id": "prince_reflection",
+      "name": "倒映",
+      "nameEn": "Reflection",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得9点格挡。抽1张牌。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御"
+      ],
+      "upgradedDescription": "获得12点格挡。抽1张牌。"
+    },
+    {
+      "id": "prince_shimmer",
+      "name": "微光",
+      "nameEn": "Shimmer",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "是无限的核心，也可以称之为小杂技。",
+      "keywords": [
+        "draw"
+      ],
+      "tags": [
+        "过牌"
+      ]
+    },
+    {
+      "id": "prince_royal_mandate",
+      "name": "君权自授",
+      "nameEn": "Royal Mandate",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得8点格挡。将弃牌堆中的一张随机牌加入手牌。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御"
+      ],
+      "upgradedDescription": "获得11点格挡。将弃牌堆中的一张随机牌加入手牌。"
+    },
+    {
+      "id": "prince_conscript",
+      "name": "征召上前",
+      "nameEn": "Conscript",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得2层铸造。抽1张牌。",
+      "keywords": [
+        "forge"
+      ],
+      "tags": [
+        "铸造"
+      ],
+      "upgradedDescription": "获得2层铸造。抽2张牌。"
+    },
+    {
+      "id": "prince_prophecy",
+      "name": "预言",
+      "nameEn": "Prophecy",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "预见3。获得1层辉星。",
+      "keywords": [],
+      "tags": [
+        "技能"
+      ]
+    },
+    {
+      "id": "prince_dim_blue_dot",
+      "name": "暗淡蓝点",
+      "nameEn": "Dim Blue Dot",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "选择一张手牌。在下个回合，将该牌的复制品加入手牌。",
+      "keywords": [],
+      "tags": [
+        "技能"
+      ]
+    },
+    {
+      "id": "prince_guiding_star",
+      "name": "引导之星",
+      "nameEn": "Guiding Star",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "抽2张牌。获得1层辉星。",
+      "keywords": [
+        "draw",
+        "star"
+      ],
+      "tags": [
+        "过牌",
+        "辉星"
+      ],
+      "upgradedDescription": "抽3张牌。获得1层辉星。"
+    },
+    {
+      "id": "prince_forge_blade",
+      "name": "淬炼刀刃",
+      "nameEn": "Forge Blade",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得1层铸造。在下个回合获得1点能量。",
+      "keywords": [
+        "forge"
+      ],
+      "tags": [
+        "铸造",
+        "能量"
+      ]
+    },
+    {
+      "id": "prince_hidden_treasure",
+      "name": "隐秘藏品",
+      "nameEn": "Hidden Treasure",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得4层辉星。",
+      "keywords": [
+        "star"
+      ],
+      "tags": [
+        "辉星"
+      ]
+    },
+    {
+      "id": "prince_this_is_good",
+      "name": "如此甚好",
+      "nameEn": "This Is Good",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成8点伤害。抽1张牌。",
+      "keywords": [],
+      "tags": [
+        "技能"
+      ],
+      "upgradedDescription": "造成11点伤害。抽1张牌。"
+    },
+    {
+      "id": "prince_newborn_joy",
+      "name": "新生之喜",
+      "nameEn": "Newborn Joy",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "新生之喜技能。",
+      "keywords": [],
+      "tags": [
+        "技能"
+      ]
+    },
+    {
+      "id": "prince_weapon_arsenal",
+      "name": "武器库",
+      "nameEn": "Weapon Arsenal",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "武器库技能。",
+      "keywords": [],
+      "tags": [
+        "技能"
+      ]
+    },
+    {
+      "id": "prince_big_bang",
+      "name": "大爆炸",
+      "nameEn": "Big Bang",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "大爆炸终极攻击。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "高伤"
+      ]
+    },
+    {
+      "id": "prince_black_hole",
+      "name": "黑洞",
+      "nameEn": "Black Hole",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "对所有敌人造成伤害，星流的核心。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "AOE"
+      ]
+    },
+    {
+      "id": "prince_comet",
+      "name": "彗星",
+      "nameEn": "Comet",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 0,
+      "description": "造成33点伤害。给予3层虚弱。给予3层易伤。",
+      "keywords": [
+        "weak",
+        "vulnerable"
+      ],
+      "tags": [
+        "攻击",
+        "控制",
+        "零费"
+      ],
+      "upgradedDescription": "造成44点伤害。"
+    },
+    {
+      "id": "prince_forced_landing",
+      "name": "迫降",
+      "nameEn": "Forced Landing",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "对所有敌人造成21点伤害。用碎屑填满你的手牌。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "AOE"
+      ],
+      "upgradedDescription": "造成26点伤害。"
+    },
+    {
+      "id": "prince_decisive_strike",
+      "name": "决胜一击",
+      "nameEn": "Decisive Strike",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "造成32点伤害。消耗。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "高伤"
+      ],
+      "upgradedDescription": "造成42点伤害。消耗。"
+    },
+    {
+      "id": "prince_child_of_stars",
+      "name": "群星之子",
+      "nameEn": "Child of Stars",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "造成15点伤害。获得2层辉星。",
+      "keywords": [
+        "star"
+      ],
+      "tags": [
+        "攻击",
+        "辉星"
+      ],
+      "upgradedDescription": "造成20点伤害。获得2层辉星。"
+    },
+    {
+      "id": "prince_super_energy",
+      "name": "超能量体",
+      "nameEn": "Super Energy",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "获得3点能量。消耗。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "prince_celestial_drill",
+      "name": "天际钻头",
+      "nameEn": "Celestial Drill",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "造成20点伤害。消耗。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "造成26点伤害。消耗。"
+    },
+    {
+      "id": "prince_celestial_power",
+      "name": "天穹之力",
+      "nameEn": "Celestial Power",
+      "character": "prince",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "在你的回合开始时，获得1层辉星和1层铸造。",
+      "keywords": [],
+      "tags": [
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_star_position_seq",
+      "name": "星位序列",
+      "nameEn": "Star Position Seq",
+      "character": "prince",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "在你的回合开始时，获得2层辉星。",
+      "keywords": [
+        "star"
+      ],
+      "tags": [
+        "辉星",
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_pillar_of_creation",
+      "name": "创世之柱",
+      "nameEn": "Pillar of Creation",
+      "character": "prince",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "在你的回合结束时，获得等量于辉星层数的格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御",
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_forge",
+      "name": "熔炉",
+      "nameEn": "Forge",
+      "character": "prince",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "在你的回合开始时，获得1层铸造。",
+      "keywords": [
+        "forge"
+      ],
+      "tags": [
+        "铸造",
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_spectral_shift",
+      "name": "光谱偏移",
+      "nameEn": "Spectral Shift",
+      "character": "prince",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "每当你获得辉星时，获得1点力量。",
+      "keywords": [],
+      "tags": [
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_orbital",
+      "name": "环绕轨道",
+      "nameEn": "Orbital",
+      "character": "prince",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "每当你获得辉星时，抽1张牌。",
+      "keywords": [],
+      "tags": [
+        "能力"
+      ],
+      "upgradedDescription": "每当你获得辉星时，抽2张牌。"
+    },
+    {
+      "id": "prince_quasar",
+      "name": "类星体",
+      "nameEn": "Quasar",
+      "character": "prince",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "每当你获得辉星时，获得1点能量。",
+      "keywords": [],
+      "tags": [
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_victory_in_king",
+      "name": "胜券在王",
+      "nameEn": "Victory in King",
+      "character": "prince",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "你的消耗牌不再被消耗。",
+      "keywords": [],
+      "tags": [
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_radiance",
+      "name": "辉光",
+      "nameEn": "Radiance",
+      "character": "prince",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "获得2层辉星。抽2张牌。",
+      "keywords": [
+        "star",
+        "draw"
+      ],
+      "tags": [
+        "辉星",
+        "过牌",
+        "能力"
+      ],
+      "upgradedDescription": "获得2层辉星。抽3张牌。"
+    },
+    {
+      "id": "prince_heritage_hammer",
+      "name": "传承之锤",
+      "nameEn": "Heritage Hammer",
+      "character": "prince",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "它可以复制君主之剑。",
+      "keywords": [],
+      "tags": [
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_question_mark",
+      "name": "？？？",
+      "nameEn": "???",
+      "character": "prince",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "将一张随机无色牌加入所有队友的手牌。",
+      "keywords": [],
+      "tags": [
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_succession",
+      "name": "继承",
+      "nameEn": "Succession",
+      "character": "prince",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "在你的回合开始时，获得1层辉星。",
+      "keywords": [
+        "star"
+      ],
+      "tags": [
+        "辉星",
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_crown_slash",
+      "name": "皇冠斩",
+      "nameEn": "Crown Slash",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "造成10点伤害。每有1层辉星，额外造成3点伤害。",
+      "keywords": [
+        "star"
+      ],
+      "tags": [
+        "攻击",
+        "辉星"
+      ],
+      "upgradedDescription": "造成13点伤害。每有1层辉星，额外造成6点伤害。"
+    },
+    {
+      "id": "prince_kingmaker",
+      "name": "造王者",
+      "nameEn": "Kingmaker",
+      "character": "prince",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "每当你获得辉星时，获得1点力量和1点敏捷。",
+      "keywords": [
+        "star",
+        "strength",
+        "dexterity"
+      ],
+      "tags": [
+        "辉星",
+        "力量",
+        "敏捷",
+        "能力"
+      ]
+    },
+    {
+      "id": "prince_throne_room",
+      "name": "王座厅",
+      "nameEn": "Throne Room",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "选择一张手牌。打出该牌两次。",
+      "keywords": [],
+      "tags": [
+        "复制"
+      ]
+    },
+    {
+      "id": "prince_royal_guard",
+      "name": "皇家卫队",
+      "nameEn": "Royal Guard",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得7点格挡。每有1层辉星，额外获得2点格挡。",
+      "keywords": [
+        "block",
+        "star"
+      ],
+      "tags": [
+        "防御",
+        "辉星"
+      ],
+      "upgradedDescription": "获得10点格挡。每有1层辉星，额外获得5点格挡。"
+    },
+    {
+      "id": "prince_royal_decree",
+      "name": "皇家法令",
+      "nameEn": "Royal Decree",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得2层辉星。",
+      "keywords": [
+        "star"
+      ],
+      "tags": [
+        "辉星"
+      ]
+    },
+    {
+      "id": "prince_tax",
+      "name": "征税",
+      "nameEn": "Tax",
+      "character": "prince",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 0,
+      "description": "获得15金币。",
+      "keywords": [],
+      "tags": [
+        "经济",
+        "零费"
+      ]
+    },
+    {
+      "id": "prince_knights_charge",
+      "name": "骑士冲锋",
+      "nameEn": "Knight's Charge",
+      "character": "prince",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成9点伤害。获得5点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "攻击",
+        "防御"
+      ],
+      "upgradedDescription": "造成12点伤害。获得5点格挡。"
+    }
+  ]
+}

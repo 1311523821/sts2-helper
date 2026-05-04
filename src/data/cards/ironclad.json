@@ -1,0 +1,1444 @@
+{
+  "character": "ironclad",
+  "version": "0.3.0",
+  "cards": [
+    {
+      "id": "ironclad_strike",
+      "name": "打击",
+      "nameEn": "Strike",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "basic",
+      "cost": 1,
+      "description": "造成6点伤害。",
+      "keywords": [],
+      "tags": [
+        "基础",
+        "攻击"
+      ],
+      "upgradedDescription": "造成9点伤害。"
+    },
+    {
+      "id": "ironclad_defend",
+      "name": "防御",
+      "nameEn": "Defend",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "basic",
+      "cost": 1,
+      "description": "获得5点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "基础",
+        "防御"
+      ],
+      "upgradedDescription": "获得8点格挡。"
+    },
+    {
+      "id": "ironclad_bash",
+      "name": "痛击",
+      "nameEn": "Bash",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "basic",
+      "cost": 2,
+      "description": "造成8点伤害。给予2层易伤。",
+      "keywords": [
+        "vulnerable"
+      ],
+      "tags": [
+        "基础",
+        "攻击",
+        "易伤"
+      ],
+      "upgradedDescription": "造成10点伤害。给予3层易伤。"
+    },
+    {
+      "id": "ironclad_anger",
+      "name": "愤怒",
+      "nameEn": "Anger",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 0,
+      "description": "造成6点伤害。将一张此牌的复制品放入你的弃牌堆。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "零费"
+      ],
+      "upgradedDescription": "造成9点伤害。将一张此牌的复制品放入你的弃牌堆。"
+    },
+    {
+      "id": "ironclad_cleave",
+      "name": "顺劈斩",
+      "nameEn": "Cleave",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "对所有敌人造成8点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "AOE"
+      ],
+      "upgradedDescription": "对所有敌人造成11点伤害。"
+    },
+    {
+      "id": "ironclad_iron_wave",
+      "name": "铁斩波",
+      "nameEn": "Iron Wave",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成5点伤害。获得5点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "攻击",
+        "防御"
+      ],
+      "upgradedDescription": "造成8点伤害。获得5点格挡。"
+    },
+    {
+      "id": "ironclad_pommel_strike",
+      "name": "剑柄打击",
+      "nameEn": "Pommel Strike",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成9点伤害。抽1张牌。",
+      "keywords": [
+        "draw"
+      ],
+      "tags": [
+        "攻击",
+        "过牌"
+      ],
+      "upgradedDescription": "造成12点伤害。抽1张牌。"
+    },
+    {
+      "id": "ironclad_twin_strike",
+      "name": "双重打击",
+      "nameEn": "Twin Strike",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成5点伤害两次。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "多段"
+      ],
+      "upgradedDescription": "造成8点伤害两次。"
+    },
+    {
+      "id": "ironclad_heavy_blade",
+      "name": "重刃",
+      "nameEn": "Heavy Blade",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 2,
+      "description": "造成14点伤害。力量对此牌的伤害加成变为3倍。",
+      "keywords": [
+        "strength"
+      ],
+      "tags": [
+        "攻击",
+        "力量"
+      ],
+      "upgradedDescription": "造成17点伤害。力量对此牌的伤害加成变为3倍。"
+    },
+    {
+      "id": "ironclad_perfected_strike",
+      "name": "完美打击",
+      "nameEn": "Perfect Strike",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成6点伤害。你每有一张名字中含有\"打击\"的牌，额外造成2点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "造成9点伤害。你每有一张名字中含有\"打击\"的牌，额外造成5点伤害。"
+    },
+    {
+      "id": "ironclad_wild_strike",
+      "name": "狂野打击",
+      "nameEn": "Wild Strike",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成12点伤害。将一张伤口洗入你的抽牌堆。",
+      "keywords": [
+        "wound"
+      ],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "造成15点伤害。将一张伤口洗入你的抽牌堆。"
+    },
+    {
+      "id": "ironclad_headbutt",
+      "name": "头槌",
+      "nameEn": "Headbutt",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成9点伤害。将你弃牌堆中的一张牌放到抽牌堆顶部。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "操控"
+      ],
+      "upgradedDescription": "造成12点伤害。将你弃牌堆中的一张牌放到抽牌堆顶部。"
+    },
+    {
+      "id": "ironclad_sword_boomerang",
+      "name": "飞剑回旋镖",
+      "nameEn": "Sword Boomerang",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成3点伤害3次（随机目标）。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "多段"
+      ],
+      "upgradedDescription": "造成6点伤害3次（随机目标）。"
+    },
+    {
+      "id": "ironclad_thunderclap",
+      "name": "闪电霹雳",
+      "nameEn": "Thunderclap",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "对所有敌人造成4点伤害。给予1层易伤。",
+      "keywords": [
+        "vulnerable"
+      ],
+      "tags": [
+        "攻击",
+        "AOE",
+        "易伤"
+      ],
+      "upgradedDescription": "对所有敌人造成7点伤害。给予1层易伤。"
+    },
+    {
+      "id": "ironclad_body_slam",
+      "name": "全身撞击",
+      "nameEn": "Body Slam",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成等量于你当前格挡值的伤害。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "攻击",
+        "格挡"
+      ]
+    },
+    {
+      "id": "ironclad_rampage",
+      "name": "暴走",
+      "nameEn": "Rampage",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成8点伤害。每次打出此牌，伤害永久增加5。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "成长"
+      ],
+      "upgradedDescription": "造成11点伤害。每次打出此牌，伤害永久增加5。"
+    },
+    {
+      "id": "ironclad_searing_blow",
+      "name": "灼热打击",
+      "nameEn": "Searing Blow",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "造成12点伤害。可以被多次升级，每次升级增加伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "成长"
+      ],
+      "upgradedDescription": "造成15点伤害。可以被多次升级，每次升级增加伤害。"
+    },
+    {
+      "id": "ironclad_uppercut",
+      "name": "上勾拳",
+      "nameEn": "Uppercut",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "造成13点伤害。给予1层虚弱和1层易伤。",
+      "keywords": [
+        "weak",
+        "vulnerable"
+      ],
+      "tags": [
+        "攻击",
+        "控制"
+      ],
+      "upgradedDescription": "造成16点伤害。给予1层虚弱和1层易伤。"
+    },
+    {
+      "id": "ironclad_carnage",
+      "name": "猛击",
+      "nameEn": "Carnage",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "虚无。造成20点伤害。",
+      "keywords": [
+        "ethereal"
+      ],
+      "tags": [
+        "攻击",
+        "高伤",
+        "虚无"
+      ],
+      "upgradedDescription": "虚无。造成26点伤害。"
+    },
+    {
+      "id": "ironclad_hemokinesis",
+      "name": "放血",
+      "nameEn": "Hemokinesis",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "失去2点生命。造成15点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "自伤"
+      ],
+      "upgradedDescription": "失去2点生命。造成20点伤害。"
+    },
+    {
+      "id": "ironclad_reckless_charge",
+      "name": "鲁莽冲锋",
+      "nameEn": "Reckless Charge",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 0,
+      "description": "造成7点伤害。将一张虚无洗入你的抽牌堆。",
+      "keywords": [
+        "ethereal"
+      ],
+      "tags": [
+        "攻击",
+        "零费"
+      ],
+      "upgradedDescription": "造成10点伤害。将一张虚无洗入你的抽牌堆。"
+    },
+    {
+      "id": "ironclad_dropkick",
+      "name": "下踢",
+      "nameEn": "Dropkick",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成5点伤害。如果敌人有易伤，获得1点能量并抽1张牌。",
+      "keywords": [
+        "vulnerable",
+        "draw"
+      ],
+      "tags": [
+        "攻击",
+        "易伤",
+        "能量"
+      ],
+      "upgradedDescription": "造成8点伤害。如果敌人有易伤，获得1点能量并抽1张牌。"
+    },
+    {
+      "id": "ironclad_pummel",
+      "name": "连击",
+      "nameEn": "Pummel",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成2点伤害4次。消耗。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "攻击",
+        "多段",
+        "消耗"
+      ],
+      "upgradedDescription": "造成5点伤害4次。消耗。"
+    },
+    {
+      "id": "ironclad_merciless_assault",
+      "name": "无情猛攻",
+      "nameEn": "Merciless Assault",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成12点伤害。你打出的下一张攻击牌耗能变为0。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "造成15点伤害。你打出的下一张攻击牌耗能变为0。"
+    },
+    {
+      "id": "ironclad_duel",
+      "name": "决斗",
+      "nameEn": "Duel",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成7点伤害。如果这是你本回合打出的唯一一张牌，造成双倍伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ],
+      "upgradedDescription": "造成10点伤害。如果这是你本回合打出的唯一一张牌，造成双倍伤害。"
+    },
+    {
+      "id": "ironclad_shrug_it_off",
+      "name": "耸肩",
+      "nameEn": "Shrug It Off",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得8点格挡。抽1张牌。",
+      "keywords": [
+        "block",
+        "draw"
+      ],
+      "tags": [
+        "防御",
+        "过牌"
+      ],
+      "upgradedDescription": "获得11点格挡。抽1张牌。"
+    },
+    {
+      "id": "ironclad_armaments",
+      "name": "武装",
+      "nameEn": "Armaments",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得5点格挡。升级手牌中1张牌。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御",
+        "升级"
+      ],
+      "upgradedDescription": "获得8点格挡。升级手牌中1张牌。"
+    },
+    {
+      "id": "ironclad_flex",
+      "name": "屈肌",
+      "nameEn": "Flex",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 0,
+      "description": "获得2点力量。在回合结束时失去2点力量。",
+      "keywords": [
+        "strength"
+      ],
+      "tags": [
+        "力量",
+        "零费"
+      ]
+    },
+    {
+      "id": "ironclad_true_grit",
+      "name": "坚毅",
+      "nameEn": "True Grit",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得7点格挡。消耗你抽牌堆中的一张随机牌。",
+      "keywords": [
+        "block",
+        "exhaust"
+      ],
+      "tags": [
+        "防御",
+        "消耗"
+      ],
+      "upgradedDescription": "获得10点格挡。消耗你抽牌堆中的一张随机牌。"
+    },
+    {
+      "id": "ironclad_warcry",
+      "name": "战吼",
+      "nameEn": "Warcry",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 0,
+      "description": "抽1张牌。将你手牌中的一张牌放到抽牌堆顶部。",
+      "keywords": [
+        "draw"
+      ],
+      "tags": [
+        "过牌",
+        "操控",
+        "零费"
+      ],
+      "upgradedDescription": "抽2张牌。将你手牌中的一张牌放到抽牌堆顶部。"
+    },
+    {
+      "id": "ironclad_havoc",
+      "name": "浩劫",
+      "nameEn": "Havoc",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "打出你抽牌堆顶部的牌。消耗该牌。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "消耗"
+      ]
+    },
+    {
+      "id": "ironclad_good_instincts",
+      "name": "好本能",
+      "nameEn": "Good Instincts",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 0,
+      "description": "获得6点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御",
+        "零费"
+      ],
+      "upgradedDescription": "获得9点格挡。"
+    },
+    {
+      "id": "ironclad_bloodletting",
+      "name": "血溅",
+      "nameEn": "Bloodletting",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 0,
+      "description": "失去3点生命。获得2点能量。",
+      "keywords": [],
+      "tags": [
+        "能量",
+        "自伤",
+        "零费"
+      ]
+    },
+    {
+      "id": "ironclad_battle_trance",
+      "name": "战斗专注",
+      "nameEn": "Battle Trance",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 0,
+      "description": "抽3张牌。本回合内你不能再抽牌。",
+      "keywords": [
+        "draw"
+      ],
+      "tags": [
+        "过牌",
+        "零费"
+      ],
+      "upgradedDescription": "抽4张牌。本回合内你不能再抽牌。"
+    },
+    {
+      "id": "ironclad_disarm",
+      "name": "缴械",
+      "nameEn": "Disarm",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "敌人失去2点力量。消耗。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "控制",
+        "消耗"
+      ]
+    },
+    {
+      "id": "ironclad_entrench",
+      "name": "堑壕",
+      "nameEn": "Entrench",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "将你的格挡值翻倍。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御",
+        "格挡"
+      ]
+    },
+    {
+      "id": "ironclad_flame_barrier",
+      "name": "火焰屏障",
+      "nameEn": "Flame Barrier",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "获得12点格挡。每次受到攻击时，对攻击者造成4点伤害。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御",
+        "反伤"
+      ],
+      "upgradedDescription": "获得12点格挡。每次受到攻击时，对攻击者造成7点伤害。"
+    },
+    {
+      "id": "ironclad_ghostly_armor",
+      "name": "幽灵护甲",
+      "nameEn": "Ghostly Armor",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "虚无。获得10点格挡。",
+      "keywords": [
+        "block",
+        "ethereal"
+      ],
+      "tags": [
+        "防御",
+        "虚无"
+      ],
+      "upgradedDescription": "虚无。获得13点格挡。"
+    },
+    {
+      "id": "ironclad_second_wind",
+      "name": "重振精神",
+      "nameEn": "Second Wind",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "消耗你手牌中所有非攻击牌。每消耗一张牌，获得5点格挡。",
+      "keywords": [
+        "exhaust",
+        "block"
+      ],
+      "tags": [
+        "消耗",
+        "格挡"
+      ],
+      "upgradedDescription": "消耗你手牌中所有非攻击牌。每消耗一张牌，获得8点格挡。"
+    },
+    {
+      "id": "ironclad_shockwave",
+      "name": "冲击波",
+      "nameEn": "Shockwave",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "给予所有敌人3层虚弱和3层易伤。消耗。",
+      "keywords": [
+        "exhaust",
+        "weak",
+        "vulnerable"
+      ],
+      "tags": [
+        "控制",
+        "消耗",
+        "AOE"
+      ]
+    },
+    {
+      "id": "ironclad_sentinel",
+      "name": "哨兵",
+      "nameEn": "Sentinel",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得5点格挡。如果此牌被消耗，获得2点能量。",
+      "keywords": [
+        "block",
+        "exhaust"
+      ],
+      "tags": [
+        "防御",
+        "消耗",
+        "能量"
+      ],
+      "upgradedDescription": "获得8点格挡。如果此牌被消耗，获得2点能量。"
+    },
+    {
+      "id": "ironclad_seeing_red",
+      "name": "怒火中烧",
+      "nameEn": "Seeing Red",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得2点能量。消耗。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "能量",
+        "消耗"
+      ]
+    },
+    {
+      "id": "ironclad_intimidate",
+      "name": "恐吓",
+      "nameEn": "Intimidate",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "给予所有敌人1层虚弱。消耗。",
+      "keywords": [
+        "exhaust",
+        "weak"
+      ],
+      "tags": [
+        "控制",
+        "消耗"
+      ]
+    },
+    {
+      "id": "ironclad_power_through",
+      "name": "突破",
+      "nameEn": "Power Through",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "将2张伤口加入你的手牌。获得15点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御"
+      ],
+      "upgradedDescription": "将2张伤口加入你的手牌。获得18点格挡。"
+    },
+    {
+      "id": "ironclad_dual_wield",
+      "name": "双持",
+      "nameEn": "Dual Wield",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "选择一张攻击或技能牌。将其复制品加入你的手牌。",
+      "keywords": [],
+      "tags": [
+        "复制"
+      ]
+    },
+    {
+      "id": "ironclad_spot_weakness",
+      "name": "识破弱点",
+      "nameEn": "Spot Weakness",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "如果敌人正在攻击，获得3点力量。",
+      "keywords": [
+        "strength"
+      ],
+      "tags": [
+        "力量"
+      ]
+    },
+    {
+      "id": "ironclad_blood_surge",
+      "name": "御血术",
+      "nameEn": "Blood Surge",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "失去3点生命。抽2张牌。",
+      "keywords": [
+        "draw"
+      ],
+      "tags": [
+        "自伤",
+        "过牌"
+      ],
+      "upgradedDescription": "失去3点生命。抽3张牌。"
+    },
+    {
+      "id": "ironclad_blood_wall",
+      "name": "血墙",
+      "nameEn": "Blood Wall",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "失去5点生命。获得20点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "自伤",
+        "防御"
+      ],
+      "upgradedDescription": "失去5点生命。获得26点格挡。"
+    },
+    {
+      "id": "ironclad_battle_cry",
+      "name": "战斗呐喊",
+      "nameEn": "Battle Cry",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 0,
+      "description": "将你手牌中的一张牌放到抽牌堆顶部。",
+      "keywords": [],
+      "tags": [
+        "操控",
+        "零费"
+      ]
+    },
+    {
+      "id": "ironclad_offering",
+      "name": "祭品",
+      "nameEn": "Offering",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 0,
+      "description": "失去6点生命。获得2点能量。抽3张牌。",
+      "keywords": [
+        "draw"
+      ],
+      "tags": [
+        "能量",
+        "过牌",
+        "自伤",
+        "零费"
+      ],
+      "upgradedDescription": "失去6点生命。获得2点能量。抽4张牌。"
+    },
+    {
+      "id": "ironclad_impervious",
+      "name": "不可侵犯",
+      "nameEn": "Impervious",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "获得30点格挡。消耗。",
+      "keywords": [
+        "exhaust",
+        "block"
+      ],
+      "tags": [
+        "防御",
+        "格挡",
+        "消耗"
+      ],
+      "upgradedDescription": "获得36点格挡。消耗。"
+    },
+    {
+      "id": "ironclad_reaper",
+      "name": "死神",
+      "nameEn": "Reaper",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "对所有敌人造成4点伤害。每击杀一个敌人恢复6点生命。消耗。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "攻击",
+        "回复",
+        "消耗",
+        "AOE"
+      ],
+      "upgradedDescription": "对所有敌人造成7点伤害。每击杀一个敌人恢复6点生命。消耗。"
+    },
+    {
+      "id": "ironclad_bludgeon",
+      "name": "重锤",
+      "nameEn": "Bludgeon",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "造成32点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "高伤"
+      ],
+      "upgradedDescription": "造成42点伤害。"
+    },
+    {
+      "id": "ironclad_feed",
+      "name": "狂宴",
+      "nameEn": "Feed",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成10点伤害。如果击杀敌人，永久增加3点最大生命值。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "回复"
+      ],
+      "upgradedDescription": "造成13点伤害。如果击杀敌人，永久增加3点最大生命值。"
+    },
+    {
+      "id": "ironclad_immolate",
+      "name": "焚烧",
+      "nameEn": "Immolate",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "对所有敌人造成21点伤害。将一张伤口加入你的手牌。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "AOE"
+      ],
+      "upgradedDescription": "对所有敌人造成27点伤害。将一张伤口加入你的手牌。"
+    },
+    {
+      "id": "ironclad_fiend_fire",
+      "name": "恶魔之火",
+      "nameEn": "Fiend Fire",
+      "character": "ironclad",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "消耗你的所有手牌。每消耗一张牌，造成7点伤害。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "攻击",
+        "消耗"
+      ],
+      "upgradedDescription": "消耗你的所有手牌。每消耗一张牌，造成10点伤害。"
+    },
+    {
+      "id": "ironclad_inflame",
+      "name": "燃烧",
+      "nameEn": "Inflame",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得2点力量。",
+      "keywords": [
+        "strength"
+      ],
+      "tags": [
+        "力量",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_metallicize",
+      "name": "金属化",
+      "nameEn": "Metallicize",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "在你的回合结束时，获得3点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "格挡",
+        "能力"
+      ],
+      "upgradedDescription": "在你的回合结束时，获得6点格挡。"
+    },
+    {
+      "id": "ironclad_rage",
+      "name": "狂怒",
+      "nameEn": "Rage",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "common",
+      "cost": 0,
+      "description": "每当你打出一张攻击牌时，获得3点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "格挡",
+        "能力",
+        "零费"
+      ],
+      "upgradedDescription": "每当你打出一张攻击牌时，获得6点格挡。"
+    },
+    {
+      "id": "ironclad_combust",
+      "name": "燃烧",
+      "nameEn": "Combust",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "在你的回合结束时，失去1点生命并对所有敌人造成5点伤害。",
+      "keywords": [],
+      "tags": [
+        "自伤",
+        "AOE",
+        "能力"
+      ],
+      "upgradedDescription": "在你的回合结束时，失去1点生命并对所有敌人造成8点伤害。"
+    },
+    {
+      "id": "ironclad_evolve",
+      "name": "进化",
+      "nameEn": "Evolve",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "每当你抽到一张状态牌时，抽1张牌。",
+      "keywords": [
+        "draw"
+      ],
+      "tags": [
+        "过牌",
+        "能力"
+      ],
+      "upgradedDescription": "每当你抽到一张状态牌时，抽2张牌。"
+    },
+    {
+      "id": "ironclad_feel_no_pain",
+      "name": "无惧疼痛",
+      "nameEn": "Feel No Pain",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "每当一张牌被消耗时，获得3点格挡。",
+      "keywords": [
+        "block",
+        "exhaust"
+      ],
+      "tags": [
+        "消耗",
+        "格挡",
+        "能力"
+      ],
+      "upgradedDescription": "每当一张牌被消耗时，获得6点格挡。"
+    },
+    {
+      "id": "ironclad_fire_breathing",
+      "name": "火焰吐息",
+      "nameEn": "Fire Breathing",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "每当你抽到一张状态或虚无牌时，对所有敌人造成6点伤害。",
+      "keywords": [],
+      "tags": [
+        "能力",
+        "AOE"
+      ],
+      "upgradedDescription": "每当你抽到一张状态或虚无牌时，对所有敌人造成9点伤害。"
+    },
+    {
+      "id": "ironclad_rupture",
+      "name": "撕裂",
+      "nameEn": "Rupture",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "每当你因卡牌效果失去生命时，获得1点力量。",
+      "keywords": [
+        "strength"
+      ],
+      "tags": [
+        "力量",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_self_forming_clay",
+      "name": "自我成型黏土",
+      "nameEn": "Self-Forming Clay",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "每当你在战斗中受到伤害时，在下个回合开始时获得3点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "格挡",
+        "能力"
+      ],
+      "upgradedDescription": "每当你在战斗中受到伤害时，在下个回合开始时获得6点格挡。"
+    },
+    {
+      "id": "ironclad_dark_embrace",
+      "name": "黑暗之拥",
+      "nameEn": "Dark Embrace",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "每当一张牌被消耗时，抽1张牌。",
+      "keywords": [
+        "draw",
+        "exhaust"
+      ],
+      "tags": [
+        "过牌",
+        "消耗",
+        "能力"
+      ],
+      "upgradedDescription": "每当一张牌被消耗时，抽2张牌。"
+    },
+    {
+      "id": "ironclad_demon_form",
+      "name": "恶魔形态",
+      "nameEn": "Demon Form",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "在你的回合开始时，获得2点力量。",
+      "keywords": [
+        "strength"
+      ],
+      "tags": [
+        "力量",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_corruption",
+      "name": "腐化",
+      "nameEn": "Corruption",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "技能牌耗能变为0。每当你打出一张技能牌时，消耗该牌。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "消耗",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_brutality",
+      "name": "凶恶",
+      "nameEn": "Brutality",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 0,
+      "description": "在你的回合开始时，失去1点生命并抽1张牌。",
+      "keywords": [
+        "draw"
+      ],
+      "tags": [
+        "过牌",
+        "自伤",
+        "能力"
+      ],
+      "upgradedDescription": "在你的回合开始时，失去1点生命并抽2张牌。"
+    },
+    {
+      "id": "ironclad_juggernaut",
+      "name": "主宰",
+      "nameEn": "Juggernaut",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "每当你获得格挡时，对一名随机敌人造成5点伤害。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "格挡",
+        "能力"
+      ],
+      "upgradedDescription": "每当你获得格挡时，对一名随机敌人造成8点伤害。"
+    },
+    {
+      "id": "ironclad_berserk",
+      "name": "狂暴",
+      "nameEn": "Berserk",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 0,
+      "description": "获得2层虚弱。在你的回合开始时，获得1点能量。",
+      "keywords": [
+        "weak"
+      ],
+      "tags": [
+        "能量",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_barricade",
+      "name": "壁垒",
+      "nameEn": "Barricade",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "格挡不再在你的回合开始时消失。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "格挡",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_eternal_form",
+      "name": "永恒形态",
+      "nameEn": "Eternal Form",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "永恒。在你的回合开始时，获得1点力量、1点敏捷和1点集中。",
+      "keywords": [
+        "strength",
+        "dexterity",
+        "focus"
+      ],
+      "tags": [
+        "力量",
+        "敏捷",
+        "集中",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_fearless_pain",
+      "name": "无惧疼痛",
+      "nameEn": "Fearless Pain",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "每当你在战斗中受到伤害时，获得1点力量。",
+      "keywords": [
+        "strength"
+      ],
+      "tags": [
+        "力量",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_spite",
+      "name": "怨恨",
+      "nameEn": "Spite",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "每当你打出一张消耗牌时，抽1张牌。",
+      "keywords": [
+        "draw",
+        "exhaust"
+      ],
+      "tags": [
+        "过牌",
+        "消耗",
+        "能力"
+      ],
+      "upgradedDescription": "每当你打出一张消耗牌时，抽2张牌。"
+    },
+    {
+      "id": "ironclad_crimson_cape",
+      "name": "绯红披风",
+      "nameEn": "Crimson Cape",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "在你的回合结束时，获得3点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "格挡",
+        "能力"
+      ],
+      "upgradedDescription": "在你的回合结束时，获得6点格挡。"
+    },
+    {
+      "id": "ironclad_hooded_figure",
+      "name": "地狱狂徒",
+      "nameEn": "Hooded Figure",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "每当你抽到名字中含有\"打击\"的牌时，对一名随机敌人造成8点伤害。",
+      "keywords": [],
+      "tags": [
+        "能力"
+      ],
+      "upgradedDescription": "每当你抽到名字中含有\"打击\"的牌时，对一名随机敌人造成11点伤害。"
+    },
+    {
+      "id": "ironclad_bonfire_source",
+      "name": "薪火之源",
+      "nameEn": "Bonfire Source",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "在你的回合开始时，获得1点能量。",
+      "keywords": [],
+      "tags": [
+        "能量",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_forgotten_ritual",
+      "name": "被遗忘的仪式",
+      "nameEn": "Forgotten Ritual",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "在你的回合开始时，获得1点能量。",
+      "keywords": [],
+      "tags": [
+        "能量",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_premonition",
+      "name": "预兆",
+      "nameEn": "Premonition",
+      "character": "ironclad",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "在你的回合开始时，预见2。",
+      "keywords": [
+        "scry"
+      ],
+      "tags": [
+        "预见",
+        "能力"
+      ]
+    },
+    {
+      "id": "ironclad_burning_pact",
+      "name": "燃烧契约",
+      "nameEn": "Burning Pact",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "消耗1张手牌。抽2张牌。",
+      "keywords": [
+        "exhaust",
+        "draw"
+      ],
+      "tags": [
+        "消耗",
+        "过牌"
+      ],
+      "upgradedDescription": "消耗1张手牌。抽3张牌。"
+    },
+    {
+      "id": "ironclad_dark_pact",
+      "name": "黑暗契约",
+      "nameEn": "Dark Pact",
+      "character": "ironclad",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 0,
+      "description": "消耗1张手牌。获得2点力量。",
+      "keywords": [
+        "exhaust",
+        "strength"
+      ],
+      "tags": [
+        "消耗",
+        "力量",
+        "零费"
+      ]
+    }
+  ]
+}

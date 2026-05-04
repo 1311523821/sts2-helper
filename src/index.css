@@ -1,0 +1,771 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CSS Custom Properties (明暗主题色彩系统)
+   ============================================================ */
+:root {
+  --bg-primary: #FFFAF5;
+  --bg-secondary: #FFF5EB;
+  --bg-card: #FFFFFF;
+  --text-primary: #2D1810;
+  --text-secondary: #7A5D4A;
+  --text-muted: #8B7355;
+  --border-color: #E8DCCF;
+  --border-light: #F0E6DB;
+  --accent: #FF6B35;
+  --accent-glow: rgba(255, 107, 53, 0.3);
+  --shadow-card: 0 1px 3px rgba(45, 24, 16, 0.04), 0 4px 12px rgba(45, 24, 16, 0.03);
+  --shadow-card-hover: 0 2px 8px rgba(255, 107, 53, 0.08), 0 8px 24px rgba(255, 107, 53, 0.06);
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --footer-bg: #FFFAF5;
+  --card-glow-white: rgba(255, 255, 255, 0.8);
+  --card-glow-green: rgba(16, 185, 129, 0.6);
+  --card-glow-gold: rgba(245, 158, 11, 0.6);
+  --card-glow-purple: rgba(168, 85, 247, 0.6);
+}
+
+.dark {
+  --bg-primary: #1E1E2E;
+  --bg-secondary: #252536;
+  --bg-card: #2D2D3F;
+  --text-primary: #E8E0D8;
+  --text-secondary: #B8A898;
+  --text-muted: #8A7D72;
+  --border-color: #363649;
+  --border-light: #2D2D3F;
+  --accent: #FF6B35;
+  --accent-glow: rgba(255, 107, 53, 0.4);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-card-hover: 0 2px 8px rgba(255, 107, 53, 0.15), 0 8px 24px rgba(255, 107, 53, 0.1);
+  --nav-bg: rgba(30, 30, 46, 0.85);
+  --footer-bg: #1E1E2E;
+  --card-glow-white: rgba(200, 200, 200, 0.4);
+  --card-glow-green: rgba(16, 185, 129, 0.5);
+  --card-glow-gold: rgba(245, 158, 11, 0.5);
+  --card-glow-purple: rgba(168, 85, 247, 0.5);
+}
+
+/* ============================================================
+   Base Layer
+   ============================================================ */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    @apply min-h-screen antialiased;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background: rgba(255, 107, 53, 0.2);
+    color: var(--text-primary);
+  }
+
+  /* ---- 美化滚动条 ---- */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #FFD6A8, #FF6B35);
+    border-radius: 9999px;
+    border: 2px solid var(--bg-secondary);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #FF6B35, #E85D2C);
+  }
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #FFD6A8 var(--bg-secondary);
+  }
+}
+
+/* ============================================================
+   文字渐变效果
+   ============================================================ */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #FF6B35 0%, #F59E0B 50%, #FF6B35 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F59E0B 0%, #FF6B35 50%, #F59E0B 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #A855F7 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ============================================================
+   卡牌稀有度光效动画
+   ============================================================ */
+@keyframes rarityGlowWhite {
+  0%, 100% { box-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.1); }
+  50% { box-shadow: 0 0 16px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.2); }
+}
+@keyframes rarityGlowGreen {
+  0%, 100% { box-shadow: 0 0 8px rgba(16,185,129,0.3), 0 0 20px rgba(16,185,129,0.1); }
+  50% { box-shadow: 0 0 20px rgba(16,185,129,0.5), 0 0 40px rgba(16,185,129,0.25); }
+}
+@keyframes rarityGlowGold {
+  0%, 100% { box-shadow: 0 0 8px rgba(245,158,11,0.3), 0 0 20px rgba(245,158,11,0.1); }
+  50% { box-shadow: 0 0 20px rgba(245,158,11,0.5), 0 0 40px rgba(245,158,11,0.25); }
+}
+@keyframes rarityGlowPurple {
+  0%, 100% { box-shadow: 0 0 8px rgba(168,85,247,0.3), 0 0 20px rgba(168,85,247,0.1); }
+  50% { box-shadow: 0 0 20px rgba(168,85,247,0.5), 0 0 40px rgba(168,85,247,0.25); }
+}
+
+.card-rarity-common {
+  position: relative;
+}
+.card-rarity-common::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,0.4);
+  animation: rarityGlowWhite 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.card-rarity-uncommon {
+  position: relative;
+}
+.card-rarity-uncommon::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(16,185,129,0.4);
+  animation: rarityGlowGreen 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.card-rarity-rare {
+  position: relative;
+}
+.card-rarity-rare::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(245,158,11,0.4);
+  animation: rarityGlowGold 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.card-rarity-special {
+  position: relative;
+}
+.card-rarity-special::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(168,85,247,0.4);
+  animation: rarityGlowPurple 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ============================================================
+   卡牌3D倾斜效果
+   ============================================================ */
+.card-3d-tilt {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.card-3d-tilt:hover {
+  transform: perspective(800px) rotateY(5deg) rotateX(-3deg) translateY(-4px);
+}
+
+/* ============================================================
+   页面切换过渡
+   ============================================================ */
+@keyframes pageEnter {
+  0% { opacity: 0; transform: translateY(16px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.page-enter {
+  animation: pageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ============================================================
+   加载动画 - 杀戮尖塔风格
+   ============================================================ */
+@keyframes stsSpinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes stsSpinnerInner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.sts-loader {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+.sts-loader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  border-top-color: #FF6B35;
+  border-right-color: #FF6B35;
+  border-radius: 50%;
+  animation: stsSpinner 1s linear infinite;
+}
+.sts-loader::after {
+  content: '🗡️';
+  position: absolute;
+  inset: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  animation: stsSpinnerInner 1.5s linear infinite;
+}
+
+/* Full-page loading overlay */
+.sts-loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--bg-primary);
+  transition: opacity 0.3s ease;
+}
+.sts-loader-overlay .loader-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ============================================================
+   Logo 脉动效果
+   ============================================================ */
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(255,107,53,0)); }
+  50% { transform: scale(1.08); filter: drop-shadow(0 0 8px rgba(255,107,53,0.4)); }
+}
+.logo-pulse {
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   导航 active 状态指示器
+   ============================================================ */
+@keyframes navActiveIndicator {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+.nav-active-indicator {
+  position: relative;
+}
+.nav-active-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: #FF6B35;
+  border-radius: 9999px;
+  animation: navActiveIndicator 0.3s ease-out forwards;
+}
+
+/* ============================================================
+   卡牌类型特效
+   ============================================================ */
+
+/* 攻击牌 - 红色脉冲 */
+@keyframes attackPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+}
+.card-effect-attack {
+  position: relative;
+  overflow: visible;
+}
+.card-effect-attack::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  animation: attackPulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* 技能牌 - 蓝色涟漪 */
+@keyframes skillRipple {
+  0% { transform: scale(1); opacity: 0.6; border-color: rgba(59, 130, 246, 0.5); }
+  100% { transform: scale(1.15); opacity: 0; border-color: rgba(59, 130, 246, 0); }
+}
+.card-effect-skill {
+  position: relative;
+  overflow: visible;
+}
+.card-effect-skill::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  animation: skillRipple 2s ease-out infinite;
+  pointer-events: none;
+}
+
+/* 能力牌 - 金色光环 */
+@keyframes powerAura {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.2), inset 0 0 12px rgba(245, 158, 11, 0.05);
+    border-color: rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(245, 158, 11, 0.4), inset 0 0 20px rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.5);
+  }
+}
+.card-effect-power {
+  position: relative;
+  overflow: visible;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.card-effect-power::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  animation: powerAura 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* 稀有卡牌 - 星光闪烁 */
+@keyframes starField {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+.card-effect-rare {
+  position: relative;
+  overflow: visible;
+}
+.card-effect-rare::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.8) 0px, transparent 1px),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.6) 0px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.7) 0px, transparent 1px),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.5) 0px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(245,158,11,0.15) 0%, transparent 70%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  animation: starField 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Component Layer
+   ============================================================ */
+@layer components {
+  /* 小米风格卡片 */
+  .xiaomi-card {
+    background: var(--bg-card);
+    @apply rounded-2xl border p-6 transition-all duration-300;
+    border-color: var(--border-light);
+    box-shadow: var(--shadow-card);
+  }
+  .xiaomi-card:hover {
+    border-color: rgba(255, 107, 53, 0.2);
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  /* 小米风格卡片 - 无交互 */
+  .xiaomi-card-static {
+    background: var(--bg-card);
+    @apply rounded-2xl border p-6;
+    border-color: var(--border-light);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* 主要按钮 - 小米橙 */
+  .btn-primary {
+    @apply bg-xm-primary hover:bg-xm-primary-hover active:bg-xm-primary-active
+           text-white font-medium px-5 py-2.5 rounded-xl
+           transition-all duration-200 text-sm;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 4px 14px rgba(255, 107, 53, 0.35);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    box-shadow: 0 1px 4px rgba(255, 107, 53, 0.3);
+    transform: translateY(1px);
+  }
+
+  /* 次要按钮 */
+  .btn-secondary {
+    background: var(--bg-card);
+    @apply hover:bg-warm-100 active:bg-warm-200
+           text-text-secondary font-medium px-5 py-2.5 rounded-xl
+           border transition-all duration-200 text-sm;
+    border-color: var(--border-color);
+  }
+  .btn-secondary:hover {
+    border-color: rgba(255, 107, 53, 0.3);
+    @apply text-xm-primary;
+  }
+
+  /* 卡牌展示组件 */
+  .card-display {
+    background: var(--bg-card);
+    @apply rounded-xl border p-4 transition-all duration-300 cursor-pointer;
+    border-color: var(--border-light);
+    box-shadow: 0 1px 3px rgba(45, 24, 16, 0.03);
+  }
+  .card-display:hover {
+    border-color: rgba(255, 107, 53, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.08);
+    transform: perspective(800px) rotateY(3deg) rotateX(-2deg) translateY(-4px);
+  }
+  .card-display.selected {
+    @apply border-xm-primary ring-2 ring-xm-primary/20 bg-xm-light;
+  }
+
+  /* 输入框 */
+  .input-field {
+    background: var(--bg-card);
+    @apply w-full border rounded-xl px-4 py-2.5 text-sm placeholder:text-text-muted-light transition-all duration-200;
+    border-color: var(--border-color);
+    color: var(--text-primary);
+  }
+  .input-field:focus {
+    @apply border-xm-primary/50 outline-none ring-2 ring-xm-primary/10;
+  }
+
+  /* 选择标签 */
+  .pill-tab {
+    @apply px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200;
+  }
+  .pill-tab.active {
+    @apply bg-xm-primary text-white;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
+  }
+  .pill-tab:not(.active) {
+    background: var(--bg-card);
+    @apply text-text-secondary border hover:border-xm-primary/30 hover:text-xm-primary;
+    border-color: var(--border-color);
+  }
+
+  /* 评分徽章 */
+  .score-badge {
+    @apply inline-flex items-center justify-center font-bold text-base min-w-[2.5rem] h-9 rounded-xl px-2;
+  }
+  .score-badge.high {
+    @apply bg-xm-primary/10 text-xm-primary;
+  }
+  .score-badge.medium {
+    @apply bg-xm-secondary/10 text-xm-secondary;
+  }
+  .score-badge.low {
+    @apply bg-red-50 text-score-low;
+  }
+
+  /* 进度条 */
+  .progress-bar {
+    @apply h-2.5 rounded-full overflow-hidden bg-warm-200;
+  }
+  .progress-bar .fill {
+    @apply h-full rounded-full transition-all duration-500;
+  }
+  .progress-bar .fill.high {
+    @apply bg-xm-primary;
+  }
+  .progress-bar .fill.medium {
+    @apply bg-xm-secondary;
+  }
+  .progress-bar .fill.low {
+    @apply bg-score-low;
+  }
+
+  /* 标签云 */
+  .tag-pill {
+    @apply inline-block text-xs px-2.5 py-1 rounded-lg font-medium;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+  }
+}
+
+/* ============================================================
+   粒子背景
+   ============================================================ */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 107, 53, 0.3);
+  animation: particleDrift var(--duration, 20s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  left: var(--x, 50%);
+  will-change: transform, opacity;
+}
+
+.particle:nth-child(odd) {
+  background: rgba(245, 158, 11, 0.25);
+  width: 3px;
+  height: 3px;
+}
+
+.particle:nth-child(3n) {
+  background: rgba(168, 85, 247, 0.2);
+  width: 2px;
+  height: 2px;
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  5% { opacity: 0.7; }
+  95% { opacity: 0.7; }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   光晕效果
+   ============================================================ */
+@keyframes haloGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--accent-glow),
+                0 0 20px -5px var(--accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 4px var(--accent-glow),
+                0 0 30px -5px var(--accent-glow);
+  }
+}
+
+.halo-glow {
+  animation: haloGlow 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   Stats 动画
+   ============================================================ */
+@keyframes countUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.stat-item {
+  animation: countUp 0.6s ease-out forwards;
+}
+.stat-item:nth-child(1) { animation-delay: 0.1s; }
+.stat-item:nth-child(2) { animation-delay: 0.2s; }
+.stat-item:nth-child(3) { animation-delay: 0.3s; }
+.stat-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* ============================================================
+   Stagger 逐项入场动画
+   ============================================================ */
+.stagger-item {
+  opacity: 0;
+  animation: staggerFadeIn 0.5s ease-out forwards;
+}
+.stagger-item:nth-child(1) { animation-delay: 0.05s; }
+.stagger-item:nth-child(2) { animation-delay: 0.1s; }
+.stagger-item:nth-child(3) { animation-delay: 0.15s; }
+.stagger-item:nth-child(4) { animation-delay: 0.2s; }
+.stagger-item:nth-child(5) { animation-delay: 0.25s; }
+.stagger-item:nth-child(6) { animation-delay: 0.3s; }
+.stagger-item:nth-child(7) { animation-delay: 0.35s; }
+.stagger-item:nth-child(8) { animation-delay: 0.4s; }
+.stagger-item:nth-child(9) { animation-delay: 0.45s; }
+.stagger-item:nth-child(10) { animation-delay: 0.5s; }
+
+/* ============================================================
+   Dark Mode Tailwind Class Overrides
+   Makes existing text-text-primary, bg-warm-100 etc. work in dark mode
+   ============================================================ */
+.dark .text-text-primary { color: #E8E0D8; }
+.dark .text-text-secondary { color: #B8A898; }
+.dark .text-text-muted { color: #8A7D72; }
+.dark .text-text-muted-light { color: #6B6B85; }
+.dark .bg-warm-50 { background-color: #1E1E2E; }
+.dark .bg-warm-100 { background-color: #252536; }
+.dark .bg-warm-150 { background-color: #2D2D3F; }
+.dark .bg-warm-200 { background-color: #363649; }
+.dark .bg-warm-300 { background-color: #44445A; }
+.dark .bg-white { background-color: #2D2D3F; }
+.dark .bg-xm-light { background-color: rgba(255, 107, 53, 0.12); }
+.dark .border-warm-200 { border-color: #363649; }
+.dark .border-warm-100 { border-color: #2D2D3F; }
+.dark .border-warm-300 { border-color: #44445A; }
+.dark .bg-warm-200.rounded-full { background-color: #44445A; }
+.dark .ring-xm-primary\/20 { --tw-ring-color: rgba(255, 107, 53, 0.2); }
+.dark .shadow-lg { --tw-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); box-shadow: var(--tw-shadow); }
+.dark .bg-green-50 { background-color: rgba(16, 185, 129, 0.1); }
+.dark .bg-amber-50 { background-color: rgba(245, 158, 11, 0.1); }
+.dark .bg-orange-50 { background-color: rgba(255, 107, 53, 0.1); }
+.dark .bg-red-50 { background-color: rgba(220, 38, 38, 0.1); }
+.dark .text-green-600 { color: #34d399; }
+.dark .text-amber-600 { color: #fbbf24; }
+.dark .text-amber-700 { color: #f59e0b; }
+.dark .text-orange-700 { color: #FF6B35; }
+.dark .text-red-600 { color: #f87171; }
+.dark .text-score-low { color: #f87171; }
+.dark .hover\:bg-warm-100:hover { background-color: #2D2D3F; }
+.dark .hover\:bg-warm-200:hover { background-color: #363649; }
+.dark .bg-xm-primary\/10 { background-color: rgba(255, 107, 53, 0.15); }
+.dark .bg-xm-secondary\/10 { background-color: rgba(245, 158, 11, 0.15); }
+
+/* ============================================================
+   Reduced Motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .particle { display: none; }
+  .sts-loader::before { animation: spin 1s linear infinite; }
+  .sts-loader::after { animation: none; }
+  .logo-pulse { animation: none; }
+  .card-3d-tilt:hover { transform: none; }
+  .card-display:hover { transform: translateY(-2px); }
+}
+
+/* ============================================================
+   移动端汉堡菜单动画
+   ============================================================ */
+@keyframes hamburgerOpen1 {
+  0% { transform: translateY(0) rotate(0); }
+  100% { transform: translateY(6px) rotate(45deg); }
+}
+@keyframes hamburgerOpen2 {
+  0% { opacity: 1; }
+  100% { opacity: 0; transform: scaleX(0); }
+}
+@keyframes hamburgerOpen3 {
+  0% { transform: translateY(0) rotate(0); }
+  100% { transform: translateY(-6px) rotate(-45deg); }
+}
+
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--text-primary);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger-open .hamburger-line:nth-child(1) {
+  animation: hamburgerOpen1 0.3s ease forwards;
+}
+.hamburger-open .hamburger-line:nth-child(2) {
+  animation: hamburgerOpen2 0.3s ease forwards;
+}
+.hamburger-open .hamburger-line:nth-child(3) {
+  animation: hamburgerOpen3 0.3s ease forwards;
+}
+
+/* ============================================================
+   移动端菜单面板
+   ============================================================ */
+@keyframes mobileMenuSlide {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.mobile-menu-enter {
+  animation: mobileMenuSlide 0.25s ease-out forwards;
+}
+
+/* ============================================================
+   Fade-in 通用动画
+   ============================================================ */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* ============================================================
+   手风琴展开/折叠动画
+   ============================================================ */
+.accordion-enter {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.accordion-enter-active {
+  max-height: 1000px;
+  opacity: 1;
+}

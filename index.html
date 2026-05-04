@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>杀戮尖塔2 智能选牌助手</title>
+  </head>
+  <body class="bg-warm-50 text-text-primary">
+    <div id="root"></div>
+    <script>
+      // Apply saved theme before React renders to prevent flash
+      try {
+        var stored = JSON.parse(localStorage.getItem('sts2-theme') || '{}');
+        if (stored.state && stored.state.theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch(e) {}
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
