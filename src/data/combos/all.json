@@ -1,0 +1,175 @@
+{
+  "combos": [
+    {
+      "id": "ironclad_strength_heavy_blade",
+      "name": "力量重刃",
+      "character": "ironclad",
+      "cards": ["ironclad_inflame", "ironclad_heavy_blade"],
+      "power": "high",
+      "description": "燃烧增加力量 → 重刃享受3倍力量加成 → 恐怖单体伤害",
+      "setup": "先使用燃烧增加力量，再用重刃输出。力量越高收益越大。"
+    },
+    {
+      "id": "ironclad_strength_multi_hit",
+      "name": "力量多段",
+      "character": "ironclad",
+      "cards": ["ironclad_demon_form", "ironclad_sword_boomerang", "ironclad_pummel"],
+      "power": "game_winning",
+      "description": "恶魔形态持续叠加力量 → 回旋镖和连击多次攻击 → 每次都享受力量加成",
+      "setup": "需要2-3回合的setup时间，期间需要足够的防御。恶魔形态越早打出越好。"
+    },
+    {
+      "id": "ironclad_block_body_slam",
+      "name": "护甲撞击",
+      "character": "ironclad",
+      "cards": ["ironclad_barricade", "ironclad_entrench", "ironclad_body_slam"],
+      "power": "game_winning",
+      "description": "堡垒保留护甲 → 壕沟翻倍 → 身体撞击一击必杀",
+      "setup": "需要先打出堡垒，然后积累护甲，最后用身体撞击输出。"
+    },
+    {
+      "id": "ironclad_exhaust_cycle",
+      "name": "消耗循环",
+      "character": "ironclad",
+      "cards": ["ironclad_corruption", "ironclad_feel_no_pain", "ironclad_fiend_fire"],
+      "power": "game_winning",
+      "description": "腐败让技能牌0费 → 打出消耗获得护甲 → 恶魔之火消耗手牌造成伤害",
+      "setup": "先打出腐败和无痛，然后不断消耗牌获取收益。"
+    },
+    {
+      "id": "ironclad_blood_rupture",
+      "name": "破裂循环",
+      "character": "ironclad",
+      "cards": ["ironclad_rupture", "ironclad_brutality", "ironclad_combust"],
+      "power": "game_winning",
+      "description": "残暴每回合自伤触发破裂获力量 + 燃烧每回合自伤再触发破裂 = 力量指数增长",
+      "setup": "先打出破裂，再打出残暴和燃烧，力量会持续增长。"
+    },
+    {
+      "id": "silent_poison_catalyst",
+      "name": "毒爆",
+      "character": "silent",
+      "cards": ["silent_noxious_fumes", "silent_catalyst"],
+      "power": "game_winning",
+      "description": "毒雾持续叠加中毒 → 催化剂翻倍 → 瞬间秒杀",
+      "setup": "先用毒雾积累中毒层数，然后用催化剂翻倍。层数越高爆发越恐怖。"
+    },
+    {
+      "id": "silent_blade_accuracy",
+      "name": "精准小刀",
+      "character": "silent",
+      "cards": ["silent_blade_dance", "silent_accuracy"],
+      "power": "high",
+      "description": "刀舞生成大量小刀 → 精准增加每把小刀伤害 → 高频输出",
+      "setup": "先打出精准，再用刀舞生成小刀。"
+    },
+    {
+      "id": "silent_discard_cycle",
+      "name": "弃牌能量循环",
+      "character": "silent",
+      "cards": ["silent_concentrate", "silent_acrobatics", "silent_sneaky_strike"],
+      "power": "high",
+      "description": "杂技抽牌 → 集中弃牌获能量 → 偷袭弃牌后抽牌 → 循环",
+      "setup": "保持手牌数量，用杂技和准备不断过牌弃牌。"
+    },
+    {
+      "id": "defect_lightning_aoe",
+      "name": "闪电风暴",
+      "character": "defect",
+      "cards": ["defect_electrodynamics", "defect_ball_lightning", "defect_storm"],
+      "power": "game_winning",
+      "description": "电动力学让闪电球攻击所有敌人 → 配合大量闪电球来源AOE清场",
+      "setup": "先打出电动力学，然后不断生成闪电球。"
+    },
+    {
+      "id": "defect_frost_defense",
+      "name": "冰霜壁垒",
+      "character": "defect",
+      "cards": ["defect_glacier", "defect_defragment", "defect_capacitor"],
+      "power": "high",
+      "description": "冰川生成冰霜球 → 碎片整理增加专注 → 电容器增加球位 → 每回合大量护甲",
+      "setup": "优先增加球位和专注，然后生成冰霜球。"
+    },
+    {
+      "id": "defect_dark_recursion",
+      "name": "黑暗循环",
+      "character": "defect",
+      "cards": ["defect_darkness", "defect_recursion", "defect_defragment"],
+      "power": "game_winning",
+      "description": "生成黑暗球 → 碎片整理增加专注 → 循环将黑暗球移到后方继续蓄力 → 引爆秒杀",
+      "setup": "先生成黑暗球并增加专注，用循环保持黑暗球蓄力位置。"
+    },
+    {
+      "id": "defect_focus_echo",
+      "name": "回声专注",
+      "character": "defect",
+      "cards": ["defect_defragment", "defect_echo_form", "defect_biased_cognition"],
+      "power": "game_winning",
+      "description": "回声形态让能力牌打两次 → 碎片整理打两次+2专注 → 偏见认知打两次+8专注",
+      "setup": "先打出回声形态，再用碎片整理和偏见认知叠加专注。"
+    },
+    {
+      "id": "watcher_stance_cycle",
+      "name": "姿态循环",
+      "character": "watcher",
+      "cards": ["watcher_rushdown", "watcher_flurry_of_blows", "watcher_tantrum"],
+      "power": "game_winning",
+      "description": "急攻抽牌 → 发怒进入愤怒 → 连击风暴回手 → 空拳退出 → 再次进入愤怒",
+      "setup": "需要急攻在场，然后不断切换姿态。"
+    },
+    {
+      "id": "watcher_divinity_burst",
+      "name": "神格爆发",
+      "character": "watcher",
+      "cards": ["watcher_worship", "watcher_conclude", "watcher_judgement"],
+      "power": "game_winning",
+      "description": "崇拜进入神格 → 伤害x3 → 终结AOE清场",
+      "setup": "先积累神格层数，进入神格后全力输出。"
+    },
+    {
+      "id": "watcher_retain_shield",
+      "name": "保留灵盾",
+      "character": "watcher",
+      "cards": ["watcher_spirit_shield", "watcher_establishment", "watcher_evaluate"],
+      "power": "high",
+      "description": "周密计划保留手牌 → 评估+洞察保持手牌数量 → 灵盾按手牌数获取海量护甲",
+      "setup": "先打出周密计划，每回合保留手牌，积累到大量手牌后用灵盾。"
+    },
+    {
+      "id": "necromancer_undead_army",
+      "name": "亡灵大军",
+      "character": "necromancer",
+      "cards": ["necromancer_countdown", "necromancer_doom_comes"],
+      "power": "game_winning",
+      "description": "亡灵军团每回合召唤骷髅 → 白骨风暴按数量AOE",
+      "setup": "先打出亡灵军团积累骷髅数量。"
+    },
+    {
+      "id": "necromancer_contract_cycle",
+      "name": "契约循环",
+      "character": "necromancer",
+      "cards": ["necromancer_friendship", "necromancer_dredge", "necromancer_sacrifice"],
+      "power": "game_winning",
+      "description": "黑暗契约消耗牌获亡灵之力 → 墓地轮班回收消耗牌 → 献祭亡灵获能量 → 循环",
+      "setup": "先有亡灵，然后不断契约消耗+墓地回收。"
+    },
+    {
+      "id": "prince_king_power",
+      "name": "王者之力",
+      "character": "prince",
+      "cards": ["prince_succession", "prince_kingmaker", "prince_crown_slash"],
+      "power": "game_winning",
+      "description": "继承每回合获得王权 → 造王者转化为力量/敏捷 → 皇冠斩高伤害输出",
+      "setup": "先打出继承和造王者，然后积累王权。"
+    },
+    {
+      "id": "prince_attack_burst",
+      "name": "攻击爆发",
+      "character": "prince",
+      "cards": ["prince_kingmaker", "prince_crown_slash", "prince_throne_room"],
+      "power": "game_winning",
+      "description": "造王者转化力量 → 皇冠斩高伤害 → 王座厅复制 → 双倍爆发",
+      "setup": "先打出造王者积累力量，再用王座厅复制皇冠斩。"
+    }
+  ]
+}

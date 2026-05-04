@@ -1,0 +1,48 @@
+{
+  "relics": [
+    {
+      "id": "defect_cracked_core",
+      "name": "碎裂核心",
+      "nameEn": "Cracked Core",
+      "rarity": "starter",
+      "character": "defect",
+      "description": "每场战斗开始时生成1个闪电球。",
+      "effects": [{ "trigger": "on_combat_start", "description": "生成闪电球", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["电球"]
+    },
+    {
+      "id": "defect_data_disk",
+      "name": "数据磁盘",
+      "nameEn": "Data Disk",
+      "rarity": "uncommon",
+      "character": "defect",
+      "description": "每场战斗开始时获得1层专注。",
+      "effects": [{ "trigger": "on_combat_start", "description": "专注+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["专注"]
+    },
+    {
+      "id": "defect_symbiotic_virus",
+      "name": "共生病毒",
+      "nameEn": "Symbiotic Virus",
+      "rarity": "uncommon",
+      "character": "defect",
+      "description": "每场战斗开始时生成1个黑暗球。",
+      "effects": [{ "trigger": "on_combat_start", "description": "生成黑暗球", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["黑暗球"]
+    },
+    {
+      "id": "defect_frozen_core",
+      "name": "冰冻核心",
+      "nameEn": "Frozen Core",
+      "rarity": "rare",
+      "character": "defect",
+      "description": "替换碎裂核心。每场战斗开始时生成1个冰霜球。",
+      "effects": [{ "trigger": "on_combat_start", "description": "生成冰霜球", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["冰球"]
+    }
+  ]
+}

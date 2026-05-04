@@ -1,0 +1,37 @@
+{
+  "relics": [
+    {
+      "id": "prince_royal_signet",
+      "name": "皇家印戒",
+      "nameEn": "Royal Signet",
+      "rarity": "starter",
+      "character": "prince",
+      "description": "每场战斗开始时获得1层王权。",
+      "effects": [{ "trigger": "on_combat_start", "description": "王权+1", "power": 1 }],
+      "dataSource": "community",
+      "tags": ["王权"]
+    },
+    {
+      "id": "prince_golden_egg",
+      "name": "金蛋",
+      "nameEn": "Golden Egg",
+      "rarity": "uncommon",
+      "character": "prince",
+      "description": "每当你获得王权时，额外获得1层。",
+      "effects": [{ "trigger": "passive", "description": "王权额外+1", "power": 1 }],
+      "dataSource": "community",
+      "tags": ["王权"]
+    },
+    {
+      "id": "prince_crown_jewel",
+      "name": "皇冠宝石",
+      "nameEn": "Crown Jewel",
+      "rarity": "rare",
+      "character": "prince",
+      "description": "王权层数超过10时，每层额外提供1点护甲。",
+      "effects": [{ "trigger": "passive", "description": "王权>10时每层护甲+1", "power": 1 }],
+      "dataSource": "community",
+      "tags": ["王权", "护甲"]
+    }
+  ]
+}

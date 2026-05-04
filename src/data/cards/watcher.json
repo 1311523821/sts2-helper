@@ -1,0 +1,997 @@
+{
+  "character": "watcher",
+  "version": "0.3.0",
+  "cards": [
+    {
+      "id": "watcher_strike",
+      "name": "打击",
+      "nameEn": "Strike",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "basic",
+      "cost": 1,
+      "description": "造成6点伤害。",
+      "keywords": [],
+      "tags": [
+        "基础",
+        "攻击"
+      ],
+      "upgradedDescription": "造成9点伤害。"
+    },
+    {
+      "id": "watcher_defend",
+      "name": "防御",
+      "nameEn": "Defend",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "basic",
+      "cost": 1,
+      "description": "获得5点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "基础",
+        "防御"
+      ],
+      "upgradedDescription": "获得8点格挡。"
+    },
+    {
+      "id": "watcher_vigilance",
+      "name": "警惕",
+      "nameEn": "Vigilance",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "basic",
+      "cost": 2,
+      "description": "获得8点格挡。进入平静。",
+      "keywords": [
+        "block",
+        "calm"
+      ],
+      "tags": [
+        "基础",
+        "防御",
+        "平静"
+      ]
+    },
+    {
+      "id": "watcher_eruption",
+      "name": "爆发",
+      "nameEn": "Eruption",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "basic",
+      "cost": 2,
+      "description": "造成9点伤害。进入愤怒。",
+      "keywords": [
+        "wrath"
+      ],
+      "tags": [
+        "基础",
+        "攻击",
+        "愤怒"
+      ]
+    },
+    {
+      "id": "watcher_consecrate",
+      "name": "祝圣",
+      "nameEn": "Consecrate",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 0,
+      "description": "对所有敌人造成5点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "AOE",
+        "零费"
+      ]
+    },
+    {
+      "id": "watcher_crush_joints",
+      "name": "碎骨",
+      "nameEn": "Crush Joints",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成8点伤害。如果敌人有易伤，给予1层虚弱。",
+      "keywords": [
+        "vulnerable",
+        "weak"
+      ],
+      "tags": [
+        "攻击",
+        "易伤"
+      ]
+    },
+    {
+      "id": "watcher_cut_through_fate",
+      "name": "断命",
+      "nameEn": "Cut Through Fate",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成7点伤害。预见2。",
+      "keywords": [
+        "scry"
+      ],
+      "tags": [
+        "攻击",
+        "预见"
+      ]
+    },
+    {
+      "id": "watcher_flurry_of_blows",
+      "name": "连击",
+      "nameEn": "Flurry of Blows",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 0,
+      "description": "造成4点伤害。每当你切换姿态时，将此牌从弃牌堆加入手牌。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "姿态",
+        "零费"
+      ]
+    },
+    {
+      "id": "watcher_flying_sleeves",
+      "name": "飞袖",
+      "nameEn": "Flying Sleeves",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成4点伤害两次。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "多段"
+      ]
+    },
+    {
+      "id": "watcher_follow_up",
+      "name": "追击",
+      "nameEn": "Follow-Up",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成7点伤害。如果本回合你已经打过一张攻击牌，获得1点能量。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "能量"
+      ]
+    },
+    {
+      "id": "watcher_wheel_kick",
+      "name": "轮踢",
+      "nameEn": "Wheel Kick",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 2,
+      "description": "造成15点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "watcher_bowling_bash",
+      "name": "保龄球",
+      "nameEn": "Bowling Bash",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成7点伤害X次（X等于敌人数量）。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "watcher_empty_fist",
+      "name": "空拳",
+      "nameEn": "Empty Fist",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成9点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "watcher_lesson_learned",
+      "name": "教训",
+      "nameEn": "Lesson Learned",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "造成10点伤害。如果击杀敌人，升级你牌组中的一张随机牌。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "升级"
+      ]
+    },
+    {
+      "id": "watcher_reach_heaven",
+      "name": "登天",
+      "nameEn": "Reach Heaven",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "造成10点伤害。将一张\"穿透一切\"加入你的抽牌堆。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "watcher_sash_whip",
+      "name": "鞭索",
+      "nameEn": "Sash Whip",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 1,
+      "description": "造成8点伤害。如果敌人有虚弱，给予1层易伤。",
+      "keywords": [
+        "weak",
+        "vulnerable"
+      ],
+      "tags": [
+        "攻击",
+        "虚弱"
+      ]
+    },
+    {
+      "id": "watcher_tantrum",
+      "name": "暴怒",
+      "nameEn": "Tantrum",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成3点伤害三次。进入愤怒。将此牌洗入你的抽牌堆。",
+      "keywords": [
+        "wrath"
+      ],
+      "tags": [
+        "攻击",
+        "愤怒",
+        "多段"
+      ]
+    },
+    {
+      "id": "watcher_fear_no_evil",
+      "name": "无惧邪恶",
+      "nameEn": "Fear No Evil",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "造成8点伤害。如果敌人正在攻击，进入平静。",
+      "keywords": [
+        "calm"
+      ],
+      "tags": [
+        "攻击",
+        "平静"
+      ]
+    },
+    {
+      "id": "watcher_wallop",
+      "name": "重击",
+      "nameEn": "Wallop",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "造成9点伤害。获得等量的格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "攻击",
+        "防御"
+      ]
+    },
+    {
+      "id": "watcher_swivel_swipe",
+      "name": "旋身",
+      "nameEn": "Swivel Swipe",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "造成14点伤害。获得等量的格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "攻击",
+        "防御"
+      ]
+    },
+    {
+      "id": "watcher_brilliance",
+      "name": "光辉",
+      "nameEn": "Brilliance",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "造成7点伤害。本场战斗中你每获得过1点能量，额外造成2点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "watcher_halt",
+      "name": "停止",
+      "nameEn": "Halt",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 0,
+      "description": "获得3点格挡。如果你在愤怒中，改为获得9点格挡。",
+      "keywords": [
+        "block",
+        "wrath"
+      ],
+      "tags": [
+        "防御",
+        "愤怒",
+        "零费"
+      ]
+    },
+    {
+      "id": "watcher_evaluate",
+      "name": "评估",
+      "nameEn": "Evaluate",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得6点格挡。将一张\"洞察\"加入你的抽牌堆。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御",
+        "过牌"
+      ]
+    },
+    {
+      "id": "watcher_deceive_reality",
+      "name": "欺骗现实",
+      "nameEn": "Deceive Reality",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得4点格挡。将一张\"小奇迹\"加入你的手牌。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御"
+      ]
+    },
+    {
+      "id": "watcher_third_eye",
+      "name": "第三眼",
+      "nameEn": "Third Eye",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得7点格挡。预见3。",
+      "keywords": [
+        "block",
+        "scry"
+      ],
+      "tags": [
+        "防御",
+        "预见"
+      ]
+    },
+    {
+      "id": "watcher_sanctity",
+      "name": "圣洁",
+      "nameEn": "Sanctity",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得6点格挡。如果你本回合打过一张技能牌，抽2张牌。",
+      "keywords": [
+        "block",
+        "draw"
+      ],
+      "tags": [
+        "防御",
+        "过牌"
+      ]
+    },
+    {
+      "id": "watcher_inner_peace",
+      "name": "内心平静",
+      "nameEn": "Inner Peace",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "如果你在平静中，抽3张牌。否则，进入平静。",
+      "keywords": [
+        "calm",
+        "draw"
+      ],
+      "tags": [
+        "平静",
+        "过牌"
+      ]
+    },
+    {
+      "id": "watcher_empty_body",
+      "name": "空身",
+      "nameEn": "Empty Body",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "获得7点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "防御"
+      ]
+    },
+    {
+      "id": "watcher_tranquility",
+      "name": "宁静",
+      "nameEn": "Tranquility",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "进入平静。消耗。",
+      "keywords": [
+        "calm",
+        "exhaust"
+      ],
+      "tags": [
+        "平静",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_crescendo",
+      "name": "渐强",
+      "nameEn": "Crescendo",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "进入愤怒。消耗。",
+      "keywords": [
+        "wrath",
+        "exhaust"
+      ],
+      "tags": [
+        "愤怒",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_wave_of_the_hand",
+      "name": "波手",
+      "nameEn": "Wave of the Hand",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "每当你在本回合获得格挡时，给予所有敌人1层虚弱。",
+      "keywords": [
+        "weak"
+      ],
+      "tags": [
+        "控制"
+      ]
+    },
+    {
+      "id": "watcher_wreath_of_flame",
+      "name": "火焰花环",
+      "nameEn": "Wreath of Flame",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "common",
+      "cost": 1,
+      "description": "你打出的下一张攻击牌额外造成5点伤害。",
+      "keywords": [],
+      "tags": [
+        "攻击"
+      ]
+    },
+    {
+      "id": "watcher_pray",
+      "name": "祈祷",
+      "nameEn": "Pray",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "将一张\"洞察\"加入你的抽牌堆。进入平静。",
+      "keywords": [
+        "calm"
+      ],
+      "tags": [
+        "平静",
+        "过牌"
+      ]
+    },
+    {
+      "id": "watcher_collect",
+      "name": "收集",
+      "nameEn": "Collect",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "在下个回合获得1点能量。将一张\"小奇迹\"加入你的手牌。",
+      "keywords": [],
+      "tags": [
+        "能量"
+      ]
+    },
+    {
+      "id": "watcher_conjure_blade",
+      "name": "召唤刀刃",
+      "nameEn": "Conjure Blade",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "将一张\"切割\"加入你的手牌。切割造成等量于其费用的伤害。",
+      "keywords": [],
+      "tags": [
+        "技能"
+      ]
+    },
+    {
+      "id": "watcher_foreign_influence",
+      "name": "外来影响",
+      "nameEn": "Foreign Influence",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "将一张随机攻击牌加入你的手牌。该牌本回合耗能为0。",
+      "keywords": [],
+      "tags": [
+        "技能"
+      ]
+    },
+    {
+      "id": "watcher_worship",
+      "name": "崇拜",
+      "nameEn": "Worship",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "进入神格。消耗。",
+      "keywords": [
+        "divinity",
+        "exhaust"
+      ],
+      "tags": [
+        "神格",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_rushdown",
+      "name": "冲锋",
+      "nameEn": "Rushdown",
+      "character": "watcher",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "每当你进入愤怒时，抽2张牌。",
+      "keywords": [
+        "draw",
+        "wrath"
+      ],
+      "tags": [
+        "过牌",
+        "愤怒",
+        "能力"
+      ]
+    },
+    {
+      "id": "watcher_mental_fortress",
+      "name": "心灵堡垒",
+      "nameEn": "Mental Fortress",
+      "character": "watcher",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "每当你切换姿态时，获得4点格挡。",
+      "keywords": [
+        "block"
+      ],
+      "tags": [
+        "格挡",
+        "姿态",
+        "能力"
+      ]
+    },
+    {
+      "id": "watcher_nirvana",
+      "name": "涅槃",
+      "nameEn": "Nirvana",
+      "character": "watcher",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "每当你预见时，获得3点格挡。",
+      "keywords": [
+        "block",
+        "scry"
+      ],
+      "tags": [
+        "格挡",
+        "预见",
+        "能力"
+      ]
+    },
+    {
+      "id": "watcher_fasting",
+      "name": "斋戒",
+      "nameEn": "Fasting",
+      "character": "watcher",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "获得2点力量和2点敏捷。在你的回合开始时，获得1点能量。",
+      "keywords": [
+        "strength",
+        "dexterity"
+      ],
+      "tags": [
+        "力量",
+        "敏捷",
+        "能力"
+      ]
+    },
+    {
+      "id": "watcher_study",
+      "name": "学习",
+      "nameEn": "Study",
+      "character": "watcher",
+      "type": "power",
+      "rarity": "uncommon",
+      "cost": 2,
+      "description": "在你的回合开始时，将一张\"洞察\"加入你的手牌。",
+      "keywords": [],
+      "tags": [
+        "过牌",
+        "能力"
+      ]
+    },
+    {
+      "id": "watcher_devotion",
+      "name": "虔诚",
+      "nameEn": "Devotion",
+      "character": "watcher",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "在你的回合开始时，获得1层虔诚。每有3层虔诚，进入神格。",
+      "keywords": [
+        "divinity"
+      ],
+      "tags": [
+        "神格",
+        "能力"
+      ]
+    },
+    {
+      "id": "watcher_establishment",
+      "name": "建立",
+      "nameEn": "Establishment",
+      "character": "watcher",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "每当你保留一张牌时，该牌费用永久减少1。",
+      "keywords": [
+        "retain"
+      ],
+      "tags": [
+        "保留",
+        "能力"
+      ]
+    },
+    {
+      "id": "watcher_master_reality",
+      "name": "掌控现实",
+      "nameEn": "Master Reality",
+      "character": "watcher",
+      "type": "power",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "每当你创造一张牌时，该牌被升级。",
+      "keywords": [],
+      "tags": [
+        "能力"
+      ]
+    },
+    {
+      "id": "watcher_blasphemy",
+      "name": "亵渎",
+      "nameEn": "Blasphemy",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "进入神格。在下个回合结束时死亡。消耗。",
+      "keywords": [
+        "divinity",
+        "exhaust"
+      ],
+      "tags": [
+        "神格",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_vault",
+      "name": "穹顶",
+      "nameEn": "Vault",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "结束你的回合。开始一个新的回合。消耗。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "额外回合",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_omniscience",
+      "name": "全知",
+      "nameEn": "Omniscience",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 4,
+      "description": "从你的抽牌堆中选择一张牌。打出该牌的两张复制品。消耗。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "复制",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_scrawl",
+      "name": "潦草",
+      "nameEn": "Scrawl",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 0,
+      "description": "抽牌直到手牌满。消耗。",
+      "keywords": [
+        "exhaust",
+        "draw"
+      ],
+      "tags": [
+        "过牌",
+        "消耗",
+        "零费"
+      ]
+    },
+    {
+      "id": "watcher_spirit_shield",
+      "name": "灵魂护盾",
+      "nameEn": "Spirit Shield",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 2,
+      "description": "获得等量于你手牌数量乘以3的格挡。消耗。",
+      "keywords": [
+        "block",
+        "exhaust"
+      ],
+      "tags": [
+        "防御",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_wish",
+      "name": "许愿",
+      "nameEn": "Wish",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 3,
+      "description": "选择一项：获得6点力量、获得6点敏捷或获得25点格挡。消耗。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "万能",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_alpha",
+      "name": "阿尔法",
+      "nameEn": "Alpha",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "将一张\"贝塔\"加入你的抽牌堆。贝塔将一张\"欧米茄\"加入你的抽牌堆。欧米茄：在你的回合结束时，对所有敌人造成50点伤害。消耗。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "持续伤害",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_meditate",
+      "name": "冥想",
+      "nameEn": "Meditate",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "从消耗堆中选择1张牌加入手牌。进入平静姿态。",
+      "keywords": [
+        "calm"
+      ],
+      "tags": [
+        "回收",
+        "平静"
+      ]
+    },
+    {
+      "id": "watcher_indignation",
+      "name": "愤慨",
+      "nameEn": "Indignation",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "如果你在愤怒中，给予所有敌人2层易伤。消耗。",
+      "keywords": [
+        "wrath",
+        "vulnerable",
+        "exhaust"
+      ],
+      "tags": [
+        "愤怒",
+        "易伤",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_prostrate",
+      "name": "俯伏",
+      "nameEn": "Prostrate",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得2层虔诚。获得4点格挡。",
+      "keywords": [
+        "divinity",
+        "block"
+      ],
+      "tags": [
+        "神格",
+        "防御"
+      ]
+    },
+    {
+      "id": "watcher_simulate_dao",
+      "name": "模拟大道",
+      "nameEn": "Simulate Dao",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "获得1层虔诚。抽2张牌。",
+      "keywords": [
+        "divinity",
+        "draw"
+      ],
+      "tags": [
+        "神格",
+        "过牌"
+      ]
+    },
+    {
+      "id": "watcher_conclude",
+      "name": "终结",
+      "nameEn": "Conclude",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "uncommon",
+      "cost": 1,
+      "description": "对所有敌人造成12点伤害。结束你的回合。",
+      "keywords": [],
+      "tags": [
+        "攻击",
+        "AOE"
+      ]
+    },
+    {
+      "id": "watcher_judgement",
+      "name": "审判",
+      "nameEn": "Judgement",
+      "character": "watcher",
+      "type": "skill",
+      "rarity": "rare",
+      "cost": 1,
+      "description": "如果一名敌人的生命值低于等于30，将其生命值降为0。消耗。",
+      "keywords": [
+        "exhaust"
+      ],
+      "tags": [
+        "处决",
+        "消耗"
+      ]
+    },
+    {
+      "id": "watcher_just_lucky",
+      "name": "刚刚好",
+      "nameEn": "Just Lucky",
+      "character": "watcher",
+      "type": "attack",
+      "rarity": "common",
+      "cost": 0,
+      "description": "预见1。获得3点格挡。造成3点伤害。",
+      "keywords": [
+        "scry",
+        "block"
+      ],
+      "tags": [
+        "攻击",
+        "防御",
+        "预见",
+        "零费"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "relics": [
+    {
+      "id": "ironclad_burning_blood",
+      "name": "燃烧之血",
+      "nameEn": "Burning Blood",
+      "rarity": "starter",
+      "character": "ironclad",
+      "description": "每场战斗结束时恢复6点生命。",
+      "effects": [{ "trigger": "passive", "description": "战斗结束恢复6HP", "power": 6 }],
+      "dataSource": "manual",
+      "tags": ["回复"]
+    },
+    {
+      "id": "ironclad_champion_belt",
+      "name": "冠军腰带",
+      "nameEn": "Champion Belt",
+      "rarity": "rare",
+      "character": "ironclad",
+      "description": "每当你施加易伤时，额外施加1层。",
+      "effects": [{ "trigger": "passive", "description": "易伤额外+1", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["易伤"]
+    },
+    {
+      "id": "ironclad_charons_ashes",
+      "name": "卡戎之灰",
+      "nameEn": "Charon's Ashes",
+      "rarity": "rare",
+      "character": "ironclad",
+      "description": "每当你消耗一张牌时，对所有敌人造成3点伤害。",
+      "effects": [{ "trigger": "on_exhaust", "description": "消耗时AOE3", "power": 3 }],
+      "dataSource": "manual",
+      "tags": ["消耗", "攻击"]
+    },
+    {
+      "id": "ironclad_magic_flower",
+      "name": "魔法之花",
+      "nameEn": "Magic Flower",
+      "rarity": "uncommon",
+      "character": "ironclad",
+      "description": "回复效果增加50%。",
+      "effects": [{ "trigger": "passive", "description": "回复+50%", "power": 50 }],
+      "dataSource": "manual",
+      "tags": ["回复"]
+    },
+    {
+      "id": "ironclad_self_forming_clay",
+      "name": "自成型粘土",
+      "nameEn": "Self-Forming Clay",
+      "rarity": "uncommon",
+      "character": "ironclad",
+      "description": "每当你在战斗中受到伤害时，下回合获得3点护甲。",
+      "effects": [{ "trigger": "on_take_damage", "description": "受伤后下回合护甲+3", "power": 3 }],
+      "dataSource": "manual",
+      "tags": ["护甲"]
+    }
+  ]
+}

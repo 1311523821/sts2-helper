@@ -1,0 +1,37 @@
+{
+  "relics": [
+    {
+      "id": "necromancer_hollow_heart",
+      "name": "空洞之心",
+      "nameEn": "Hollow Heart",
+      "rarity": "starter",
+      "character": "necromancer",
+      "description": "每场战斗开始时获得1层亡灵之力。",
+      "effects": [{ "trigger": "on_combat_start", "description": "亡灵之力+1", "power": 1 }],
+      "dataSource": "community",
+      "tags": ["亡灵"]
+    },
+    {
+      "id": "necromancer_bone_shard",
+      "name": "骨片",
+      "nameEn": "Bone Shard",
+      "rarity": "uncommon",
+      "character": "necromancer",
+      "description": "每当你召唤亡灵时，获得3点护甲。",
+      "effects": [{ "trigger": "passive", "description": "召唤时护甲+3", "power": 3 }],
+      "dataSource": "community",
+      "tags": ["亡灵", "护甲"]
+    },
+    {
+      "id": "necromancer_soul_lantern",
+      "name": "灵魂灯笼",
+      "nameEn": "Soul Lantern",
+      "rarity": "rare",
+      "character": "necromancer",
+      "description": "每当你牺牲亡灵时，恢复4点生命。",
+      "effects": [{ "trigger": "passive", "description": "牺牲亡灵恢复4HP", "power": 4 }],
+      "dataSource": "community",
+      "tags": ["亡灵", "回复"]
+    }
+  ]
+}

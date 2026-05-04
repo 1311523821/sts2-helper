@@ -1,0 +1,291 @@
+{
+  "events": [
+    {
+      "id": "big_fish",
+      "name": "大鱼",
+      "nameEn": "Big Fish",
+      "act": 1,
+      "description": "你发现了一条巨大的鱼在水中游动。",
+      "options": [
+        {
+          "id": "big_fish_catch",
+          "text": "捕捉它",
+          "results": [
+            { "type": "gold", "value": 15, "description": "获得15金币" },
+            { "type": "damage", "value": 5, "description": "受到5点伤害" }
+          ]
+        },
+        {
+          "id": "big_fish_leave",
+          "text": "离开",
+          "results": []
+        }
+      ]
+    },
+    {
+      "id": "the_cleric",
+      "name": "牧师",
+      "nameEn": "The Cleric",
+      "act": 1,
+      "description": "一位牧师向你走来，提出可以为你治疗或净化。",
+      "options": [
+        {
+          "id": "cleric_heal",
+          "text": "接受治疗（花费35金币）",
+          "results": [
+            { "type": "gold", "value": -35, "description": "花费35金币" },
+            { "type": "heal", "value": 25, "description": "恢复25点生命" }
+          ]
+        },
+        {
+          "id": "cleric_purify",
+          "text": "请求净化",
+          "results": [
+            { "type": "upgrade", "value": 1, "description": "升级1张牌" }
+          ]
+        },
+        {
+          "id": "cleric_leave",
+          "text": "离开",
+          "results": []
+        }
+      ]
+    },
+    {
+      "id": "golden_shrine",
+      "name": "金色神殿",
+      "nameEn": "Golden Shrine",
+      "act": 1,
+      "description": "你发现了一座闪闪发光的金色神殿。",
+      "options": [
+        {
+          "id": "shrine_pray",
+          "text": "祈祷",
+          "results": [
+            { "type": "gold", "value": 50, "description": "获得50金币" }
+          ]
+        },
+        {
+          "id": "shrine_desecrate",
+          "text": "亵渎",
+          "results": [
+            { "type": "gold", "value": 100, "description": "获得100金币" },
+            { "type": "curse", "value": 1, "description": "获得1张诅咒" }
+          ]
+        },
+        {
+          "id": "shrine_leave",
+          "text": "离开",
+          "results": []
+        }
+      ]
+    },
+    {
+      "id": "the_woman_in_blue",
+      "name": "蓝衣女子",
+      "nameEn": "The Woman in Blue",
+      "act": 1,
+      "description": "一位身穿蓝衣的女子向你兜售药水。",
+      "options": [
+        {
+          "id": "woman_buy",
+          "text": "购买药水（花费20金币）",
+          "results": [
+            { "type": "gold", "value": -20, "description": "花费20金币" },
+            { "type": "potion", "value": 1, "description": "获得1瓶随机药水" }
+          ]
+        },
+        {
+          "id": "woman_leave",
+          "text": "离开",
+          "results": []
+        }
+      ]
+    },
+    {
+      "id": "living_wall",
+      "name": "活墙",
+      "nameEn": "Living Wall",
+      "act": 1,
+      "description": "一堵由藤蔓和骨骼组成的活墙挡住了去路。",
+      "options": [
+        {
+          "id": "wall_forget",
+          "text": "遗忘（移除1张牌）",
+          "results": [
+            { "type": "remove_card", "value": 1, "description": "移除1张牌" }
+          ]
+        },
+        {
+          "id": "wall_change",
+          "text": "改变（变换1张牌）",
+          "results": [
+            { "type": "transform_card", "value": 1, "description": "变换1张牌" }
+          ]
+        },
+        {
+          "id": "wall_adapt",
+          "text": "适应（升级1张牌）",
+          "results": [
+            { "type": "upgrade", "value": 1, "description": "升级1张牌" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bonfire_spirits",
+      "name": "篝火精灵",
+      "nameEn": "Bonfire Spirits",
+      "act": 1,
+      "description": "一群篝火精灵围绕着一团温暖的火焰跳舞。",
+      "options": [
+        {
+          "id": "bonfire_offer",
+          "text": "献上一张牌",
+          "results": [
+            { "type": "remove_card", "value": 1, "description": "移除1张牌" },
+            { "type": "heal_percent", "value": 100, "description": "恢复全部生命" }
+          ]
+        },
+        {
+          "id": "bonfire_leave",
+          "text": "离开",
+          "results": []
+        }
+      ]
+    },
+    {
+      "id": "mushrooms",
+      "name": "蘑菇",
+      "nameEn": "Mushrooms",
+      "act": 1,
+      "description": "你发现了一片散发奇异光芒的蘑菇。",
+      "options": [
+        {
+          "id": "mushrooms_eat",
+          "text": "吃掉它们",
+          "results": [
+            { "type": "max_hp", "value": 5, "description": "最大生命+5" },
+            { "type": "damage", "value": 5, "description": "受到5点伤害" }
+          ]
+        },
+        {
+          "id": "mushrooms_leave",
+          "text": "离开",
+          "results": []
+        }
+      ]
+    },
+    {
+      "id": "the_mausoleum",
+      "name": "陵墓",
+      "nameEn": "The Mausoleum",
+      "act": 1,
+      "description": "你发现了一座古老的陵墓。",
+      "options": [
+        {
+          "id": "mausoleum_open",
+          "text": "打开棺材",
+          "results": [
+            { "type": "relic", "value": 1, "description": "获得1件遗物（50%概率获得诅咒）" }
+          ]
+        },
+        {
+          "id": "mausoleum_leave",
+          "text": "离开",
+          "results": []
+        }
+      ]
+    },
+    {
+      "id": "vampires",
+      "name": "吸血鬼",
+      "nameEn": "Vampires",
+      "act": 2,
+      "description": "一群吸血鬼出现在你面前，提出交易。",
+      "options": [
+        {
+          "id": "vampires_accept",
+          "text": "接受交易",
+          "results": [
+            { "type": "max_hp", "value": -5, "description": "最大生命-5" },
+            { "type": "card", "value": 0, "description": "移除所有打击，获得等量吸血鬼牌" }
+          ]
+        },
+        {
+          "id": "vampires_refuse",
+          "text": "拒绝",
+          "results": []
+        }
+      ]
+    },
+    {
+      "id": "colosseum",
+      "name": "竞技场",
+      "nameEn": "Colosseum",
+      "act": 2,
+      "description": "你被传送到一座古老的竞技场。",
+      "options": [
+        {
+          "id": "colosseum_fight",
+          "text": "战斗",
+          "results": [
+            { "type": "combat", "value": 1, "description": "与精英敌人战斗" },
+            { "type": "relic", "value": 1, "description": "胜利后获得1件遗物" }
+          ]
+        },
+        {
+          "id": "colosseum_flee",
+          "text": "逃跑",
+          "results": [
+            { "type": "gold", "value": -25, "description": "损失25金币" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "face_trader",
+      "name": "面具商人",
+      "nameEn": "Face Trader",
+      "act": 2,
+      "description": "一位神秘的面具商人向你展示各种面具。",
+      "options": [
+        {
+          "id": "face_trade",
+          "text": "交易（花费金币获得面具）",
+          "results": [
+            { "type": "gold", "value": -50, "description": "花费50金币" },
+            { "type": "relic", "value": 1, "description": "获得1件面具遗物" }
+          ]
+        },
+        {
+          "id": "face_leave",
+          "text": "离开",
+          "results": []
+        }
+      ]
+    },
+    {
+      "id": "fallen",
+      "name": "堕落者",
+      "nameEn": "The Fallen",
+      "act": 3,
+      "description": "你遇到了一位曾经的英雄，如今已经堕落。",
+      "options": [
+        {
+          "id": "fallen_fight",
+          "text": "与之战斗",
+          "results": [
+            { "type": "combat", "value": 1, "description": "与Boss级敌人战斗" },
+            { "type": "relic", "value": 2, "description": "胜利后获得2件遗物" }
+          ]
+        },
+        {
+          "id": "fallen_leave",
+          "text": "离开",
+          "results": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "relics": [
+    {
+      "id": "silent_ring_of_the_snake",
+      "name": "蛇之戒指",
+      "nameEn": "Ring of the Snake",
+      "rarity": "starter",
+      "character": "silent",
+      "description": "每场战斗开始时额外抽2张牌。",
+      "effects": [{ "trigger": "on_combat_start", "description": "抽2张牌", "power": 2 }],
+      "dataSource": "manual",
+      "tags": ["过牌"]
+    },
+    {
+      "id": "silent_tingsha",
+      "name": "铜钹",
+      "nameEn": "Tingsha",
+      "rarity": "rare",
+      "character": "silent",
+      "description": "每当你弃牌时，对随机敌人造成3点伤害。",
+      "effects": [{ "trigger": "on_discard", "description": "弃牌时伤害3", "power": 3 }],
+      "dataSource": "manual",
+      "tags": ["弃牌", "攻击"]
+    },
+    {
+      "id": "silent_tough_bandages",
+      "name": "坚韧绷带",
+      "nameEn": "Tough Bandages",
+      "rarity": "rare",
+      "character": "silent",
+      "description": "每当你弃牌时，获得3点护甲。",
+      "effects": [{ "trigger": "on_discard", "description": "弃牌时护甲+3", "power": 3 }],
+      "dataSource": "manual",
+      "tags": ["弃牌", "护甲"]
+    },
+    {
+      "id": "silent_ghost_blade",
+      "name": "幽灵之刃",
+      "nameEn": "Ghost Blade",
+      "rarity": "uncommon",
+      "character": "silent",
+      "description": "每场战斗开始时将1张刀刃加入手牌。",
+      "effects": [{ "trigger": "on_combat_start", "description": "获得刀刃", "power": 1 }],
+      "dataSource": "manual",
+      "tags": ["小刀"]
+    }
+  ]
+}
