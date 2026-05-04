@@ -1,4 +1,4 @@
-import type { DeckCard } from '@/types'
+import type { DeckCard, CardType, CardRarity } from '@/types'
 import { TYPE_NAMES, TYPE_COLORS, RARITY_BG_COLORS, RARITY_NAMES } from '@/constants'
 
 interface DeckStatsData {
@@ -65,14 +65,14 @@ export function DeckStats({ stats, deck }: DeckStatsProps) {
           {Object.entries(stats.typeCount).map(([type, count]) => (
             <div key={type}>
               <div className="flex items-center justify-between mb-1">
-                <span className="text-sm text-text-primary">{TYPE_NAMES[type] || type}</span>
+                <span className="text-sm text-text-primary">{TYPE_NAMES[type as CardType] || type}</span>
                 <span className="text-xs text-text-muted">{count}张 ({stats.total > 0 ? Math.round(count / stats.total * 100) : 0}%)</span>
               </div>
               <div className="h-3 bg-warm-100 rounded-full overflow-hidden">
                 <div className="h-full rounded-full transition-all duration-700"
                   style={{
                     width: `${(count / maxType) * 100}%`,
-                    backgroundColor: TYPE_COLORS[type] || '#B8A08E',
+                    backgroundColor: TYPE_COLORS[type as CardType] || '#B8A08E',
                   }} />
               </div>
             </div>
@@ -86,8 +86,8 @@ export function DeckStats({ stats, deck }: DeckStatsProps) {
         <div className="grid grid-cols-2 gap-2">
           {Object.entries(stats.rarityCount).map(([rarity, count]) => (
             <div key={rarity} className="flex items-center gap-2 p-2 bg-warm-50 rounded-lg">
-              <div className={`w-3 h-3 rounded-full ${RARITY_BG_COLORS[rarity] || 'bg-warm-300'}`} />
-              <span className="text-sm text-text-primary flex-1">{RARITY_NAMES[rarity] || rarity}</span>
+              <div className={`w-3 h-3 rounded-full ${RARITY_BG_COLORS[rarity as CardRarity] || 'bg-warm-300'}`} />
+              <span className="text-sm text-text-primary flex-1">{RARITY_NAMES[rarity as CardRarity] || rarity}</span>
               <span className="text-sm font-bold text-text-primary">{count}</span>
             </div>
           ))}

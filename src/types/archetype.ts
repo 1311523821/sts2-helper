@@ -54,6 +54,14 @@ export interface Archetype {
     costCurveMatch: number
     synergyBonus: number
   }
+  cardScorerWeights: {
+    baseStrength: number
+    archetypeFit: number
+    synergy: number
+    floorAdaptation: number
+    relicSynergy: number
+    deckHealth: number
+  }
   combos: Combo[]
   guide: ArchetypeGuide
 }

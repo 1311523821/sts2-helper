@@ -71,6 +71,7 @@ export interface CostCurveAnalysis {
   averageCost: number
   oneDropRatio: number
   highCostRatio: number
+  xCardCount: number
   rating: 'too_low' | 'good' | 'too_high'
   suggestion: string
 }

@@ -77,35 +77,58 @@ export class RecordManager {
   }
 
   /**
+   * 内部方法：在单个 readwrite 事务中读取、修改、写回记录
+   */
+  private async updateRecord(
+    recordId: string,
+    modifier: (record: GameRecord) => void
+  ): Promise<void> {
+    return new Promise((resolve, reject) => {
+      const tx = this.getDB().transaction(STORE_NAME, 'readwrite')
+      const store = tx.objectStore(STORE_NAME)
+      const getReq = store.get(recordId)
+      getReq.onsuccess = () => {
+        const record = getReq.result as GameRecord | undefined
+        if (!record) {
+          reject(new Error(`记录不存在: ${recordId}`))
+          return
+        }
+        modifier(record)
+        store.put(record)
+      }
+      getReq.onerror = () => reject(new Error('读取记录失败'))
+      tx.oncomplete = () => resolve()
+      tx.onerror = () => reject(new Error('保存记录失败'))
+    })
+  }
+
+  /**
    * 添加选牌决策
    */
   async addDecision(recordId: string, decision: Decision): Promise<void> {
-    const record = await this.getRecord(recordId)
-    if (!record) throw new Error(`记录不存在: ${recordId}`)
-    record.decisions.push(decision)
-    await this.saveRecord(record)
+    await this.updateRecord(recordId, (record) => {
+      record.decisions.push(decision)
+    })
   }
 
   /**
    * 更新牌库
    */
   async updateDeck(recordId: string, deck: DeckCard[]): Promise<void> {
-    const record = await this.getRecord(recordId)
-    if (!record) throw new Error(`记录不存在: ${recordId}`)
-    record.finalDeck = deck
-    await this.saveRecord(record)
+    await this.updateRecord(recordId, (record) => {
+      record.finalDeck = deck
+    })
   }
 
   /**
    * 完成游戏
    */
   async finishRecord(recordId: string, result: 'win' | 'loss', finalFloor: number): Promise<void> {
-    const record = await this.getRecord(recordId)
-    if (!record) throw new Error(`记录不存在: ${recordId}`)
-    record.result = result
-    record.finalFloor = finalFloor
-    record.endTime = new Date().toISOString()
-    await this.saveRecord(record)
+    await this.updateRecord(recordId, (record) => {
+      record.result = result
+      record.finalFloor = finalFloor
+      record.endTime = new Date().toISOString()
+    })
   }
 
   /**

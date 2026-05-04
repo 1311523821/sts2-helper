@@ -3,6 +3,7 @@ import { CHARACTER_IDS, CHARACTER_INFO, getCardsByCharacter } from '@/data/cards
 import { CardDisplay } from '@/components/CardDisplay'
 import type { CharacterId, CardType, Card, CardRarity } from '@/types'
 import { TYPE_ICONS, TYPE_NAMES, RARITY_NAMES, RARITY_TAG_COLORS } from '@/constants'
+import { useDebounce } from '@/hooks/useDebounce'
 
 const CARD_TYPES: { key: CardType | 'all'; label: string; icon: string }[] = [
   { key: 'all', label: '全部类型', icon: '📋' },
@@ -47,6 +48,7 @@ export default function EncyclopediaPage() {
   const [rarityFilter, setRarityFilter] = useState<CardRarity | 'all'>('all')
   const [costRange, setCostRange] = useState('all')
   const [search, setSearch] = useState('')
+  const debouncedSearch = useDebounce(search, 300)
   const [selectedCard, setSelectedCard] = useState<Card | null>(null)
   const [compareCards, setCompareCards] = useState<Card[]>([])
   const [showCompare, setShowCompare] = useState(false)
@@ -82,7 +84,7 @@ export default function EncyclopediaPage() {
   if (costRange !== 'all') cards = cards.filter(c => c.cost >= costRangeObj.min && c.cost <= costRangeObj.max)
   if (showFavOnly) cards = cards.filter(c => favorites.has(c.id))
   if (search) {
-    const q = search.toLowerCase()
+    const q = debouncedSearch.toLowerCase()
     cards = cards.filter(c =>
       c.name.toLowerCase().includes(q) ||
       c.nameEn.toLowerCase().includes(q) ||
@@ -127,10 +129,10 @@ export default function EncyclopediaPage() {
 
           {/* 筛选行 */}
           <div className="flex flex-wrap gap-2">
-            <select value={typeFilter} onChange={e => setTypeFilter(e.target.value as any)} className="input-field w-auto sm:w-36">
+            <select value={typeFilter} onChange={e => setTypeFilter(e.target.value as CardType | 'all')} className="input-field w-auto sm:w-36">
               {CARD_TYPES.map(t => <option key={t.key} value={t.key}>{t.icon} {t.label}</option>)}
             </select>
-            <select value={rarityFilter} onChange={e => setRarityFilter(e.target.value as any)} className="input-field w-auto sm:w-36">
+            <select value={rarityFilter} onChange={e => setRarityFilter(e.target.value as CardRarity | 'all')} className="input-field w-auto sm:w-36">
               {RARITIES.map(r => <option key={r.key} value={r.key}>{r.label}</option>)}
             </select>
             <select value={costRange} onChange={e => setCostRange(e.target.value)} className="input-field w-auto sm:w-36">

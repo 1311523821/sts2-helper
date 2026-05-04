@@ -7,28 +7,87 @@
     "description": "通过叠加力量层数，使每一张攻击牌都能造成大量伤害。力量流是铁甲战士最经典也最容易上手的流派。",
     "difficulty": "beginner",
     "coreCards": [
-      { "cardId": "ironclad_inflame", "weight": 90, "isCore": true, "reason": "永久增加力量，是力量流的基石" },
-      { "cardId": "ironclad_demon_form", "weight": 85, "isCore": true, "reason": "每回合自动叠加力量，后期伤害爆炸" },
-      { "cardId": "ironclad_anger", "weight": 70, "isCore": true, "reason": "零费获得力量，效率极高" }
+      {
+        "cardId": "ironclad_inflame",
+        "weight": 90,
+        "isCore": true,
+        "reason": "永久增加力量，是力量流的基石"
+      },
+      {
+        "cardId": "ironclad_demon_form",
+        "weight": 85,
+        "isCore": true,
+        "reason": "每回合自动叠加力量，后期伤害爆炸"
+      },
+      {
+        "cardId": "ironclad_anger",
+        "weight": 70,
+        "isCore": true,
+        "reason": "零费获得力量，效率极高"
+      }
     ],
     "importantCards": [
-      { "cardId": "ironclad_heavy_blade", "weight": 80, "isCore": false, "reason": "力量加成 x3，是力量流的核心输出手段" },
-      { "cardId": "ironclad_sword_boomerang", "weight": 75, "isCore": false, "reason": "多次攻击，每次都能享受力量加成" },
-      { "cardId": "ironclad_pummel", "weight": 70, "isCore": false, "reason": "多次攻击，力量加成收益高" },
-      { "cardId": "ironclad_twin_strike", "weight": 65, "isCore": false, "reason": "两次攻击 + 过牌" }
+      {
+        "cardId": "ironclad_heavy_blade",
+        "weight": 80,
+        "isCore": false,
+        "reason": "力量加成 x3，是力量流的核心输出手段"
+      },
+      {
+        "cardId": "ironclad_sword_boomerang",
+        "weight": 75,
+        "isCore": false,
+        "reason": "多次攻击，每次都能享受力量加成"
+      },
+      {
+        "cardId": "ironclad_pummel",
+        "weight": 70,
+        "isCore": false,
+        "reason": "多次攻击，力量加成收益高"
+      },
+      {
+        "cardId": "ironclad_twin_strike",
+        "weight": 65,
+        "isCore": false,
+        "reason": "两次攻击 + 过牌"
+      }
     ],
     "supportCards": [
-      { "cardId": "ironclad_flex", "weight": 50, "isCore": false, "reason": "临时力量，配合重刃效果好" },
-      { "cardId": "ironclad_bash", "weight": 45, "isCore": false, "reason": "易伤使伤害翻倍" },
-      { "cardId": "ironclad_battle_trance", "weight": 40, "isCore": false, "reason": "过牌，找核心卡" }
+      {
+        "cardId": "ironclad_flex",
+        "weight": 50,
+        "isCore": false,
+        "reason": "临时力量，配合重刃效果好"
+      },
+      {
+        "cardId": "ironclad_bash",
+        "weight": 45,
+        "isCore": false,
+        "reason": "易伤使伤害翻倍"
+      },
+      {
+        "cardId": "ironclad_battle_trance",
+        "weight": 40,
+        "isCore": false,
+        "reason": "过牌，找核心卡"
+      }
     ],
-    "preferredRatio": { "attack": 0.5, "skill": 0.3, "power": 0.2 },
-    "idealCostCurve": [0.15, 0.45, 0.30, 0.10],
+    "preferredRatio": {
+      "attack": 0.5,
+      "skill": 0.3,
+      "power": 0.2
+    },
+    "idealCostCurve": [
+      0.15,
+      0.45,
+      0.3,
+      0.1
+    ],
     "scoringWeights": {
-      "coreCardMatch": 0.35,
+      "coreCardMatch": 0.4,
       "importantCardMatch": 0.25,
-      "supportCardMatch": 0.10,
-      "ratioMatch": 0.10,
+      "supportCardMatch": 0.05,
+      "ratioMatch": 0.1,
       "costCurveMatch": 0.05,
       "synergyBonus": 0.15
     },
@@ -36,7 +95,10 @@
       {
         "id": "strength_heavy_blade",
         "name": "力量重刃",
-        "cards": ["ironclad_inflame", "ironclad_heavy_blade"],
+        "cards": [
+          "ironclad_inflame",
+          "ironclad_heavy_blade"
+        ],
         "description": "力量叠加 + 重刃的3倍力量加成 = 恐怖单体伤害",
         "power": "high",
         "setup": "先使用燃烧增加力量，再用重刃输出"
@@ -44,7 +106,11 @@
       {
         "id": "strength_multi_hit",
         "name": "力量多段",
-        "cards": ["ironclad_demon_form", "ironclad_sword_boomerang", "ironclad_pummel"],
+        "cards": [
+          "ironclad_demon_form",
+          "ironclad_sword_boomerang",
+          "ironclad_pummel"
+        ],
         "description": "恶魔形态持续叠加力量，配合多段攻击打出海量伤害",
         "power": "game_winning",
         "setup": "需要2-3回合的 setup 时间，期间需要足够的防御"
@@ -67,6 +133,14 @@
         "拿太多力量来源但没有好的输出牌",
         "在力量不够时就拿重刃，效率很低"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.25,
+      "archetypeFit": 0.2,
+      "synergy": 0.2,
+      "floorAdaptation": 0.15,
+      "relicSynergy": 0.1,
+      "deckHealth": 0.1
     }
   },
   {
@@ -77,27 +151,81 @@
     "description": "通过大量护甲积累，配合身体撞击等卡牌将护甲转化为伤害。适合喜欢稳健打法的玩家。",
     "difficulty": "intermediate",
     "coreCards": [
-      { "cardId": "ironclad_barricade", "weight": 95, "isCore": true, "reason": "护甲不再消失，是防战流的核心" },
-      { "cardId": "ironclad_body_slam", "weight": 90, "isCore": true, "reason": "将护甲转化为伤害的核心输出" },
-      { "cardId": "ironclad_entrench", "weight": 80, "isCore": true, "reason": "护甲翻倍，快速积累护甲" }
+      {
+        "cardId": "ironclad_barricade",
+        "weight": 95,
+        "isCore": true,
+        "reason": "护甲不再消失，是防战流的核心"
+      },
+      {
+        "cardId": "ironclad_body_slam",
+        "weight": 90,
+        "isCore": true,
+        "reason": "将护甲转化为伤害的核心输出"
+      },
+      {
+        "cardId": "ironclad_entrench",
+        "weight": 80,
+        "isCore": true,
+        "reason": "护甲翻倍，快速积累护甲"
+      }
     ],
     "importantCards": [
-      { "cardId": "ironclad_impervious", "weight": 80, "isCore": false, "reason": "单次获得大量护甲" },
-      { "cardId": "ironclad_flame_barrier", "weight": 70, "isCore": false, "reason": "护甲 + 反伤" },
-      { "cardId": "ironclad_shrug_it_off", "weight": 65, "isCore": false, "reason": "护甲 + 过牌" }
+      {
+        "cardId": "ironclad_impervious",
+        "weight": 80,
+        "isCore": false,
+        "reason": "单次获得大量护甲"
+      },
+      {
+        "cardId": "ironclad_flame_barrier",
+        "weight": 70,
+        "isCore": false,
+        "reason": "护甲 + 反伤"
+      },
+      {
+        "cardId": "ironclad_shrug_it_off",
+        "weight": 65,
+        "isCore": false,
+        "reason": "护甲 + 过牌"
+      }
     ],
     "supportCards": [
-      { "cardId": "ironclad_metallicize", "weight": 55, "isCore": false, "reason": "每回合自动获得护甲" },
-      { "cardId": "ironclad_feel_no_pain", "weight": 50, "isCore": false, "reason": "消耗牌时获得护甲" },
-      { "cardId": "ironclad_juggernaut", "weight": 45, "isCore": false, "reason": "获得护甲时造成伤害" }
+      {
+        "cardId": "ironclad_metallicize",
+        "weight": 55,
+        "isCore": false,
+        "reason": "每回合自动获得护甲"
+      },
+      {
+        "cardId": "ironclad_feel_no_pain",
+        "weight": 50,
+        "isCore": false,
+        "reason": "消耗牌时获得护甲"
+      },
+      {
+        "cardId": "ironclad_juggernaut",
+        "weight": 45,
+        "isCore": false,
+        "reason": "获得护甲时造成伤害"
+      }
     ],
-    "preferredRatio": { "attack": 0.25, "skill": 0.55, "power": 0.20 },
-    "idealCostCurve": [0.20, 0.40, 0.30, 0.10],
+    "preferredRatio": {
+      "attack": 0.25,
+      "skill": 0.55,
+      "power": 0.2
+    },
+    "idealCostCurve": [
+      0.2,
+      0.4,
+      0.3,
+      0.1
+    ],
     "scoringWeights": {
       "coreCardMatch": 0.35,
-      "importantCardMatch": 0.25,
-      "supportCardMatch": 0.10,
-      "ratioMatch": 0.10,
+      "importantCardMatch": 0.2,
+      "supportCardMatch": 0.1,
+      "ratioMatch": 0.15,
       "costCurveMatch": 0.05,
       "synergyBonus": 0.15
     },
@@ -105,7 +233,11 @@
       {
         "id": "block_body_slam",
         "name": "护甲撞击",
-        "cards": ["ironclad_barricade", "ironclad_entrench", "ironclad_body_slam"],
+        "cards": [
+          "ironclad_barricade",
+          "ironclad_entrench",
+          "ironclad_body_slam"
+        ],
         "description": "堡垒保留护甲 → 壕沟翻倍 → 身体撞击一击必杀",
         "power": "game_winning",
         "setup": "需要先打出堡垒，然后积累护甲，最后用身体撞击输出"
@@ -128,6 +260,14 @@
         "只拿护甲牌不拿输出牌，最后打不出伤害",
         "忽视过牌，找不到核心卡"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.15,
+      "archetypeFit": 0.2,
+      "synergy": 0.15,
+      "floorAdaptation": 0.1,
+      "relicSynergy": 0.1,
+      "deckHealth": 0.3
     }
   },
   {
@@ -138,34 +278,87 @@
     "description": "利用消耗机制，将消耗牌转化为各种收益。高风险高回报的流派。",
     "difficulty": "advanced",
     "coreCards": [
-      { "cardId": "ironclad_corruption", "weight": 95, "isCore": true, "reason": "技能牌变为0费，配合消耗机制收益巨大" },
-      { "cardId": "ironclad_feel_no_pain", "weight": 85, "isCore": true, "reason": "消耗牌时获得护甲，提供防御" },
-      { "cardId": "ironclad_fiend_fire", "weight": 75, "isCore": true, "reason": "消耗手牌造成大量伤害" }
+      {
+        "cardId": "ironclad_corruption",
+        "weight": 95,
+        "isCore": true,
+        "reason": "技能牌变为0费，配合消耗机制收益巨大"
+      },
+      {
+        "cardId": "ironclad_feel_no_pain",
+        "weight": 85,
+        "isCore": true,
+        "reason": "消耗牌时获得护甲，提供防御"
+      },
+      {
+        "cardId": "ironclad_fiend_fire",
+        "weight": 75,
+        "isCore": true,
+        "reason": "消耗手牌造成大量伤害"
+      }
     ],
     "importantCards": [
-      { "cardId": "ironclad_second_wind", "weight": 75, "isCore": false, "reason": "消耗非攻击牌获得护甲" },
-      { "cardId": "ironclad_burning_pact", "weight": 65, "isCore": false, "reason": "消耗牌 + 过牌" },
-      { "cardId": "ironclad_true_grit", "weight": 55, "isCore": false, "reason": "消耗 + 护甲" }
+      {
+        "cardId": "ironclad_second_wind",
+        "weight": 75,
+        "isCore": false,
+        "reason": "消耗非攻击牌获得护甲"
+      },
+      {
+        "cardId": "ironclad_burning_pact",
+        "weight": 65,
+        "isCore": false,
+        "reason": "消耗牌 + 过牌"
+      },
+      {
+        "cardId": "ironclad_true_grit",
+        "weight": 55,
+        "isCore": false,
+        "reason": "消耗 + 护甲"
+      }
     ],
     "supportCards": [
-      { "cardId": "ironclad_dark_pact", "weight": 50, "isCore": false, "reason": "消耗触发" },
-      { "cardId": "ironclad_disarm", "weight": 45, "isCore": false, "reason": "消耗 + 控制" }
+      {
+        "cardId": "ironclad_dark_pact",
+        "weight": 50,
+        "isCore": false,
+        "reason": "消耗触发"
+      },
+      {
+        "cardId": "ironclad_disarm",
+        "weight": 45,
+        "isCore": false,
+        "reason": "消耗 + 控制"
+      }
     ],
-    "preferredRatio": { "attack": 0.30, "skill": 0.45, "power": 0.25 },
-    "idealCostCurve": [0.25, 0.40, 0.25, 0.10],
+    "preferredRatio": {
+      "attack": 0.3,
+      "skill": 0.45,
+      "power": 0.25
+    },
+    "idealCostCurve": [
+      0.25,
+      0.4,
+      0.25,
+      0.1
+    ],
     "scoringWeights": {
       "coreCardMatch": 0.35,
-      "importantCardMatch": 0.25,
-      "supportCardMatch": 0.10,
-      "ratioMatch": 0.10,
+      "importantCardMatch": 0.2,
+      "supportCardMatch": 0.1,
+      "ratioMatch": 0.1,
       "costCurveMatch": 0.05,
-      "synergyBonus": 0.15
+      "synergyBonus": 0.2
     },
     "combos": [
       {
         "id": "exhaust_cycle",
         "name": "消耗循环",
-        "cards": ["ironclad_corruption", "ironclad_feel_no_pain", "ironclad_fiend_fire"],
+        "cards": [
+          "ironclad_corruption",
+          "ironclad_feel_no_pain",
+          "ironclad_fiend_fire"
+        ],
         "description": "腐败让技能牌0费 → 打出消耗获得护甲 → 恶魔之火消耗手牌造成伤害",
         "power": "game_winning",
         "setup": "先打出腐败和无痛，然后不断消耗牌获取收益"
@@ -188,6 +381,14 @@
         "把核心牌消耗掉了",
         "只关注消耗不关注输出"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.15,
+      "archetypeFit": 0.3,
+      "synergy": 0.2,
+      "floorAdaptation": 0.1,
+      "relicSynergy": 0.1,
+      "deckHealth": 0.15
     }
   },
   {
@@ -198,27 +399,81 @@
     "description": "通过自伤获取能量和力量，利用放血、破裂等卡牌将生命值转化为战斗力。高风险高回报的极端流派。",
     "difficulty": "advanced",
     "coreCards": [
-      { "cardId": "ironclad_rupture", "weight": 95, "isCore": true, "reason": "每次自伤获得力量，是放血流的核心引擎" },
-      { "cardId": "ironclad_hemokinesis", "weight": 85, "isCore": true, "reason": "自伤 + 高伤害输出，触发破裂" },
-      { "cardId": "ironclad_bloodletting", "weight": 80, "isCore": true, "reason": "自伤获取能量，提供更多操作空间" }
+      {
+        "cardId": "ironclad_rupture",
+        "weight": 95,
+        "isCore": true,
+        "reason": "每次自伤获得力量，是放血流的核心引擎"
+      },
+      {
+        "cardId": "ironclad_hemokinesis",
+        "weight": 85,
+        "isCore": true,
+        "reason": "自伤 + 高伤害输出，触发破裂"
+      },
+      {
+        "cardId": "ironclad_bloodletting",
+        "weight": 80,
+        "isCore": true,
+        "reason": "自伤获取能量，提供更多操作空间"
+      }
     ],
     "importantCards": [
-      { "cardId": "ironclad_combust", "weight": 75, "isCore": false, "reason": "每回合自伤触发破裂 + AOE伤害" },
-      { "cardId": "ironclad_brutality", "weight": 70, "isCore": false, "reason": "每回合自伤 + 过牌，持续触发破裂" },
-      { "cardId": "ironclad_offering", "weight": 75, "isCore": false, "reason": "自伤获取能量和过牌" }
+      {
+        "cardId": "ironclad_combust",
+        "weight": 75,
+        "isCore": false,
+        "reason": "每回合自伤触发破裂 + AOE伤害"
+      },
+      {
+        "cardId": "ironclad_brutality",
+        "weight": 70,
+        "isCore": false,
+        "reason": "每回合自伤 + 过牌，持续触发破裂"
+      },
+      {
+        "cardId": "ironclad_offering",
+        "weight": 75,
+        "isCore": false,
+        "reason": "自伤获取能量和过牌"
+      }
     ],
     "supportCards": [
-      { "cardId": "ironclad_reaper", "weight": 60, "isCore": false, "reason": "AOE伤害 + 回复，弥补自伤损失" },
-      { "cardId": "ironclad_inflame", "weight": 55, "isCore": false, "reason": "额外力量来源" },
-      { "cardId": "ironclad_shockwave", "weight": 45, "isCore": false, "reason": "AOE控制，保护setup阶段" }
+      {
+        "cardId": "ironclad_reaper",
+        "weight": 60,
+        "isCore": false,
+        "reason": "AOE伤害 + 回复，弥补自伤损失"
+      },
+      {
+        "cardId": "ironclad_inflame",
+        "weight": 55,
+        "isCore": false,
+        "reason": "额外力量来源"
+      },
+      {
+        "cardId": "ironclad_shockwave",
+        "weight": 45,
+        "isCore": false,
+        "reason": "AOE控制，保护setup阶段"
+      }
     ],
-    "preferredRatio": { "attack": 0.45, "skill": 0.30, "power": 0.25 },
-    "idealCostCurve": [0.20, 0.40, 0.30, 0.10],
+    "preferredRatio": {
+      "attack": 0.45,
+      "skill": 0.3,
+      "power": 0.25
+    },
+    "idealCostCurve": [
+      0.2,
+      0.4,
+      0.3,
+      0.1
+    ],
     "scoringWeights": {
       "coreCardMatch": 0.35,
       "importantCardMatch": 0.25,
-      "supportCardMatch": 0.10,
-      "ratioMatch": 0.10,
+      "supportCardMatch": 0.1,
+      "ratioMatch": 0.1,
       "costCurveMatch": 0.05,
       "synergyBonus": 0.15
     },
@@ -226,7 +481,11 @@
       {
         "id": "blood_rupture_cycle",
         "name": "破裂循环",
-        "cards": ["ironclad_rupture", "ironclad_brutality", "ironclad_combust"],
+        "cards": [
+          "ironclad_rupture",
+          "ironclad_brutality",
+          "ironclad_combust"
+        ],
         "description": "残暴每回合自伤触发破裂获得力量 + 燃烧每回合自伤再触发破裂 = 力量指数增长",
         "power": "game_winning",
         "setup": "先打出破裂，再打出残暴和燃烧，力量会持续增长"
@@ -234,7 +493,11 @@
       {
         "id": "blood_reaper",
         "name": "放血收割",
-        "cards": ["ironclad_hemokinesis", "ironclad_offering", "ironclad_reaper"],
+        "cards": [
+          "ironclad_hemokinesis",
+          "ironclad_offering",
+          "ironclad_reaper"
+        ],
         "description": "通过放血和献祭大量自伤获取资源 → 死神AOE回复弥补生命损失",
         "power": "high",
         "setup": "前期积累自伤效果，关键时刻用死神回复"
@@ -259,6 +522,14 @@
         "忽视回复手段，纯靠自伤输出",
         "忘记恶魔形态也可以配合放血流"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.25,
+      "archetypeFit": 0.25,
+      "synergy": 0.2,
+      "floorAdaptation": 0.1,
+      "relicSynergy": 0.1,
+      "deckHealth": 0.1
     }
   },
   {
@@ -269,36 +540,99 @@
     "description": "通过精简牌组，实现每回合无限循环打牌。需要极端的牌组管理，但一旦成型几乎无敌。",
     "difficulty": "advanced",
     "coreCards": [
-      { "cardId": "ironclad_pommel_strike", "weight": 90, "isCore": true, "reason": "剑柄打击：攻击+过牌，无限循环的核心输出+过牌" },
-      { "cardId": "ironclad_shrug_it_off", "weight": 85, "isCore": true, "reason": "耸肩无视：护甲+过牌，循环核心防御+过牌" },
-      { "cardId": "ironclad_burning_pact", "weight": 80, "isCore": true, "reason": "燃烧契约：消耗+过牌，精简牌组+循环" }
+      {
+        "cardId": "ironclad_pommel_strike",
+        "weight": 90,
+        "isCore": true,
+        "reason": "剑柄打击：攻击+过牌，无限循环的核心输出+过牌"
+      },
+      {
+        "cardId": "ironclad_shrug_it_off",
+        "weight": 85,
+        "isCore": true,
+        "reason": "耸肩无视：护甲+过牌，循环核心防御+过牌"
+      },
+      {
+        "cardId": "ironclad_burning_pact",
+        "weight": 80,
+        "isCore": true,
+        "reason": "燃烧契约：消耗+过牌，精简牌组+循环"
+      }
     ],
     "importantCards": [
-      { "cardId": "ironclad_burning_pact", "weight": 75, "isCore": false, "reason": "消耗+过牌，精简牌组" },
-      { "cardId": "ironclad_second_wind", "weight": 70, "isCore": false, "reason": "消耗非攻击牌精简牌组" },
-      { "cardId": "ironclad_true_grit", "weight": 65, "isCore": false, "reason": "消耗+护甲，精简牌组" },
-      { "cardId": "ironclad_battle_trance", "weight": 70, "isCore": false, "reason": "零费过牌3张" }
+      {
+        "cardId": "ironclad_burning_pact",
+        "weight": 75,
+        "isCore": false,
+        "reason": "消耗+过牌，精简牌组"
+      },
+      {
+        "cardId": "ironclad_second_wind",
+        "weight": 70,
+        "isCore": false,
+        "reason": "消耗非攻击牌精简牌组"
+      },
+      {
+        "cardId": "ironclad_true_grit",
+        "weight": 65,
+        "isCore": false,
+        "reason": "消耗+护甲，精简牌组"
+      },
+      {
+        "cardId": "ironclad_battle_trance",
+        "weight": 70,
+        "isCore": false,
+        "reason": "零费过牌3张"
+      }
     ],
     "supportCards": [
-      { "cardId": "ironclad_flex", "weight": 55, "isCore": false, "reason": "零费力量，循环中使用" },
-      { "cardId": "ironclad_anger", "weight": 50, "isCore": false, "reason": "零费攻击，自复制" },
-      { "cardId": "ironclad_body_slam", "weight": 45, "isCore": false, "reason": "1费输出，护甲转化为伤害" }
+      {
+        "cardId": "ironclad_flex",
+        "weight": 55,
+        "isCore": false,
+        "reason": "零费力量，循环中使用"
+      },
+      {
+        "cardId": "ironclad_anger",
+        "weight": 50,
+        "isCore": false,
+        "reason": "零费攻击，自复制"
+      },
+      {
+        "cardId": "ironclad_body_slam",
+        "weight": 45,
+        "isCore": false,
+        "reason": "1费输出，护甲转化为伤害"
+      }
     ],
-    "preferredRatio": { "attack": 0.35, "skill": 0.45, "power": 0.20 },
-    "idealCostCurve": [0.30, 0.45, 0.20, 0.05],
+    "preferredRatio": {
+      "attack": 0.35,
+      "skill": 0.45,
+      "power": 0.2
+    },
+    "idealCostCurve": [
+      0.3,
+      0.45,
+      0.2,
+      0.05
+    ],
     "scoringWeights": {
-      "coreCardMatch": 0.35,
-      "importantCardMatch": 0.25,
-      "supportCardMatch": 0.10,
-      "ratioMatch": 0.10,
-      "costCurveMatch": 0.05,
-      "synergyBonus": 0.15
+      "coreCardMatch": 0.4,
+      "importantCardMatch": 0.2,
+      "supportCardMatch": 0.05,
+      "ratioMatch": 0.1,
+      "costCurveMatch": 0.15,
+      "synergyBonus": 0.1
     },
     "combos": [
       {
         "id": "infinite_cycle",
         "name": "无限循环",
-        "cards": ["ironclad_pommel_strike", "ironclad_shrug_it_off", "ironclad_flex"],
+        "cards": [
+          "ironclad_pommel_strike",
+          "ironclad_shrug_it_off",
+          "ironclad_flex"
+        ],
         "description": "精简牌组至5张以内 → 剑柄打击+耸肩无视频繁洗牌 → 日跟能量回补 → 无限循环",
         "power": "game_winning",
         "setup": "需要在前期大量消耗/移除多余牌，将牌组精简到核心几张"
@@ -323,6 +657,14 @@
         "没有足够的过牌手段",
         "太早尝试无限流，组件不齐"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.1,
+      "archetypeFit": 0.25,
+      "synergy": 0.25,
+      "floorAdaptation": 0.1,
+      "relicSynergy": 0.05,
+      "deckHealth": 0.25
     }
   }
 ]

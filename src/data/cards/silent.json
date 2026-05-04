@@ -556,7 +556,7 @@
     },
     {
       "id": "silent_setup",
-      "name": "准备",
+      "name": "布局",
       "nameEn": "Setup",
       "character": "silent",
       "type": "skill",

@@ -6,6 +6,29 @@ import { analyzeDeckHealth } from './archetypeEngine'
 
 export type { CardScore, SkipAnalysis, Recommendation }
 
+/** 默认权重（当没有匹配流派时使用） */
+const DEFAULT_WEIGHTS = {
+  baseStrength: 0.20,
+  archetypeFit: 0.25,
+  synergy: 0.20,
+  floorAdaptation: 0.15,
+  relicSynergy: 0.10,
+  deckHealth: 0.10,
+}
+
+/**
+ * 获取当前流派的评分权重，优先使用流派自定义权重
+ */
+function getScoringWeights(archetypes: ArchetypeMatch[]): typeof DEFAULT_WEIGHTS {
+  if (archetypes.length > 0) {
+    const archetype = getArchetypeById(archetypes[0].archetypeId)
+    if (archetype?.cardScorerWeights) {
+      return archetype.cardScorerWeights
+    }
+  }
+  return DEFAULT_WEIGHTS
+}
+
 /**
  * 改进的多维度选牌评分
  */
@@ -55,14 +78,15 @@ export function scoreCardOptions(
     // 6. 牌库健康度 (10%)
     const deckHealth = calcDeckHealthContribution(card, deck)
 
-    // 加权总分
+    // 加权总分（使用流派自定义权重）
+    const w = getScoringWeights(archetypes)
     const score = Math.round(
-      baseStrength * 0.20 +
-      archetypeFit * 0.25 +
-      synergy * 0.20 +
-      floorAdaptation * 0.15 +
-      relicSynergy * 0.10 +
-      deckHealth * 0.10
+      baseStrength * w.baseStrength +
+      archetypeFit * w.archetypeFit +
+      synergy * w.synergy +
+      floorAdaptation * w.floorAdaptation +
+      relicSynergy * w.relicSynergy +
+      deckHealth * w.deckHealth
     )
 
     if (reasons.length === 0) reasons.push('中规中矩的选择')

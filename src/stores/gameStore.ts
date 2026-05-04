@@ -43,6 +43,17 @@ interface GameState {
   updateGameState: (state: Partial<Pick<GameState, 'floor' | 'health' | 'maxHealth' | 'gold'>>) => void
 }
 
+/** 统一计算牌库全量分析，避免多次 set() */
+function computeFullAnalysis(deck: DeckCard[], character: CharacterId, relics: OwnedRelic[]) {
+  return {
+    archetypes: identifyArchetypes(deck, character, relics),
+    deckHealth: analyzeDeckHealth(deck),
+    costCurve: analyzeCostCurve(deck),
+    combatBalance: analyzeCombatBalance(deck),
+    combos: detectCombos(deck, character),
+  }
+}
+
 export const useGameStore = create<GameState>((set, get) => ({
   character: null,
   deck: [],
@@ -59,34 +70,25 @@ export const useGameStore = create<GameState>((set, get) => ({
   combos: [],
 
   setCharacter: (c) => {
-    set({ character: c, deck: [], relics: [], archetypes: [], recommendation: null, deckHealth: null, combos: [] })
+    set({ character: c, deck: [], relics: [], archetypes: [], recommendation: null, deckHealth: null, costCurve: null, combatBalance: null, combos: [] })
   },
 
   setDeck: (d) => {
-    set({ deck: d })
     const { character, relics } = get()
     if (character) {
-      const archetypes = identifyArchetypes(d, character, relics)
-      const deckHealth = analyzeDeckHealth(d)
-      const costCurve = analyzeCostCurve(d)
-      const combatBalance = analyzeCombatBalance(d)
-      const combos = detectCombos(d, character)
-      set({ archetypes, deckHealth, costCurve, combatBalance, combos })
+      set({ deck: d, ...computeFullAnalysis(d, character, relics) })
+    } else {
+      set({ deck: d })
     }
   },
 
   addCard: (cardId) => {
     const { deck, character, relics } = get()
     const newDeck = [...deck, { cardId, upgraded: false }]
-    set({ deck: newDeck })
     if (character) {
-      set({
-        archetypes: identifyArchetypes(newDeck, character, relics),
-        deckHealth: analyzeDeckHealth(newDeck),
-        costCurve: analyzeCostCurve(newDeck),
-        combatBalance: analyzeCombatBalance(newDeck),
-        combos: detectCombos(newDeck, character),
-      })
+      set({ deck: newDeck, ...computeFullAnalysis(newDeck, character, relics) })
+    } else {
+      set({ deck: newDeck })
     }
   },
 
@@ -95,15 +97,10 @@ export const useGameStore = create<GameState>((set, get) => ({
     const idx = deck.findIndex(d => d.cardId === cardId)
     if (idx === -1) return
     const newDeck = [...deck.slice(0, idx), ...deck.slice(idx + 1)]
-    set({ deck: newDeck })
     if (character) {
-      set({
-        archetypes: identifyArchetypes(newDeck, character, relics),
-        deckHealth: analyzeDeckHealth(newDeck),
-        costCurve: analyzeCostCurve(newDeck),
-        combatBalance: analyzeCombatBalance(newDeck),
-        combos: detectCombos(newDeck, character),
-      })
+      set({ deck: newDeck, ...computeFullAnalysis(newDeck, character, relics) })
+    } else {
+      set({ deck: newDeck })
     }
   },
 
@@ -115,41 +112,38 @@ export const useGameStore = create<GameState>((set, get) => ({
   setGold: (g) => set({ gold: g }),
 
   setRelics: (r) => {
-    set({ relics: r })
     const { deck, character } = get()
     if (character) {
-      set({ archetypes: identifyArchetypes(deck, character, r) })
+      set({ relics: r, archetypes: identifyArchetypes(deck, character, r) })
+    } else {
+      set({ relics: r })
     }
   },
 
   addRelic: (relicId) => {
-    const { relics, deck, character } = get()
-    const newRelics = [...relics, { relicId, obtainedAtFloor: get().floor }]
-    set({ relics: newRelics })
+    const { relics, deck, character, floor } = get()
+    const newRelics = [...relics, { relicId, obtainedAtFloor: floor }]
     if (character) {
-      set({ archetypes: identifyArchetypes(deck, character, newRelics) })
+      set({ relics: newRelics, archetypes: identifyArchetypes(deck, character, newRelics) })
+    } else {
+      set({ relics: newRelics })
     }
   },
 
   removeRelic: (relicId) => {
     const { relics, deck, character } = get()
     const newRelics = relics.filter(r => r.relicId !== relicId)
-    set({ relics: newRelics })
     if (character) {
-      set({ archetypes: identifyArchetypes(deck, character, newRelics) })
+      set({ relics: newRelics, archetypes: identifyArchetypes(deck, character, newRelics) })
+    } else {
+      set({ relics: newRelics })
     }
   },
 
   analyzeDeck: () => {
     const { deck, character, relics } = get()
     if (!character) return
-    set({
-      archetypes: identifyArchetypes(deck, character, relics),
-      deckHealth: analyzeDeckHealth(deck),
-      costCurve: analyzeCostCurve(deck),
-      combatBalance: analyzeCombatBalance(deck),
-      combos: detectCombos(deck, character),
-    })
+    set(computeFullAnalysis(deck, character, relics))
   },
 
   analyzeReward: (optionIds) => {

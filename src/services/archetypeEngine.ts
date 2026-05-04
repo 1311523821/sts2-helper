@@ -262,8 +262,14 @@ export function analyzeCostCurve(deck: DeckCard[]): CostCurveAnalysis {
 
   let totalCost = 0
   let count = 0
+  let xCardCount = 0
   for (const card of cards) {
     if (!card) continue
+    if (card.cost < 0) {
+      // X费牌单独计数，不参与平均费用计算
+      xCardCount++
+      continue
+    }
     totalCost += card.cost
     count++
   }
@@ -290,6 +296,7 @@ export function analyzeCostCurve(deck: DeckCard[]): CostCurveAnalysis {
     averageCost: Math.round(averageCost * 100) / 100,
     oneDropRatio: Math.round(oneDropRatio * 100),
     highCostRatio: Math.round(highCostRatio * 100),
+    xCardCount,
     rating,
     suggestion,
   }
@@ -369,24 +376,32 @@ function calcCostCurve(deck: DeckCard[]): number[] {
   for (const dc of deck) {
     const card = getCardById(dc.cardId)
     if (!card) continue
+    // X费牌(cost=-1)不参与费用曲线分布统计
+    if (card.cost < 0) continue
     const idx = card.cost >= 3 ? 3 : card.cost
     curve[idx]++
   }
-  const total = deck.length || 1
-  return curve.map(v => v / total)
+  // 分母使用非X费牌数量，保持比例准确
+  const nonXCount = deck.filter(dc => {
+    const card = getCardById(dc.cardId)
+    return card && card.cost >= 0
+  }).length || 1
+  return curve.map(v => v / nonXCount)
 }
 
 function calcDeckSynergyScore(deck: DeckCard[]): number {
-  const cards = deck.map(dc => getCardById(dc.cardId)).filter(Boolean)
-  if (cards.length < 2) return 0
-  let synergyPairs = 0
-  let totalPairs = 0
-  for (let i = 0; i < cards.length; i++) {
-    for (let j = i + 1; j < cards.length; j++) {
-      totalPairs++
-      const common = cards[i]!.tags.filter(t => cards[j]!.tags.includes(t))
-      if (common.length > 0) synergyPairs++
+  const tagCount = new Map<string, number>()
+  for (const dc of deck) {
+    const card = getCardById(dc.cardId)
+    if (!card) continue
+    for (const tag of card.tags) {
+      tagCount.set(tag, (tagCount.get(tag) || 0) + 1)
     }
   }
-  return totalPairs > 0 ? (synergyPairs / totalPairs) * 100 : 0
+  let sharedTags = 0
+  for (const count of tagCount.values()) {
+    if (count >= 2) sharedTags++
+  }
+  const totalTags = tagCount.size
+  return totalTags > 0 ? (sharedTags / totalTags) * 100 : 0
 }

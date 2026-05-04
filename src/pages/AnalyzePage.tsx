@@ -5,8 +5,9 @@ import { DeckManager } from '@/components/analyze/DeckManager'
 import { RewardAnalyzer } from '@/components/analyze/RewardAnalyzer'
 import { DeckStats } from '@/components/analyze/DeckStats'
 import { ArchetypePanel } from '@/components/ArchetypePanel'
-import type { Card } from '@/types'
+import type { Card, CardType } from '@/types'
 import { TYPE_NAMES, TYPE_COLORS } from '@/constants'
+import { useDebounce } from '@/hooks/useDebounce'
 
 function FloorBadge({ floor }: { floor: number }) {
   const act = floor <= 17 ? 1 : floor <= 34 ? 2 : 3
@@ -25,9 +26,9 @@ export default function AnalyzePage() {
   } = useGameStore()
   const [tab, setTab] = useState<'deck' | 'reward' | 'stats'>('deck')
   const [search, setSearch] = useState('')
+  const debouncedSearch = useDebounce(search, 300)
   const [rewardInput, setRewardInput] = useState('')
   const [groupMode, setGroupMode] = useState<'type' | 'cost' | 'rarity'>('type')
-  const [dragId, setDragId] = useState<string | null>(null)
 
   if (!character) {
     return (
@@ -42,7 +43,7 @@ export default function AnalyzePage() {
   }
 
   const allCards = getCardsByCharacter(character)
-  const filtered = search ? searchCards(search, character) : allCards
+  const filtered = debouncedSearch ? searchCards(debouncedSearch, character) : allCards
   const deckCards = deck.map(dc => ({ ...dc, card: allCards.find(c => c.id === dc.cardId) }))
 
   // Deck stats
@@ -79,13 +80,6 @@ export default function AnalyzePage() {
   const handleAddReward = () => {
     const ids = rewardInput.split(/[,\n\s]+/).map(s => s.trim()).filter(Boolean)
     if (ids.length > 0) analyzeReward(ids)
-  }
-
-  const handleDragStart = (cardId: string) => setDragId(cardId)
-  const handleDragOver = (e: React.DragEvent) => e.preventDefault()
-  const handleDrop = (_cardId: string) => {
-    setDragId(null)
-    // For now just visual feedback - reordering within deck is complex with zustand
   }
 
   return (
@@ -137,8 +131,7 @@ export default function AnalyzePage() {
               filtered={filtered} deck={deck} search={search} setSearch={setSearch}
               addCard={addCard} removeCard={removeCard}
               groupMode={groupMode} setGroupMode={setGroupMode}
-              groupedDeck={groupedDeck} dragId={dragId}
-              handleDragStart={handleDragStart} handleDragOver={handleDragOver} handleDrop={handleDrop}
+              groupedDeck={groupedDeck}
             />
           )}
           {tab === 'reward' && (
@@ -163,7 +156,7 @@ export default function AnalyzePage() {
               {deck.length > 0 && (
                 <div className="flex gap-1">
                   {Object.entries(stats.typeCount).map(([type, count]) => (
-                    <span key={type} className="text-[10px] px-1.5 py-0.5 rounded" style={{ backgroundColor: TYPE_COLORS[type] + '20', color: TYPE_COLORS[type] }}>
+                    <span key={type} className="text-[10px] px-1.5 py-0.5 rounded" style={{ backgroundColor: TYPE_COLORS[type as CardType] + '20', color: TYPE_COLORS[type as CardType] }}>
                       {count}
                     </span>
                   ))}

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { CHARACTER_IDS, CHARACTER_INFO, getAllCards, getCardsByCharacter, getCardById } from '@/data/cards'
 import { getAllArchetypes, getArchetypesByCharacter } from '@/data/archetypes'
-import type { CharacterId, Card } from '@/types'
+import type { CharacterId, Card, CardType, CardRarity } from '@/types'
 import { TYPE_ICONS, TYPE_NAMES, RARITY_NAMES } from '@/constants'
 
 export default function StatsPage() {
@@ -85,12 +85,12 @@ export default function StatsPage() {
 
       {/* Tabs */}
       <div className="flex gap-2 mb-6">
-        {[
-          { key: 'cards', label: '🃏 卡牌统计' },
-          { key: 'archetypes', label: '🎯 流派统计' },
-          { key: 'combos', label: '🔗 热门Combo' },
-        ].map(t => (
-          <button key={t.key} onClick={() => setActiveTab(t.key as any)}
+        {([
+          { key: 'cards' as const, label: '🃏 卡牌统计' },
+          { key: 'archetypes' as const, label: '🎯 流派统计' },
+          { key: 'combos' as const, label: '🔗 热门Combo' },
+        ] as const).map(t => (
+          <button key={t.key} onClick={() => setActiveTab(t.key)}
             className={`pill-tab ${activeTab === t.key ? 'active' : ''}`}>{t.label}</button>
         ))}
       </div>
@@ -125,7 +125,7 @@ export default function StatsPage() {
                 {Object.entries(cardStats.typeCount).sort((a, b) => b[1] - a[1]).map(([type, count]) => (
                   <div key={type}>
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-text-primary">{TYPE_ICONS[type]} {TYPE_NAMES[type] || type}</span>
+                      <span className="text-sm text-text-primary">{TYPE_ICONS[type as CardType]} {TYPE_NAMES[type as CardType] || type}</span>
                       <span className="text-xs text-text-muted">{count}张 ({Math.round(count / cardStats.total * 100)}%)</span>
                     </div>
                     <div className="h-3 bg-warm-100 rounded-full overflow-hidden">
@@ -168,7 +168,7 @@ export default function StatsPage() {
                   return (
                     <div key={rarity} className="flex items-center gap-2 p-2 bg-warm-50 rounded-lg">
                       <div className={`w-3 h-3 rounded-full ${colors[rarity] || 'bg-warm-300'}`} />
-                      <span className="text-sm text-text-primary flex-1">{RARITY_NAMES[rarity] || rarity}</span>
+                      <span className="text-sm text-text-primary flex-1">{RARITY_NAMES[rarity as CardRarity] || rarity}</span>
                       <span className="text-sm font-bold text-text-primary">{count}</span>
                     </div>
                   )
@@ -220,7 +220,7 @@ export default function StatsPage() {
                       <div className="text-xs text-text-muted mt-1">
                         {Object.entries(
                           cards.reduce((acc: Record<string, number>, c) => { acc[c.type] = (acc[c.type] || 0) + 1; return acc }, {})
-                        ).map(([t, n]) => `${TYPE_ICONS[t]}${n}`).join(' ')}
+                        ).map(([t, n]) => `${TYPE_ICONS[t as CardType]}${n}`).join(' ')}
                       </div>
                     </div>
                   )

@@ -7,27 +7,87 @@
     "description": "通过积累王权层数，利用王权触发各种强力效果。",
     "difficulty": "intermediate",
     "coreCards": [
-      { "cardId": "prince_succession", "weight": 90, "isCore": true, "reason": "每回合自动获得王权" },
-      { "cardId": "prince_crown_slash", "weight": 80, "isCore": true, "reason": "王权越高伤害越高" },
-      { "cardId": "prince_kingmaker", "weight": 85, "isCore": true, "reason": "王权转化为力量和敏捷" }
+      {
+        "cardId": "prince_succession",
+        "weight": 90,
+        "isCore": true,
+        "reason": "每回合自动获得王权"
+      },
+      {
+        "cardId": "prince_crown_slash",
+        "weight": 80,
+        "isCore": true,
+        "reason": "王权越高伤害越高"
+      },
+      {
+        "cardId": "prince_kingmaker",
+        "weight": 85,
+        "isCore": true,
+        "reason": "王权转化为力量和敏捷"
+      }
     ],
     "importantCards": [
-      { "cardId": "prince_throne_room", "weight": 70, "isCore": false, "reason": "复制卡牌" },
-      { "cardId": "prince_royal_guard", "weight": 65, "isCore": false, "reason": "王权越高护甲越高" },
-      { "cardId": "prince_royal_decree", "weight": 60, "isCore": false, "reason": "基础王权来源" }
+      {
+        "cardId": "prince_throne_room",
+        "weight": 70,
+        "isCore": false,
+        "reason": "复制卡牌"
+      },
+      {
+        "cardId": "prince_royal_guard",
+        "weight": 65,
+        "isCore": false,
+        "reason": "王权越高护甲越高"
+      },
+      {
+        "cardId": "prince_royal_decree",
+        "weight": 60,
+        "isCore": false,
+        "reason": "基础王权来源"
+      }
     ],
     "supportCards": [
-      { "cardId": "prince_tax", "weight": 50, "isCore": false, "reason": "获取金币" },
-      { "cardId": "prince_knights_charge", "weight": 45, "isCore": false, "reason": "攻击 + 护甲" }
+      {
+        "cardId": "prince_tax",
+        "weight": 50,
+        "isCore": false,
+        "reason": "获取金币"
+      },
+      {
+        "cardId": "prince_knights_charge",
+        "weight": 45,
+        "isCore": false,
+        "reason": "攻击 + 护甲"
+      }
     ],
-    "preferredRatio": { "attack": 0.35, "skill": 0.40, "power": 0.25 },
-    "idealCostCurve": [0.15, 0.45, 0.30, 0.10],
-    "scoringWeights": { "coreCardMatch": 0.35, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.15 },
+    "preferredRatio": {
+      "attack": 0.35,
+      "skill": 0.4,
+      "power": 0.25
+    },
+    "idealCostCurve": [
+      0.15,
+      0.45,
+      0.3,
+      0.1
+    ],
+    "scoringWeights": {
+      "coreCardMatch": 0.35,
+      "importantCardMatch": 0.25,
+      "supportCardMatch": 0.1,
+      "ratioMatch": 0.1,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.15
+    },
     "combos": [
       {
         "id": "king_power",
         "name": "王者之力",
-        "cards": ["prince_succession", "prince_kingmaker", "prince_crown_slash"],
+        "cards": [
+          "prince_succession",
+          "prince_kingmaker",
+          "prince_crown_slash"
+        ],
         "description": "继承每回合获得王权 → 造王者转化为力量/敏捷 → 皇冠斩高伤害输出",
         "power": "game_winning",
         "setup": "先打出继承和造王者，然后积累王权"
@@ -35,7 +95,11 @@
       {
         "id": "king_throne",
         "name": "王座双倍",
-        "cards": ["prince_throne_room", "prince_crown_slash", "prince_royal_guard"],
+        "cards": [
+          "prince_throne_room",
+          "prince_crown_slash",
+          "prince_royal_guard"
+        ],
         "description": "王座厅复制皇冠斩 → 双倍输出；或复制皇家卫队 → 双倍护甲",
         "power": "high",
         "setup": "根据情况选择复制输出或防御牌"
@@ -57,6 +121,14 @@
         "王权积累太慢",
         "没有造王者就走王权流"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.2,
+      "archetypeFit": 0.3,
+      "synergy": 0.2,
+      "floorAdaptation": 0.1,
+      "relicSynergy": 0.1,
+      "deckHealth": 0.1
     }
   },
   {
@@ -67,27 +139,87 @@
     "description": "通过高伤害攻击牌直接输出，配合王权加成和骑士冲锋等牌打出爆发伤害。简单直接的暴力流派。",
     "difficulty": "beginner",
     "coreCards": [
-      { "cardId": "prince_crown_slash", "weight": 90, "isCore": true, "reason": "王权越高伤害越高，攻击流核心输出" },
-      { "cardId": "prince_knights_charge", "weight": 85, "isCore": true, "reason": "高伤害+护甲，攻防一体" },
-      { "cardId": "prince_kingmaker", "weight": 80, "isCore": true, "reason": "王权转化为力量，提升所有攻击" }
+      {
+        "cardId": "prince_crown_slash",
+        "weight": 90,
+        "isCore": true,
+        "reason": "王权越高伤害越高，攻击流核心输出"
+      },
+      {
+        "cardId": "prince_knights_charge",
+        "weight": 85,
+        "isCore": true,
+        "reason": "高伤害+护甲，攻防一体"
+      },
+      {
+        "cardId": "prince_kingmaker",
+        "weight": 80,
+        "isCore": true,
+        "reason": "王权转化为力量，提升所有攻击"
+      }
     ],
     "importantCards": [
-      { "cardId": "prince_royal_decree", "weight": 70, "isCore": false, "reason": "基础王权来源" },
-      { "cardId": "prince_succession", "weight": 75, "isCore": false, "reason": "每回合自动王权" },
-      { "cardId": "prince_throne_room", "weight": 65, "isCore": false, "reason": "复制攻击牌双倍输出" }
+      {
+        "cardId": "prince_royal_decree",
+        "weight": 70,
+        "isCore": false,
+        "reason": "基础王权来源"
+      },
+      {
+        "cardId": "prince_succession",
+        "weight": 75,
+        "isCore": false,
+        "reason": "每回合自动王权"
+      },
+      {
+        "cardId": "prince_throne_room",
+        "weight": 65,
+        "isCore": false,
+        "reason": "复制攻击牌双倍输出"
+      }
     ],
     "supportCards": [
-      { "cardId": "prince_royal_guard", "weight": 50, "isCore": false, "reason": "防御" },
-      { "cardId": "prince_tax", "weight": 45, "isCore": false, "reason": "经济" }
+      {
+        "cardId": "prince_royal_guard",
+        "weight": 50,
+        "isCore": false,
+        "reason": "防御"
+      },
+      {
+        "cardId": "prince_tax",
+        "weight": 45,
+        "isCore": false,
+        "reason": "经济"
+      }
     ],
-    "preferredRatio": { "attack": 0.50, "skill": 0.30, "power": 0.20 },
-    "idealCostCurve": [0.20, 0.45, 0.25, 0.10],
-    "scoringWeights": { "coreCardMatch": 0.35, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.15 },
+    "preferredRatio": {
+      "attack": 0.5,
+      "skill": 0.3,
+      "power": 0.2
+    },
+    "idealCostCurve": [
+      0.2,
+      0.45,
+      0.25,
+      0.1
+    ],
+    "scoringWeights": {
+      "coreCardMatch": 0.35,
+      "importantCardMatch": 0.25,
+      "supportCardMatch": 0.1,
+      "ratioMatch": 0.1,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.15
+    },
     "combos": [
       {
         "id": "attack_burst",
         "name": "攻击爆发",
-        "cards": ["prince_kingmaker", "prince_crown_slash", "prince_throne_room"],
+        "cards": [
+          "prince_kingmaker",
+          "prince_crown_slash",
+          "prince_throne_room"
+        ],
         "description": "造王者转化力量 → 皇冠斩高伤害 → 王座厅复制 → 双倍爆发",
         "power": "game_winning",
         "setup": "先打出造王者积累力量，再用王座厅复制皇冠斩"
@@ -110,6 +242,14 @@
         "王权不够时伤害不足",
         "忽视过牌，找不到关键牌"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.3,
+      "archetypeFit": 0.2,
+      "synergy": 0.15,
+      "floorAdaptation": 0.15,
+      "relicSynergy": 0.1,
+      "deckHealth": 0.1
     }
   },
   {
@@ -120,27 +260,87 @@
     "description": "利用储君的连胜机制，通过连续击杀获取额外奖励，滚雪球式成长。需要高效清场能力。",
     "difficulty": "advanced",
     "coreCards": [
-      { "cardId": "prince_crown_slash", "weight": 90, "isCore": true, "reason": "高伤害输出，保证击杀" },
-      { "cardId": "prince_kingmaker", "weight": 85, "isCore": true, "reason": "王权转化为力量，滚雪球" },
-      { "cardId": "prince_succession", "weight": 80, "isCore": true, "reason": "每回合自动王权，持续成长" }
+      {
+        "cardId": "prince_crown_slash",
+        "weight": 90,
+        "isCore": true,
+        "reason": "高伤害输出，保证击杀"
+      },
+      {
+        "cardId": "prince_kingmaker",
+        "weight": 85,
+        "isCore": true,
+        "reason": "王权转化为力量，滚雪球"
+      },
+      {
+        "cardId": "prince_succession",
+        "weight": 80,
+        "isCore": true,
+        "reason": "每回合自动王权，持续成长"
+      }
     ],
     "importantCards": [
-      { "cardId": "prince_throne_room", "weight": 75, "isCore": false, "reason": "复制关键牌加速成长" },
-      { "cardId": "prince_knights_charge", "weight": 70, "isCore": false, "reason": "高伤害保证击杀" },
-      { "cardId": "prince_tax", "weight": 65, "isCore": false, "reason": "经济支持连胜" }
+      {
+        "cardId": "prince_throne_room",
+        "weight": 75,
+        "isCore": false,
+        "reason": "复制关键牌加速成长"
+      },
+      {
+        "cardId": "prince_knights_charge",
+        "weight": 70,
+        "isCore": false,
+        "reason": "高伤害保证击杀"
+      },
+      {
+        "cardId": "prince_tax",
+        "weight": 65,
+        "isCore": false,
+        "reason": "经济支持连胜"
+      }
     ],
     "supportCards": [
-      { "cardId": "prince_royal_guard", "weight": 50, "isCore": false, "reason": "防御保命" },
-      { "cardId": "prince_royal_decree", "weight": 45, "isCore": false, "reason": "基础王权" }
+      {
+        "cardId": "prince_royal_guard",
+        "weight": 50,
+        "isCore": false,
+        "reason": "防御保命"
+      },
+      {
+        "cardId": "prince_royal_decree",
+        "weight": 45,
+        "isCore": false,
+        "reason": "基础王权"
+      }
     ],
-    "preferredRatio": { "attack": 0.45, "skill": 0.35, "power": 0.20 },
-    "idealCostCurve": [0.15, 0.45, 0.30, 0.10],
-    "scoringWeights": { "coreCardMatch": 0.35, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.15 },
+    "preferredRatio": {
+      "attack": 0.45,
+      "skill": 0.35,
+      "power": 0.2
+    },
+    "idealCostCurve": [
+      0.15,
+      0.45,
+      0.3,
+      0.1
+    ],
+    "scoringWeights": {
+      "coreCardMatch": 0.35,
+      "importantCardMatch": 0.25,
+      "supportCardMatch": 0.1,
+      "ratioMatch": 0.1,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.15
+    },
     "combos": [
       {
         "id": "streak_snowball",
         "name": "滚雪球",
-        "cards": ["prince_succession", "prince_kingmaker", "prince_crown_slash"],
+        "cards": [
+          "prince_succession",
+          "prince_kingmaker",
+          "prince_crown_slash"
+        ],
         "description": "继承持续获取王权 → 造王者转化为力量 → 皇冠斩越来越强 → 击杀获取更多资源 → 滚雪球",
         "power": "game_winning",
         "setup": "前期积累王权和力量，中后期开始连胜"
@@ -163,6 +363,14 @@
         "力量不够导致无法击杀",
         "忽视防御被反杀断连胜"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.25,
+      "archetypeFit": 0.25,
+      "synergy": 0.15,
+      "floorAdaptation": 0.15,
+      "relicSynergy": 0.1,
+      "deckHealth": 0.1
     }
   }
 ]

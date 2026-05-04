@@ -16,18 +16,13 @@ export interface DeckManagerProps {
   groupMode: 'type' | 'cost' | 'rarity'
   setGroupMode: (mode: 'type' | 'cost' | 'rarity') => void
   groupedDeck: Record<string, DeckCardWithInfo[]>
-  dragId: string | null
-  handleDragStart: (cardId: string) => void
-  handleDragOver: (e: React.DragEvent) => void
-  handleDrop: (cardId: string) => void
 }
 
 export function DeckManager({
   filtered, deck, search, setSearch,
   addCard, removeCard,
   groupMode, setGroupMode,
-  groupedDeck, dragId,
-  handleDragStart, handleDragOver, handleDrop,
+  groupedDeck,
 }: DeckManagerProps) {
   return (
     <div>
@@ -52,13 +47,8 @@ export function DeckManager({
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {cards.map((dc) => (
-                  <span key={dc.cardId} draggable
-                    onDragStart={() => handleDragStart(dc.cardId)}
-                    onDragOver={handleDragOver}
-                    onDrop={() => handleDrop(dc.cardId)}
-                    className={`inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-lg cursor-pointer transition-all ${
-                      dragId === dc.cardId ? 'bg-xm-primary text-white scale-105' : 'bg-white text-text-secondary hover:bg-xm-light hover:text-xm-primary border border-warm-200'
-                    }`}>
+                  <span key={dc.cardId}
+                    className="inline-flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-lg cursor-pointer transition-all bg-white text-text-secondary hover:bg-xm-light hover:text-xm-primary border border-warm-200">
                     {dc.card?.name || dc.cardId}
                     <span className="opacity-50 ml-0.5" onClick={() => removeCard(dc.cardId)}>✕</span>
                   </span>

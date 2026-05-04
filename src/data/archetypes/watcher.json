@@ -7,28 +7,93 @@
     "description": "通过频繁切换愤怒/平静姿态，利用姿态切换触发的各种效果进行输出和防御。",
     "difficulty": "intermediate",
     "coreCards": [
-      { "cardId": "watcher_rushdown", "weight": 90, "isCore": true, "reason": "进入愤怒时抽牌，核心引擎" },
-      { "cardId": "watcher_flurry_of_blows", "weight": 85, "isCore": true, "reason": "切换姿态时回到手牌，可反复使用" },
-      { "cardId": "watcher_mental_fortress", "weight": 80, "isCore": true, "reason": "切换姿态时获得护甲" }
+      {
+        "cardId": "watcher_rushdown",
+        "weight": 90,
+        "isCore": true,
+        "reason": "进入愤怒时抽牌，核心引擎"
+      },
+      {
+        "cardId": "watcher_flurry_of_blows",
+        "weight": 85,
+        "isCore": true,
+        "reason": "切换姿态时回到手牌，可反复使用"
+      },
+      {
+        "cardId": "watcher_mental_fortress",
+        "weight": 80,
+        "isCore": true,
+        "reason": "切换姿态时获得护甲"
+      }
     ],
     "importantCards": [
-      { "cardId": "watcher_tantrum", "weight": 75, "isCore": false, "reason": "进入愤怒 + 多段攻击" },
-      { "cardId": "watcher_fear_no_evil", "weight": 70, "isCore": false, "reason": "进入平静 + 护甲" },
-      { "cardId": "watcher_empty_fist", "weight": 65, "isCore": false, "reason": "退出姿态 + 攻击" }
+      {
+        "cardId": "watcher_tantrum",
+        "weight": 75,
+        "isCore": false,
+        "reason": "进入愤怒 + 多段攻击"
+      },
+      {
+        "cardId": "watcher_fear_no_evil",
+        "weight": 70,
+        "isCore": false,
+        "reason": "进入平静 + 护甲"
+      },
+      {
+        "cardId": "watcher_empty_fist",
+        "weight": 65,
+        "isCore": false,
+        "reason": "退出姿态 + 攻击"
+      }
     ],
     "supportCards": [
-      { "cardId": "watcher_eruption", "weight": 60, "isCore": false, "reason": "进入愤怒" },
-      { "cardId": "watcher_vigilance", "weight": 55, "isCore": false, "reason": "进入平静" },
-      { "cardId": "watcher_indignation", "weight": 50, "isCore": false, "reason": "愤怒姿态易伤" }
+      {
+        "cardId": "watcher_eruption",
+        "weight": 60,
+        "isCore": false,
+        "reason": "进入愤怒"
+      },
+      {
+        "cardId": "watcher_vigilance",
+        "weight": 55,
+        "isCore": false,
+        "reason": "进入平静"
+      },
+      {
+        "cardId": "watcher_indignation",
+        "weight": 50,
+        "isCore": false,
+        "reason": "愤怒姿态易伤"
+      }
     ],
-    "preferredRatio": { "attack": 0.40, "skill": 0.35, "power": 0.25 },
-    "idealCostCurve": [0.25, 0.45, 0.20, 0.10],
-    "scoringWeights": { "coreCardMatch": 0.35, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.15 },
+    "preferredRatio": {
+      "attack": 0.4,
+      "skill": 0.35,
+      "power": 0.25
+    },
+    "idealCostCurve": [
+      0.25,
+      0.45,
+      0.2,
+      0.1
+    ],
+    "scoringWeights": {
+      "coreCardMatch": 0.35,
+      "importantCardMatch": 0.25,
+      "supportCardMatch": 0.1,
+      "ratioMatch": 0.1,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.15
+    },
     "combos": [
       {
         "id": "stance_cycle",
         "name": "姿态循环",
-        "cards": ["watcher_rushdown", "watcher_flurry_of_blows", "watcher_tantrum"],
+        "cards": [
+          "watcher_rushdown",
+          "watcher_flurry_of_blows",
+          "watcher_tantrum"
+        ],
         "description": "急攻抽牌 → 发怒进入愤怒 → 连击风暴回手 → 空拳退出 → 再次进入愤怒",
         "power": "game_winning",
         "setup": "需要急攻在场，然后不断切换姿态"
@@ -36,7 +101,11 @@
       {
         "id": "stance_mental_fortress",
         "name": "堡垒循环",
-        "cards": ["watcher_mental_fortress", "watcher_tantrum", "watcher_fear_no_evil"],
+        "cards": [
+          "watcher_mental_fortress",
+          "watcher_tantrum",
+          "watcher_fear_no_evil"
+        ],
         "description": "精神堡垒每次切换护甲 → 发怒进愤怒 → 无惧进平静 → 不断切换获取大量护甲",
         "power": "high",
         "setup": "先打出精神堡垒，然后不断切换姿态"
@@ -58,6 +127,14 @@
         "没有急攻就走姿态流",
         "忘记退出愤怒姿态被双倍伤害"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.15,
+      "archetypeFit": 0.25,
+      "synergy": 0.3,
+      "floorAdaptation": 0.1,
+      "relicSynergy": 0.1,
+      "deckHealth": 0.1
     }
   },
   {
@@ -68,28 +145,93 @@
     "description": "通过积累神格层数，进入神格姿态后伤害翻三倍。高爆发流派。",
     "difficulty": "advanced",
     "coreCards": [
-      { "cardId": "watcher_worship", "weight": 90, "isCore": true, "reason": "直接获得神格层数" },
-      { "cardId": "watcher_prostrate", "weight": 80, "isCore": true, "reason": "神格 + 护甲" },
-      { "cardId": "watcher_simulate_dao", "weight": 75, "isCore": true, "reason": "神格 + 过牌" }
+      {
+        "cardId": "watcher_worship",
+        "weight": 90,
+        "isCore": true,
+        "reason": "直接获得神格层数"
+      },
+      {
+        "cardId": "watcher_prostrate",
+        "weight": 80,
+        "isCore": true,
+        "reason": "神格 + 护甲"
+      },
+      {
+        "cardId": "watcher_simulate_dao",
+        "weight": 75,
+        "isCore": true,
+        "reason": "神格 + 过牌"
+      }
     ],
     "importantCards": [
-      { "cardId": "watcher_blasphemy", "weight": 70, "isCore": false, "reason": "直接进入神格，但下回合死亡" },
-      { "cardId": "watcher_conclude", "weight": 65, "isCore": false, "reason": "AOE攻击" },
-      { "cardId": "watcher_judgement", "weight": 60, "isCore": false, "reason": "处决低血量敌人" }
+      {
+        "cardId": "watcher_blasphemy",
+        "weight": 70,
+        "isCore": false,
+        "reason": "直接进入神格，但下回合死亡"
+      },
+      {
+        "cardId": "watcher_conclude",
+        "weight": 65,
+        "isCore": false,
+        "reason": "AOE攻击"
+      },
+      {
+        "cardId": "watcher_judgement",
+        "weight": 60,
+        "isCore": false,
+        "reason": "处决低血量敌人"
+      }
     ],
     "supportCards": [
-      { "cardId": "watcher_rushdown", "weight": 55, "isCore": false, "reason": "过牌" },
-      { "cardId": "watcher_mental_fortress", "weight": 50, "isCore": false, "reason": "护甲" },
-      { "cardId": "watcher_vault", "weight": 45, "isCore": false, "reason": "额外回合，神格下多输出一回合" }
+      {
+        "cardId": "watcher_rushdown",
+        "weight": 55,
+        "isCore": false,
+        "reason": "过牌"
+      },
+      {
+        "cardId": "watcher_mental_fortress",
+        "weight": 50,
+        "isCore": false,
+        "reason": "护甲"
+      },
+      {
+        "cardId": "watcher_vault",
+        "weight": 45,
+        "isCore": false,
+        "reason": "额外回合，神格下多输出一回合"
+      }
     ],
-    "preferredRatio": { "attack": 0.35, "skill": 0.40, "power": 0.25 },
-    "idealCostCurve": [0.20, 0.40, 0.30, 0.10],
-    "scoringWeights": { "coreCardMatch": 0.35, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.15 },
+    "preferredRatio": {
+      "attack": 0.35,
+      "skill": 0.4,
+      "power": 0.25
+    },
+    "idealCostCurve": [
+      0.2,
+      0.4,
+      0.3,
+      0.1
+    ],
+    "scoringWeights": {
+      "coreCardMatch": 0.4,
+      "importantCardMatch": 0.2,
+      "supportCardMatch": 0.1,
+      "ratioMatch": 0.1,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.15
+    },
     "combos": [
       {
         "id": "divinity_burst",
         "name": "神格爆发",
-        "cards": ["watcher_worship", "watcher_conclude", "watcher_judgement"],
+        "cards": [
+          "watcher_worship",
+          "watcher_conclude",
+          "watcher_judgement"
+        ],
         "description": "崇拜进入神格 → 伤害x3 → 终结AOE清场",
         "power": "game_winning",
         "setup": "先积累神格层数，进入神格后全力输出"
@@ -97,7 +239,11 @@
       {
         "id": "divinity_vault",
         "name": "神格金库",
-        "cards": ["watcher_worship", "watcher_vault", "watcher_conclude"],
+        "cards": [
+          "watcher_worship",
+          "watcher_vault",
+          "watcher_conclude"
+        ],
         "description": "进入神格 → 金库获得额外回合 → 两回合神格输出 = 毁灭性伤害",
         "power": "game_winning",
         "setup": "先进入神格，再用金库获取额外回合"
@@ -119,6 +265,14 @@
         "亵渎使用时机不对",
         "神格层数不够就输出"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.25,
+      "archetypeFit": 0.3,
+      "synergy": 0.15,
+      "floorAdaptation": 0.1,
+      "relicSynergy": 0.1,
+      "deckHealth": 0.1
     }
   },
   {
@@ -129,29 +283,99 @@
     "description": "利用保留机制，在关键时刻集中打出大量牌。配合灵盾等按手牌数计算效果的牌，爆发力极强。",
     "difficulty": "intermediate",
     "coreCards": [
-      { "cardId": "watcher_spirit_shield", "weight": 90, "isCore": true, "reason": "按手牌数x3获得护甲，保留越多护甲越高" },
-      { "cardId": "watcher_establishment", "weight": 85, "isCore": true, "reason": "每回合结束保留手牌，保留流核心" },
-      { "cardId": "watcher_rushdown", "weight": 75, "isCore": true, "reason": "过牌，保持手牌数量" }
+      {
+        "cardId": "watcher_spirit_shield",
+        "weight": 90,
+        "isCore": true,
+        "reason": "按手牌数x3获得护甲，保留越多护甲越高"
+      },
+      {
+        "cardId": "watcher_establishment",
+        "weight": 85,
+        "isCore": true,
+        "reason": "每回合结束保留手牌，保留流核心"
+      },
+      {
+        "cardId": "watcher_rushdown",
+        "weight": 75,
+        "isCore": true,
+        "reason": "过牌，保持手牌数量"
+      }
     ],
     "importantCards": [
-      { "cardId": "watcher_evaluate", "weight": 70, "isCore": false, "reason": "护甲 + 洞察过牌" },
-      { "cardId": "watcher_halt", "weight": 65, "isCore": false, "reason": "零费护甲，愤怒下额外" },
-      { "cardId": "watcher_vault", "weight": 60, "isCore": false, "reason": "额外回合，保留后爆发" },
-      { "cardId": "watcher_meditate", "weight": 55, "isCore": false, "reason": "从消耗堆回收牌+进平静" }
+      {
+        "cardId": "watcher_evaluate",
+        "weight": 70,
+        "isCore": false,
+        "reason": "护甲 + 洞察过牌"
+      },
+      {
+        "cardId": "watcher_halt",
+        "weight": 65,
+        "isCore": false,
+        "reason": "零费护甲，愤怒下额外"
+      },
+      {
+        "cardId": "watcher_vault",
+        "weight": 60,
+        "isCore": false,
+        "reason": "额外回合，保留后爆发"
+      },
+      {
+        "cardId": "watcher_meditate",
+        "weight": 55,
+        "isCore": false,
+        "reason": "从消耗堆回收牌+进平静"
+      }
     ],
     "supportCards": [
-      { "cardId": "watcher_just_lucky", "weight": 50, "isCore": false, "reason": "零费多效，保留后打出" },
-      { "cardId": "watcher_cut_through_fate", "weight": 45, "isCore": false, "reason": "攻击+过牌" },
-      { "cardId": "watcher_wish", "weight": 40, "isCore": false, "reason": "万能选择，保留后关键时刻使用" }
+      {
+        "cardId": "watcher_just_lucky",
+        "weight": 50,
+        "isCore": false,
+        "reason": "零费多效，保留后打出"
+      },
+      {
+        "cardId": "watcher_cut_through_fate",
+        "weight": 45,
+        "isCore": false,
+        "reason": "攻击+过牌"
+      },
+      {
+        "cardId": "watcher_wish",
+        "weight": 40,
+        "isCore": false,
+        "reason": "万能选择，保留后关键时刻使用"
+      }
     ],
-    "preferredRatio": { "attack": 0.30, "skill": 0.45, "power": 0.25 },
-    "idealCostCurve": [0.25, 0.40, 0.25, 0.10],
-    "scoringWeights": { "coreCardMatch": 0.35, "importantCardMatch": 0.25, "supportCardMatch": 0.10, "ratioMatch": 0.10, "costCurveMatch": 0.05, "synergyBonus": 0.15 },
+    "preferredRatio": {
+      "attack": 0.3,
+      "skill": 0.45,
+      "power": 0.25
+    },
+    "idealCostCurve": [
+      0.25,
+      0.4,
+      0.25,
+      0.1
+    ],
+    "scoringWeights": {
+      "coreCardMatch": 0.35,
+      "importantCardMatch": 0.2,
+      "supportCardMatch": 0.15,
+      "ratioMatch": 0.1,
+      "costCurveMatch": 0.05,
+      "synergyBonus": 0.15
+    },
     "combos": [
       {
         "id": "retain_spirit_shield",
         "name": "保留灵盾",
-        "cards": ["watcher_spirit_shield", "watcher_establishment", "watcher_evaluate"],
+        "cards": [
+          "watcher_spirit_shield",
+          "watcher_establishment",
+          "watcher_evaluate"
+        ],
         "description": "周密计划保留手牌 → 评估+洞察保持手牌数量 → 灵盾按手牌数获取海量护甲",
         "power": "high",
         "setup": "先打出周密计划，每回合保留手牌，积累到大量手牌后用灵盾"
@@ -159,7 +383,11 @@
       {
         "id": "retain_vault",
         "name": "保留金库",
-        "cards": ["watcher_vault", "watcher_spirit_shield", "watcher_wish"],
+        "cards": [
+          "watcher_vault",
+          "watcher_spirit_shield",
+          "watcher_wish"
+        ],
         "description": "保留大量手牌 → 金库额外回合 → 灵盾海量护甲 + 许愿全面buff",
         "power": "game_winning",
         "setup": "积累手牌后一回合内打出金库+灵盾+许愿"
@@ -182,6 +410,14 @@
         "手牌管理不当，保留太多导致无法出牌",
         "灵盾使用时机不对，手牌不够多"
       ]
+    },
+    "cardScorerWeights": {
+      "baseStrength": 0.15,
+      "archetypeFit": 0.25,
+      "synergy": 0.15,
+      "floorAdaptation": 0.1,
+      "relicSynergy": 0.1,
+      "deckHealth": 0.25
     }
   }
 ]

@@ -992,7 +992,7 @@
     },
     {
       "id": "ironclad_combust",
-      "name": "燃烧",
+      "name": "灼烧",
       "nameEn": "Combust",
       "character": "ironclad",
       "type": "power",
@@ -1236,7 +1236,7 @@
     },
     {
       "id": "ironclad_fearless_pain",
-      "name": "无惧疼痛",
+      "name": "无畏之痛",
       "nameEn": "Fearless Pain",
       "character": "ironclad",
       "type": "power",
