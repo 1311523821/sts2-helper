@@ -1023,6 +1023,144 @@
    STS 卡牌样式
    ============================================================ */
 
+/* ============================================================
+   STS 卡牌交互特效 - 拖拽、选择、悬停
+   ============================================================ */
+
+/* 拖拽阴影效果 */
+@keyframes stsDragShadow {
+  0% {
+    box-shadow:
+      0 10px 30px -5px rgba(0, 0, 0, 0.5),
+      0 5px 15px -3px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02) rotate(2deg);
+  }
+  50% {
+    box-shadow:
+      0 15px 40px -5px rgba(0, 0, 0, 0.6),
+      0 8px 20px -3px rgba(0, 0, 0, 0.4);
+    transform: scale(1.03) rotate(1.5deg);
+  }
+  100% {
+    box-shadow:
+      0 10px 30px -5px rgba(0, 0, 0, 0.5),
+      0 5px 15px -3px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02) rotate(2deg);
+  }
+}
+
+.card-effect-dragging {
+  animation: stsDragShadow 0.8s ease-in-out infinite;
+  z-index: 100;
+  cursor: grabbing;
+  opacity: 0.95;
+}
+
+.card-effect-dragging::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px dashed rgba(201, 162, 39, 0.6);
+  pointer-events: none;
+}
+
+/* 选择光效脉冲 */
+@keyframes stsSelectPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(201, 162, 39, 0.4),
+      0 0 20px rgba(201, 162, 39, 0.3),
+      inset 0 0 10px rgba(201, 162, 39, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 0 8px rgba(201, 162, 39, 0),
+      0 0 35px rgba(201, 162, 39, 0.5),
+      inset 0 0 15px rgba(201, 162, 39, 0.15);
+  }
+}
+
+.card-effect-selected {
+  animation: stsSelectPulse 2s ease-in-out infinite;
+  border: 2px solid rgba(201, 162, 39, 0.6);
+}
+
+.card-effect-selected::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at center, rgba(201, 162, 39, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* 悬停放大发光效果 */
+@keyframes stsCardGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 10px rgba(201, 162, 39, 0.2),
+      0 0 20px rgba(201, 162, 39, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 15px rgba(201, 162, 39, 0.35),
+      0 0 30px rgba(201, 162, 39, 0.2);
+  }
+}
+
+.card-effect-hovered {
+  transform: scale(1.03) translateY(-2px);
+  animation: stsCardGlow 2.5s ease-in-out infinite;
+}
+
+.card-effect-hovered::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  pointer-events: none;
+}
+
+/* 深色主题下的效果调整 */
+.dark .card-effect-dragging,
+.sts .card-effect-dragging {
+  animation: stsDragShadow 0.8s ease-in-out infinite;
+}
+
+.dark .card-effect-selected,
+.sts .card-effect-selected {
+  animation: stsSelectPulse 2s ease-in-out infinite;
+  border-color: rgba(201, 162, 39, 0.7);
+}
+
+.dark .card-effect-hovered,
+.sts .card-effect-hovered {
+  animation: stsCardGlow 2.5s ease-in-out infinite;
+}
+
+/* 减少动画模式下的回退 */
+@media (prefers-reduced-motion: reduce) {
+  .card-effect-dragging {
+    animation: none;
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  }
+  .card-effect-selected {
+    animation: none;
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+  }
+  .card-effect-hovered {
+    animation: none;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(201, 162, 39, 0.2);
+  }
+}
+
 /* 卡牌 STS 风格基础 */
 .card-sts-style {
   position: relative;

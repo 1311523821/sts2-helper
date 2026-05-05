@@ -100,6 +100,10 @@ function CostGem({ cost, size = 36 }: { cost: number; size?: number }) {
             <stop offset="0%" stopColor={colors.primary} />
             <stop offset="100%" stopColor={colors.secondary} />
           </linearGradient>
+          <linearGradient id="gem-highlight" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="white" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </linearGradient>
           <filter id="gem-inner-shadow">
             <feOffset dx="0" dy="1" />
             <feGaussianBlur stdDeviation="1" result="offset-blur" />
