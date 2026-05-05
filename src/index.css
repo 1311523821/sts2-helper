@@ -1150,3 +1150,117 @@
   max-height: 1000px;
   opacity: 1;
 }
+
+/* ============================================================
+   STS 背景装饰组件
+   ============================================================ */
+.sts-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* 深蓝紫渐变背景 */
+.sts-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #0d0d1a 0%, #141428 50%, #1a1a32 100%);
+}
+
+/* 边缘渐晕效果 */
+.sts-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+/* 火焰粒子容器 */
+.sts-particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* 火焰粒子动画 */
+@keyframes stsParticleRise {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--opacity, 0.5);
+    transform: translateY(90vh) translateX(calc(var(--drift, 0) * 0.1)) scale(1);
+  }
+  90% {
+    opacity: var(--opacity, 0.5);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(var(--drift, 0)) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.sts-particle {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 120, 50, 0.9) 0%,
+    rgba(255, 80, 30, 0.6) 40%,
+    rgba(200, 50, 20, 0.3) 70%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 6px rgba(255, 100, 40, 0.5),
+    0 0 12px rgba(255, 80, 30, 0.3);
+  animation: stsParticleRise var(--duration, 7s) ease-out infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform, opacity;
+}
+
+/* 粒子颜色变体 */
+.sts-particle:nth-child(3n) {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 160, 60, 0.8) 0%,
+    rgba(255, 120, 40, 0.5) 40%,
+    rgba(200, 80, 20, 0.2) 70%,
+    transparent 100%
+  );
+}
+
+.sts-particle:nth-child(5n) {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 200, 100, 0.7) 0%,
+    rgba(255, 150, 50, 0.4) 40%,
+    rgba(200, 100, 30, 0.2) 70%,
+    transparent 100%
+  );
+}
+
+/* 地图纹理叠加层 */
+.sts-texture-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M10 10h80v80h-80z' fill='none' stroke='%23ffffff' stroke-width='0.5'/%3E%3Cpath d='M20 20h60v60h-60z' fill='none' stroke='%23ffffff' stroke-width='0.3'/%3E%3Ccircle cx='30' cy='30' r='3' fill='%23ffffff' opacity='0.3'/%3E%3Ccircle cx='70' cy='30' r='2' fill='%23ffffff' opacity='0.2'/%3E%3Ccircle cx='50' cy='50' r='4' fill='%23ffffff' opacity='0.25'/%3E%3Ccircle cx='30' cy='70' r='2' fill='%23ffffff' opacity='0.2'/%3E%3Ccircle cx='70' cy='70' r='3' fill='%23ffffff' opacity='0.3'/%3E%3Cline x1='30' y1='30' x2='50' y2='50' stroke='%23ffffff' stroke-width='0.3' opacity='0.2'/%3E%3Cline x1='70' y1='30' x2='50' y2='50' stroke='%23ffffff' stroke-width='0.3' opacity='0.2'/%3E%3Cline x1='30' y1='70' x2='50' y2='50' stroke='%23ffffff' stroke-width='0.3' opacity='0.2'/%3E%3Cline x1='70' y1='70' x2='50' y2='50' stroke='%23ffffff' stroke-width='0.3' opacity='0.2'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+
+/* 减少动画模式下隐藏粒子 */
+@media (prefers-reduced-motion: reduce) {
+  .sts-particle {
+    animation: none;
+    display: none;
+  }
+}
