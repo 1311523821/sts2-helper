@@ -40,6 +40,32 @@ export default {
           500: '#52526B',
           600: '#6B6B85',
         },
+        // STS主题配色 - 杀戮尖塔风格
+        sts: {
+          // 背景色
+          'bg-primary': '#0D0D1A',
+          'bg-secondary': '#141428',
+          'bg-card': '#1A1A2E',
+          // 文字色
+          'text-primary': '#E8E4DC',
+          'text-secondary': '#A8A0B4',
+          // 强调色 - 金色
+          accent: '#C9A227',
+          'accent-hover': '#D4B23A',
+          'accent-active': '#B8911F',
+          // 卡牌类型色
+          'card-attack': '#D94437',
+          'card-skill': '#2B7DB5',
+          'card-power': '#C9A227',
+        },
+        // STS稀有度色
+        'sts-rarity': {
+          basic: '#5A5A6E',
+          common: '#C8C8C8',
+          uncommon: '#2E8B57',
+          rare: '#4169E1',
+          special: '#9932CC',
+        },
         // 暗色主题文字
         'dark-text': {
           primary: '#E8E0D8',

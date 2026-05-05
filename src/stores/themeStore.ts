@@ -1,45 +1,58 @@
-import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
-export type ThemeMode = 'light' | 'dark' | 'system'
-export type Language = 'zh-CN' | 'en'
-export type FontSize = 'small' | 'medium' | 'large'
+export type ThemeMode = 'light' | 'dark' | 'sts' | 'system';
+export type Language = 'zh-CN' | 'en';
+export type FontSize = 'small' | 'medium' | 'large';
 
 export interface SettingsState {
-  theme: ThemeMode
-  language: Language
-  fontSize: FontSize
-  compactMode: boolean
-  showAdvancedAnalysis: boolean
-  autoSaveRecords: boolean
-  dataRemoteUrl: string
+  theme: ThemeMode;
+  language: Language;
+  fontSize: FontSize;
+  compactMode: boolean;
+  showAdvancedAnalysis: boolean;
+  autoSaveRecords: boolean;
+  dataRemoteUrl: string;
 
-  setTheme: (theme: ThemeMode) => void
-  setLanguage: (lang: Language) => void
-  setFontSize: (size: FontSize) => void
-  setCompactMode: (compact: boolean) => void
-  setShowAdvancedAnalysis: (show: boolean) => void
-  setAutoSaveRecords: (auto: boolean) => void
-  setDataRemoteUrl: (url: string) => void
-  resetSettings: () => void
+  setTheme: (theme: ThemeMode) => void;
+  setLanguage: (lang: Language) => void;
+  setFontSize: (size: FontSize) => void;
+  setCompactMode: (compact: boolean) => void;
+  setShowAdvancedAnalysis: (show: boolean) => void;
+  setAutoSaveRecords: (auto: boolean) => void;
+  setDataRemoteUrl: (url: string) => void;
+  resetSettings: () => void;
 }
 
 function applyTheme(theme: ThemeMode) {
-  const root = document.documentElement
-  let effective: 'light' | 'dark' = 'light'
+  const root = document.documentElement;
+  // 清除所有主题类
+  root.classList.remove('dark', 'sts');
+
   if (theme === 'dark') {
-    effective = 'dark'
+    root.classList.add('dark');
+  } else if (theme === 'sts') {
+    root.classList.add('sts');
   } else if (theme === 'system') {
-    effective = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      root.classList.add('dark');
+    }
   }
-  if (effective === 'dark') {
-    root.classList.add('dark')
-  } else {
-    root.classList.remove('dark')
-  }
+  // light 主题不需要添加任何类
 }
 
-const defaults: Omit<SettingsState, 'setTheme' | 'setLanguage' | 'setFontSize' | 'setCompactMode' | 'setShowAdvancedAnalysis' | 'setAutoSaveRecords' | 'setDataRemoteUrl' | 'resetSettings'> = {
+const defaults: Omit<
+  SettingsState,
+  | 'setTheme'
+  | 'setLanguage'
+  | 'setFontSize'
+  | 'setCompactMode'
+  | 'setShowAdvancedAnalysis'
+  | 'setAutoSaveRecords'
+  | 'setDataRemoteUrl'
+  | 'resetSettings'
+> = {
   theme: 'system',
   language: 'zh-CN',
   fontSize: 'medium',
@@ -47,7 +60,7 @@ const defaults: Omit<SettingsState, 'setTheme' | 'setLanguage' | 'setFontSize' |
   showAdvancedAnalysis: true,
   autoSaveRecords: true,
   dataRemoteUrl: '',
-}
+};
 
 export const useSettingsStore = create<SettingsState>()(
   persist(
@@ -55,8 +68,8 @@ export const useSettingsStore = create<SettingsState>()(
       ...defaults,
 
       setTheme: (theme) => {
-        set({ theme })
-        applyTheme(theme)
+        set({ theme });
+        applyTheme(theme);
       },
 
       setLanguage: (language) => set({ language }),
@@ -72,16 +85,16 @@ export const useSettingsStore = create<SettingsState>()(
       setDataRemoteUrl: (dataRemoteUrl) => set({ dataRemoteUrl }),
 
       resetSettings: () => {
-        set({ ...defaults })
-        applyTheme(defaults.theme)
+        set({ ...defaults });
+        applyTheme(defaults.theme);
       },
     }),
     {
       name: 'sts2-settings',
       onRehydrateStorage: () => {
         return (state) => {
-          if (state) applyTheme(state.theme)
-        }
+          if (state) applyTheme(state.theme);
+        };
       },
       partialize: (state) => ({
         theme: state.theme,
@@ -92,14 +105,14 @@ export const useSettingsStore = create<SettingsState>()(
         autoSaveRecords: state.autoSaveRecords,
         dataRemoteUrl: state.dataRemoteUrl,
       }),
-    }
-  )
-)
+    },
+  ),
+);
 
 // Listen for system theme changes when in 'system' mode
 if (typeof window !== 'undefined') {
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    const { theme } = useSettingsStore.getState()
-    if (theme === 'system') applyTheme('system')
-  })
+    const { theme } = useSettingsStore.getState();
+    if (theme === 'system') applyTheme('system');
+  });
 }

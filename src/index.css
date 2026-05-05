@@ -8,20 +8,20 @@
    CSS Custom Properties (明暗主题色彩系统)
    ============================================================ */
 :root {
-  --bg-primary: #FFFAF5;
-  --bg-secondary: #FFF5EB;
-  --bg-card: #FFFFFF;
-  --text-primary: #2D1810;
-  --text-secondary: #7A5D4A;
-  --text-muted: #8B7355;
-  --border-color: #E8DCCF;
-  --border-light: #F0E6DB;
-  --accent: #FF6B35;
+  --bg-primary: #fffaf5;
+  --bg-secondary: #fff5eb;
+  --bg-card: #ffffff;
+  --text-primary: #2d1810;
+  --text-secondary: #7a5d4a;
+  --text-muted: #8b7355;
+  --border-color: #e8dccf;
+  --border-light: #f0e6db;
+  --accent: #ff6b35;
   --accent-glow: rgba(255, 107, 53, 0.3);
   --shadow-card: 0 1px 3px rgba(45, 24, 16, 0.04), 0 4px 12px rgba(45, 24, 16, 0.03);
   --shadow-card-hover: 0 2px 8px rgba(255, 107, 53, 0.08), 0 8px 24px rgba(255, 107, 53, 0.06);
   --nav-bg: rgba(255, 255, 255, 0.8);
-  --footer-bg: #FFFAF5;
+  --footer-bg: #fffaf5;
   --card-glow-white: rgba(255, 255, 255, 0.8);
   --card-glow-green: rgba(16, 185, 129, 0.6);
   --card-glow-gold: rgba(245, 158, 11, 0.6);
@@ -29,24 +29,56 @@
 }
 
 .dark {
-  --bg-primary: #1E1E2E;
+  --bg-primary: #1e1e2e;
   --bg-secondary: #252536;
-  --bg-card: #2D2D3F;
-  --text-primary: #E8E0D8;
-  --text-secondary: #B8A898;
-  --text-muted: #8A7D72;
+  --bg-card: #2d2d3f;
+  --text-primary: #e8e0d8;
+  --text-secondary: #b8a898;
+  --text-muted: #8a7d72;
   --border-color: #363649;
-  --border-light: #2D2D3F;
-  --accent: #FF6B35;
+  --border-light: #2d2d3f;
+  --accent: #ff6b35;
   --accent-glow: rgba(255, 107, 53, 0.4);
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
   --shadow-card-hover: 0 2px 8px rgba(255, 107, 53, 0.15), 0 8px 24px rgba(255, 107, 53, 0.1);
   --nav-bg: rgba(30, 30, 46, 0.85);
-  --footer-bg: #1E1E2E;
+  --footer-bg: #1e1e2e;
   --card-glow-white: rgba(200, 200, 200, 0.4);
   --card-glow-green: rgba(16, 185, 129, 0.5);
   --card-glow-gold: rgba(245, 158, 11, 0.5);
   --card-glow-purple: rgba(168, 85, 247, 0.5);
+}
+
+/* STS 主题 - 杀戮尖塔风格 */
+.sts {
+  --bg-primary: #0d0d1a;
+  --bg-secondary: #141428;
+  --bg-card: #1a1a2e;
+  --text-primary: #e8e4dc;
+  --text-secondary: #a8a0b4;
+  --text-muted: #6b6b85;
+  --border-color: #2a2a3e;
+  --border-light: #1f1f32;
+  --accent: #c9a227;
+  --accent-glow: rgba(201, 162, 39, 0.4);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 2px 8px rgba(201, 162, 39, 0.2), 0 8px 24px rgba(201, 162, 39, 0.15);
+  --nav-bg: rgba(13, 13, 26, 0.9);
+  --footer-bg: #0d0d1a;
+  --card-glow-white: rgba(200, 200, 200, 0.3);
+  --card-glow-green: rgba(46, 139, 87, 0.5);
+  --card-glow-gold: rgba(201, 162, 39, 0.5);
+  --card-glow-purple: rgba(153, 50, 204, 0.5);
+  /* 卡牌类型色 */
+  --card-attack: #d94437;
+  --card-skill: #2b7db5;
+  --card-power: #c9a227;
+  /* 稀有度色 */
+  --rarity-basic: #5a5a6e;
+  --rarity-common: #c8c8c8;
+  --rarity-uncommon: #2e8b57;
+  --rarity-rare: #4169e1;
+  --rarity-special: #9932cc;
 }
 
 /* ============================================================
@@ -60,11 +92,18 @@
   }
 
   body {
-    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family:
+      'Noto Sans SC',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif;
     @apply min-h-screen antialiased;
     background: var(--bg-primary);
     color: var(--text-primary);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   ::selection {
@@ -81,17 +120,17 @@
     background: var(--bg-secondary);
   }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #FFD6A8, #FF6B35);
+    background: linear-gradient(180deg, #ffd6a8, #ff6b35);
     border-radius: 9999px;
     border: 2px solid var(--bg-secondary);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #FF6B35, #E85D2C);
+    background: linear-gradient(180deg, #ff6b35, #e85d2c);
   }
   /* Firefox */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #FFD6A8 var(--bg-secondary);
+    scrollbar-color: #ffd6a8 var(--bg-secondary);
   }
 }
 
@@ -99,7 +138,7 @@
    文字渐变效果
    ============================================================ */
 .text-gradient-primary {
-  background: linear-gradient(135deg, #FF6B35 0%, #F59E0B 50%, #FF6B35 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #f59e0b 50%, #ff6b35 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -108,7 +147,7 @@
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #F59E0B 0%, #FF6B35 50%, #F59E0B 100%);
+  background: linear-gradient(135deg, #f59e0b 0%, #ff6b35 50%, #f59e0b 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -117,7 +156,7 @@
 }
 
 .text-gradient-purple {
-  background: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #A855F7 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #a855f7 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -126,28 +165,69 @@
 }
 
 @keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* ============================================================
    卡牌稀有度光效动画
    ============================================================ */
 @keyframes rarityGlowWhite {
-  0%, 100% { box-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.1); }
-  50% { box-shadow: 0 0 16px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.2); }
+  0%,
+  100% {
+    box-shadow:
+      0 0 8px rgba(255, 255, 255, 0.3),
+      0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 16px rgba(255, 255, 255, 0.5),
+      0 0 40px rgba(255, 255, 255, 0.2);
+  }
 }
 @keyframes rarityGlowGreen {
-  0%, 100% { box-shadow: 0 0 8px rgba(16,185,129,0.3), 0 0 20px rgba(16,185,129,0.1); }
-  50% { box-shadow: 0 0 20px rgba(16,185,129,0.5), 0 0 40px rgba(16,185,129,0.25); }
+  0%,
+  100% {
+    box-shadow:
+      0 0 8px rgba(16, 185, 129, 0.3),
+      0 0 20px rgba(16, 185, 129, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(16, 185, 129, 0.5),
+      0 0 40px rgba(16, 185, 129, 0.25);
+  }
 }
 @keyframes rarityGlowGold {
-  0%, 100% { box-shadow: 0 0 8px rgba(245,158,11,0.3), 0 0 20px rgba(245,158,11,0.1); }
-  50% { box-shadow: 0 0 20px rgba(245,158,11,0.5), 0 0 40px rgba(245,158,11,0.25); }
+  0%,
+  100% {
+    box-shadow:
+      0 0 8px rgba(245, 158, 11, 0.3),
+      0 0 20px rgba(245, 158, 11, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(245, 158, 11, 0.5),
+      0 0 40px rgba(245, 158, 11, 0.25);
+  }
 }
 @keyframes rarityGlowPurple {
-  0%, 100% { box-shadow: 0 0 8px rgba(168,85,247,0.3), 0 0 20px rgba(168,85,247,0.1); }
-  50% { box-shadow: 0 0 20px rgba(168,85,247,0.5), 0 0 40px rgba(168,85,247,0.25); }
+  0%,
+  100% {
+    box-shadow:
+      0 0 8px rgba(168, 85, 247, 0.3),
+      0 0 20px rgba(168, 85, 247, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(168, 85, 247, 0.5),
+      0 0 40px rgba(168, 85, 247, 0.25);
+  }
 }
 
 .card-rarity-common {
@@ -158,7 +238,7 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   animation: rarityGlowWhite 3s ease-in-out infinite;
   pointer-events: none;
 }
@@ -171,7 +251,7 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  border: 1px solid rgba(16,185,129,0.4);
+  border: 1px solid rgba(16, 185, 129, 0.4);
   animation: rarityGlowGreen 3s ease-in-out infinite;
   pointer-events: none;
 }
@@ -184,7 +264,7 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  border: 1px solid rgba(245,158,11,0.4);
+  border: 1px solid rgba(245, 158, 11, 0.4);
   animation: rarityGlowGold 2.5s ease-in-out infinite;
   pointer-events: none;
 }
@@ -197,7 +277,7 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  border: 1px solid rgba(168,85,247,0.4);
+  border: 1px solid rgba(168, 85, 247, 0.4);
   animation: rarityGlowPurple 2s ease-in-out infinite;
   pointer-events: none;
 }
@@ -206,7 +286,9 @@
    卡牌3D倾斜效果
    ============================================================ */
 .card-3d-tilt {
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition:
+    transform 0.3s ease-out,
+    box-shadow 0.3s ease-out;
   transform-style: preserve-3d;
   will-change: transform;
 }
@@ -218,8 +300,14 @@
    页面切换过渡
    ============================================================ */
 @keyframes pageEnter {
-  0% { opacity: 0; transform: translateY(16px) scale(0.98); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 .page-enter {
   animation: pageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -229,12 +317,20 @@
    加载动画 - 杀戮尖塔风格
    ============================================================ */
 @keyframes stsSpinner {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes stsSpinnerInner {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(-360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 .sts-loader {
@@ -247,8 +343,8 @@
   position: absolute;
   inset: 0;
   border: 3px solid transparent;
-  border-top-color: #FF6B35;
-  border-right-color: #FF6B35;
+  border-top-color: #ff6b35;
+  border-right-color: #ff6b35;
   border-radius: 50%;
   animation: stsSpinner 1s linear infinite;
 }
@@ -282,16 +378,28 @@
   animation: pulse 2s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* ============================================================
    Logo 脉动效果
    ============================================================ */
 @keyframes logoPulse {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(255,107,53,0)); }
-  50% { transform: scale(1.08); filter: drop-shadow(0 0 8px rgba(255,107,53,0.4)); }
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(255, 107, 53, 0));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.4));
+  }
 }
 .logo-pulse {
   animation: logoPulse 3s ease-in-out infinite;
@@ -301,8 +409,12 @@
    导航 active 状态指示器
    ============================================================ */
 @keyframes navActiveIndicator {
-  0% { transform: scaleX(0); }
-  100% { transform: scaleX(1); }
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 .nav-active-indicator {
   position: relative;
@@ -315,7 +427,7 @@
   transform: translateX(-50%);
   width: 60%;
   height: 3px;
-  background: #FF6B35;
+  background: #ff6b35;
   border-radius: 9999px;
   animation: navActiveIndicator 0.3s ease-out forwards;
 }
@@ -326,8 +438,13 @@
 
 /* 攻击牌 - 红色脉冲 */
 @keyframes attackPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
 }
 .card-effect-attack {
   position: relative;
@@ -345,8 +462,16 @@
 
 /* 技能牌 - 蓝色涟漪 */
 @keyframes skillRipple {
-  0% { transform: scale(1); opacity: 0.6; border-color: rgba(59, 130, 246, 0.5); }
-  100% { transform: scale(1.15); opacity: 0; border-color: rgba(59, 130, 246, 0); }
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+    border-color: rgba(59, 130, 246, 0.5);
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+    border-color: rgba(59, 130, 246, 0);
+  }
 }
 .card-effect-skill {
   position: relative;
@@ -364,12 +489,17 @@
 
 /* 能力牌 - 金色光环 */
 @keyframes powerAura {
-  0%, 100% {
-    box-shadow: 0 0 12px rgba(245, 158, 11, 0.2), inset 0 0 12px rgba(245, 158, 11, 0.05);
+  0%,
+  100% {
+    box-shadow:
+      0 0 12px rgba(245, 158, 11, 0.2),
+      inset 0 0 12px rgba(245, 158, 11, 0.05);
     border-color: rgba(245, 158, 11, 0.3);
   }
   50% {
-    box-shadow: 0 0 24px rgba(245, 158, 11, 0.4), inset 0 0 20px rgba(245, 158, 11, 0.1);
+    box-shadow:
+      0 0 24px rgba(245, 158, 11, 0.4),
+      inset 0 0 20px rgba(245, 158, 11, 0.1);
     border-color: rgba(245, 158, 11, 0.5);
   }
 }
@@ -389,8 +519,13 @@
 
 /* 稀有卡牌 - 星光闪烁 */
 @keyframes starField {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 .card-effect-rare {
   position: relative;
@@ -402,11 +537,11 @@
   inset: -2px;
   border-radius: inherit;
   background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.8) 0px, transparent 1px),
-    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.6) 0px, transparent 1px),
-    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.7) 0px, transparent 1px),
-    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.5) 0px, transparent 1px),
-    radial-gradient(circle at 50% 50%, rgba(245,158,11,0.15) 0%, transparent 70%);
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.8) 0px, transparent 1px),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.6) 0px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.7) 0px, transparent 1px),
+    radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.5) 0px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
   border: 1px solid rgba(245, 158, 11, 0.3);
   animation: starField 2s ease-in-out infinite;
   pointer-events: none;
@@ -586,8 +721,12 @@
     transform: translateY(100vh) rotate(0deg);
     opacity: 0;
   }
-  5% { opacity: 0.7; }
-  95% { opacity: 0.7; }
+  5% {
+    opacity: 0.7;
+  }
+  95% {
+    opacity: 0.7;
+  }
   100% {
     transform: translateY(-100vh) rotate(720deg);
     opacity: 0;
@@ -598,13 +737,16 @@
    光晕效果
    ============================================================ */
 @keyframes haloGlow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 var(--accent-glow),
-                0 0 20px -5px var(--accent-glow);
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 var(--accent-glow),
+      0 0 20px -5px var(--accent-glow);
   }
   50% {
-    box-shadow: 0 0 0 4px var(--accent-glow),
-                0 0 30px -5px var(--accent-glow);
+    box-shadow:
+      0 0 0 4px var(--accent-glow),
+      0 0 30px -5px var(--accent-glow);
   }
 }
 
@@ -616,16 +758,30 @@
    Stats 动画
    ============================================================ */
 @keyframes countUp {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .stat-item {
   animation: countUp 0.6s ease-out forwards;
 }
-.stat-item:nth-child(1) { animation-delay: 0.1s; }
-.stat-item:nth-child(2) { animation-delay: 0.2s; }
-.stat-item:nth-child(3) { animation-delay: 0.3s; }
-.stat-item:nth-child(4) { animation-delay: 0.4s; }
+.stat-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stat-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stat-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stat-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 /* ============================================================
    Stagger 逐项入场动画
@@ -634,85 +790,294 @@
   opacity: 0;
   animation: staggerFadeIn 0.5s ease-out forwards;
 }
-.stagger-item:nth-child(1) { animation-delay: 0.05s; }
-.stagger-item:nth-child(2) { animation-delay: 0.1s; }
-.stagger-item:nth-child(3) { animation-delay: 0.15s; }
-.stagger-item:nth-child(4) { animation-delay: 0.2s; }
-.stagger-item:nth-child(5) { animation-delay: 0.25s; }
-.stagger-item:nth-child(6) { animation-delay: 0.3s; }
-.stagger-item:nth-child(7) { animation-delay: 0.35s; }
-.stagger-item:nth-child(8) { animation-delay: 0.4s; }
-.stagger-item:nth-child(9) { animation-delay: 0.45s; }
-.stagger-item:nth-child(10) { animation-delay: 0.5s; }
+.stagger-item:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.stagger-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.stagger-item:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.stagger-item:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.stagger-item:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.stagger-item:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.stagger-item:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.stagger-item:nth-child(8) {
+  animation-delay: 0.4s;
+}
+.stagger-item:nth-child(9) {
+  animation-delay: 0.45s;
+}
+.stagger-item:nth-child(10) {
+  animation-delay: 0.5s;
+}
 
 /* ============================================================
    Dark Mode Tailwind Class Overrides
    Makes existing text-text-primary, bg-warm-100 etc. work in dark mode
    ============================================================ */
-.dark .text-text-primary { color: #E8E0D8; }
-.dark .text-text-secondary { color: #B8A898; }
-.dark .text-text-muted { color: #8A7D72; }
-.dark .text-text-muted-light { color: #6B6B85; }
-.dark .bg-warm-50 { background-color: #1E1E2E; }
-.dark .bg-warm-100 { background-color: #252536; }
-.dark .bg-warm-150 { background-color: #2D2D3F; }
-.dark .bg-warm-200 { background-color: #363649; }
-.dark .bg-warm-300 { background-color: #44445A; }
-.dark .bg-white { background-color: #2D2D3F; }
-.dark .bg-xm-light { background-color: rgba(255, 107, 53, 0.12); }
-.dark .border-warm-200 { border-color: #363649; }
-.dark .border-warm-100 { border-color: #2D2D3F; }
-.dark .border-warm-300 { border-color: #44445A; }
-.dark .bg-warm-200.rounded-full { background-color: #44445A; }
-.dark .ring-xm-primary\/20 { --tw-ring-color: rgba(255, 107, 53, 0.2); }
-.dark .shadow-lg { --tw-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); box-shadow: var(--tw-shadow); }
-.dark .bg-green-50 { background-color: rgba(16, 185, 129, 0.1); }
-.dark .bg-amber-50 { background-color: rgba(245, 158, 11, 0.1); }
-.dark .bg-orange-50 { background-color: rgba(255, 107, 53, 0.1); }
-.dark .bg-red-50 { background-color: rgba(220, 38, 38, 0.1); }
-.dark .text-green-600 { color: #34d399; }
-.dark .text-amber-600 { color: #fbbf24; }
-.dark .text-amber-700 { color: #f59e0b; }
-.dark .text-orange-700 { color: #FF6B35; }
-.dark .text-red-600 { color: #f87171; }
-.dark .text-score-low { color: #f87171; }
-.dark .hover\:bg-warm-100:hover { background-color: #2D2D3F; }
-.dark .hover\:bg-warm-200:hover { background-color: #363649; }
-.dark .bg-xm-primary\/10 { background-color: rgba(255, 107, 53, 0.15); }
-.dark .bg-xm-secondary\/10 { background-color: rgba(245, 158, 11, 0.15); }
+.dark .text-text-primary {
+  color: #e8e0d8;
+}
+.dark .text-text-secondary {
+  color: #b8a898;
+}
+.dark .text-text-muted {
+  color: #8a7d72;
+}
+.dark .text-text-muted-light {
+  color: #6b6b85;
+}
+.dark .bg-warm-50 {
+  background-color: #1e1e2e;
+}
+.dark .bg-warm-100 {
+  background-color: #252536;
+}
+.dark .bg-warm-150 {
+  background-color: #2d2d3f;
+}
+.dark .bg-warm-200 {
+  background-color: #363649;
+}
+.dark .bg-warm-300 {
+  background-color: #44445a;
+}
+.dark .bg-white {
+  background-color: #2d2d3f;
+}
+.dark .bg-xm-light {
+  background-color: rgba(255, 107, 53, 0.12);
+}
+.dark .border-warm-200 {
+  border-color: #363649;
+}
+.dark .border-warm-100 {
+  border-color: #2d2d3f;
+}
+.dark .border-warm-300 {
+  border-color: #44445a;
+}
+.dark .bg-warm-200.rounded-full {
+  background-color: #44445a;
+}
+.dark .ring-xm-primary\/20 {
+  --tw-ring-color: rgba(255, 107, 53, 0.2);
+}
+.dark .shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--tw-shadow);
+}
+.dark .bg-green-50 {
+  background-color: rgba(16, 185, 129, 0.1);
+}
+.dark .bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.1);
+}
+.dark .bg-orange-50 {
+  background-color: rgba(255, 107, 53, 0.1);
+}
+.dark .bg-red-50 {
+  background-color: rgba(220, 38, 38, 0.1);
+}
+.dark .text-green-600 {
+  color: #34d399;
+}
+.dark .text-amber-600 {
+  color: #fbbf24;
+}
+.dark .text-amber-700 {
+  color: #f59e0b;
+}
+.dark .text-orange-700 {
+  color: #ff6b35;
+}
+.dark .text-red-600 {
+  color: #f87171;
+}
+.dark .text-score-low {
+  color: #f87171;
+}
+.dark .hover\:bg-warm-100:hover {
+  background-color: #2d2d3f;
+}
+.dark .hover\:bg-warm-200:hover {
+  background-color: #363649;
+}
+.dark .bg-xm-primary\/10 {
+  background-color: rgba(255, 107, 53, 0.15);
+}
+.dark .bg-xm-secondary\/10 {
+  background-color: rgba(245, 158, 11, 0.15);
+}
+
+/* ============================================================
+   STS Mode Tailwind Class Overrides
+   杀戮尖塔风格主题覆盖
+   ============================================================ */
+.sts .text-text-primary {
+  color: #e8e4dc;
+}
+.sts .text-text-secondary {
+  color: #a8a0b4;
+}
+.sts .text-text-muted {
+  color: #6b6b85;
+}
+.sts .text-text-muted-light {
+  color: #5a5a6e;
+}
+.sts .bg-warm-50 {
+  background-color: #0d0d1a;
+}
+.sts .bg-warm-100 {
+  background-color: #141428;
+}
+.sts .bg-warm-150 {
+  background-color: #1a1a2e;
+}
+.sts .bg-warm-200 {
+  background-color: #1f1f32;
+}
+.sts .bg-warm-300 {
+  background-color: #2a2a3e;
+}
+.sts .bg-white {
+  background-color: #1a1a2e;
+}
+.sts .bg-xm-light {
+  background-color: rgba(201, 162, 39, 0.12);
+}
+.sts .border-warm-200 {
+  border-color: #2a2a3e;
+}
+.sts .border-warm-100 {
+  border-color: #1f1f32;
+}
+.sts .border-warm-300 {
+  border-color: #36365a;
+}
+.sts .bg-warm-200.rounded-full {
+  background-color: #36365a;
+}
+.sts .ring-xm-primary\/20 {
+  --tw-ring-color: rgba(201, 162, 39, 0.2);
+}
+.sts .shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--tw-shadow);
+}
+.sts .bg-green-50 {
+  background-color: rgba(46, 139, 87, 0.1);
+}
+.sts .bg-amber-50 {
+  background-color: rgba(201, 162, 39, 0.1);
+}
+.sts .bg-orange-50 {
+  background-color: rgba(217, 68, 55, 0.1);
+}
+.sts .bg-red-50 {
+  background-color: rgba(217, 68, 55, 0.1);
+}
+.sts .text-green-600 {
+  color: #2e8b57;
+}
+.sts .text-amber-600 {
+  color: #c9a227;
+}
+.sts .text-amber-700 {
+  color: #d4b23a;
+}
+.sts .text-orange-700 {
+  color: #d94437;
+}
+.sts .text-red-600 {
+  color: #d94437;
+}
+.sts .text-score-low {
+  color: #d94437;
+}
+.sts .hover\:bg-warm-100:hover {
+  background-color: #1a1a2e;
+}
+.sts .hover\:bg-warm-200:hover {
+  background-color: #1f1f32;
+}
+.sts .bg-xm-primary\/10 {
+  background-color: rgba(201, 162, 39, 0.15);
+}
+.sts .bg-xm-secondary\/10 {
+  background-color: rgba(201, 162, 39, 0.15);
+}
 
 /* ============================================================
    Reduced Motion
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .particle { display: none; }
-  .sts-loader::before { animation: spin 1s linear infinite; }
-  .sts-loader::after { animation: none; }
-  .logo-pulse { animation: none; }
-  .card-3d-tilt:hover { transform: none; }
-  .card-display:hover { transform: translateY(-2px); }
+  .particle {
+    display: none;
+  }
+  .sts-loader::before {
+    animation: spin 1s linear infinite;
+  }
+  .sts-loader::after {
+    animation: none;
+  }
+  .logo-pulse {
+    animation: none;
+  }
+  .card-3d-tilt:hover {
+    transform: none;
+  }
+  .card-display:hover {
+    transform: translateY(-2px);
+  }
 }
 
 /* ============================================================
    移动端汉堡菜单动画
    ============================================================ */
 @keyframes hamburgerOpen1 {
-  0% { transform: translateY(0) rotate(0); }
-  100% { transform: translateY(6px) rotate(45deg); }
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(6px) rotate(45deg);
+  }
 }
 @keyframes hamburgerOpen2 {
-  0% { opacity: 1; }
-  100% { opacity: 0; transform: scaleX(0); }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
 }
 @keyframes hamburgerOpen3 {
-  0% { transform: translateY(0) rotate(0); }
-  100% { transform: translateY(-6px) rotate(-45deg); }
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(-6px) rotate(-45deg);
+  }
 }
 
 .hamburger-line {
@@ -721,7 +1086,9 @@
   height: 2px;
   border-radius: 1px;
   background: var(--text-primary);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 .hamburger-open .hamburger-line:nth-child(1) {
   animation: hamburgerOpen1 0.3s ease forwards;
@@ -737,8 +1104,14 @@
    移动端菜单面板
    ============================================================ */
 @keyframes mobileMenuSlide {
-  0% { opacity: 0; transform: translateY(-10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .mobile-menu-enter {
   animation: mobileMenuSlide 0.25s ease-out forwards;
@@ -748,8 +1121,14 @@
    Fade-in 通用动画
    ============================================================ */
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .animate-fade-in {
   animation: fade-in 0.4s ease-out forwards;
@@ -763,7 +1142,9 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
 }
 .accordion-enter-active {
   max-height: 1000px;
