@@ -1020,6 +1020,238 @@
 }
 
 /* ============================================================
+   STS 卡牌样式
+   ============================================================ */
+
+/* 卡牌 STS 风格基础 */
+.card-sts-style {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.card-sts-style:hover {
+  transform: perspective(800px) rotateY(5deg) rotateX(-3deg) translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card-sts-style.selected {
+  background: var(--bg-secondary);
+}
+
+/* 六边形费用宝石 */
+.cost-gem {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.cost-gem:hover {
+  transform: scale(1.1);
+}
+
+/* 高光渐变定义 */
+#gem-highlight {
+  stop-color: white;
+  stop-opacity: 0.5;
+}
+
+/* 卡牌类型边框光效 - 攻击牌红色脉冲 */
+.card-type-attack {
+  position: relative;
+}
+
+.card-type-attack::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 14px;
+  border: 2px solid var(--card-attack, #d94437);
+  opacity: 0.5;
+  animation: attackBorderPulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes attackBorderPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    box-shadow: 0 0 8px var(--card-attack, #d94437);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 16px var(--card-attack, #d94437);
+  }
+}
+
+/* 卡牌类型边框光效 - 技能牌蓝色涟漪 */
+.card-type-skill {
+  position: relative;
+}
+
+.card-type-skill::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 14px;
+  border: 2px solid var(--card-skill, #2b7db5);
+  opacity: 0.5;
+  animation: skillBorderGlow 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes skillBorderGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+    box-shadow: 0 0 8px var(--card-skill, #2b7db5);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 14px var(--card-skill, #2b7db5);
+  }
+}
+
+/* 卡牌类型边框光效 - 能力牌金色光环 */
+.card-type-power {
+  position: relative;
+}
+
+.card-type-power::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 14px;
+  border: 2px solid var(--card-power, #c9a227);
+  opacity: 0.5;
+  animation: powerBorderGlow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes powerBorderGlow {
+  0%,
+  100% {
+    opacity: 0.6;
+    box-shadow: 0 0 10px var(--card-power, #c9a227);
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 0 20px var(--card-power, #c9a227);
+  }
+}
+
+/* 稀有度光效 - 罕见绿色 */
+.card-glow-uncommon::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px var(--rarity-uncommon, #2e8b57);
+  opacity: 0.4;
+  animation: uncommonGlow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes uncommonGlow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 20px var(--rarity-uncommon, #2e8b57);
+  }
+}
+
+/* 稀有度光效 - 稀有蓝色 */
+.card-glow-rare::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 16px;
+  box-shadow: 0 0 16px var(--rarity-rare, #4169e1);
+  opacity: 0.5;
+  animation: rareGlow 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes rareGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 28px var(--rarity-rare, #4169e1);
+  }
+}
+
+/* 稀有度光效 - 特殊紫色 */
+.card-glow-special::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px var(--rarity-special, #9932cc);
+  opacity: 0.6;
+  animation: specialGlow 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes specialGlow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 32px var(--rarity-special, #9932cc);
+  }
+}
+
+/* 关键词徽章 - 金色高亮 */
+.keyword-badge {
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.15), rgba(251, 191, 36, 0.1));
+  color: var(--accent, #c9a227);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+.keyword-badge:hover {
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.25), rgba(251, 191, 36, 0.15));
+  border-color: rgba(201, 162, 39, 0.5);
+}
+
+/* 卡牌艺术区域增强 */
+.card-art-area {
+  position: relative;
+}
+
+.card-art-area::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+/* 紧凑模式卡牌 */
+.card-compact {
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.card-compact:hover {
+  transform: translateY(-2px);
+}
+
+/* ============================================================
    Reduced Motion
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
@@ -1048,6 +1280,22 @@
   }
   .card-display:hover {
     transform: translateY(-2px);
+  }
+  .card-sts-style:hover {
+    transform: translateY(-2px);
+  }
+  .card-sts-style::before,
+  .card-type-attack::before,
+  .card-type-skill::before,
+  .card-type-power::before {
+    animation: none;
+    opacity: 0.5;
+  }
+  .card-glow-uncommon::after,
+  .card-glow-rare::after,
+  .card-glow-special::after {
+    animation: none;
+    opacity: 0.4;
   }
 }
 
