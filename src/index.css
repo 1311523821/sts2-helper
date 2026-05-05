@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=Cinzel:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -1649,4 +1649,262 @@
     animation: none;
     display: none;
   }
+}
+
+/* ============================================================
+   STS 主题 - 页面标题字体
+   ============================================================ */
+.sts .sts-title-font {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+}
+
+.sts .sts-title-font-small {
+  font-family: 'Cinzel', 'Noto Sans SC', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   STS 主题 - 导航栏样式
+   ============================================================ */
+.sts .sts-nav {
+  background: rgba(13, 13, 26, 0.95);
+  border-bottom-color: #2a2a3e;
+}
+
+.sts .sts-nav-link {
+  color: #a8a0b4;
+  transition: all 0.2s ease;
+}
+
+.sts .sts-nav-link:hover {
+  color: #c9a227;
+}
+
+.sts .sts-nav-link.active {
+  background: rgba(201, 162, 39, 0.15);
+  color: #c9a227;
+  box-shadow: 0 2px 8px rgba(201, 162, 39, 0.2);
+}
+
+/* ============================================================
+   STS 主题 - 页脚样式
+   ============================================================ */
+.sts .sts-footer {
+  background: #0d0d1a;
+  border-top-color: #2a2a3e;
+}
+
+.sts .sts-footer-text {
+  color: #6b6b85;
+}
+
+/* ============================================================
+   STS 主题 - 卡片网格样式
+   ============================================================ */
+.sts .sts-card-grid {
+  gap: 12px;
+}
+
+.sts .sts-card-grid > * {
+  border-color: #2a2a3e;
+}
+
+.sts .sts-card-grid > *:hover {
+  border-color: rgba(201, 162, 39, 0.3);
+  box-shadow: 0 0 15px rgba(201, 162, 39, 0.1);
+}
+
+/* ============================================================
+   STS 主题 - 筛选面板样式
+   ============================================================ */
+.sts .sts-filter-panel {
+  background: #141428;
+  border-color: #2a2a3e;
+}
+
+.sts .sts-filter-input {
+  background: #1a1a2e;
+  border-color: #2a2a3e;
+  color: #e8e4dc;
+}
+
+.sts .sts-filter-input:focus {
+  border-color: rgba(201, 162, 39, 0.5);
+  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.1);
+}
+
+.sts .sts-filter-input::placeholder {
+  color: #6b6b85;
+}
+
+/* ============================================================
+   STS 主题 - 详情弹窗样式
+   ============================================================ */
+.sts .sts-modal-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.sts .sts-modal-content {
+  background: #1a1a2e;
+  border: 1px solid #2a2a3e;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+.sts .sts-modal-header {
+  border-bottom-color: #2a2a3e;
+}
+
+.sts .sts-modal-close {
+  background: #141428;
+  color: #a8a0b4;
+}
+
+.sts .sts-modal-close:hover {
+  background: #1f1f32;
+  color: #c9a227;
+}
+
+/* ============================================================
+   STS 主题 - 角色选择卡片
+   ============================================================ */
+.sts .sts-character-card {
+  background: #1a1a2e;
+  border-color: #2a2a3e;
+  transition: all 0.3s ease;
+}
+
+.sts .sts-character-card:hover {
+  border-color: rgba(201, 162, 39, 0.4);
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.15);
+  transform: translateY(-4px);
+}
+
+/* ============================================================
+   STS 主题 - 统计数据卡片
+   ============================================================ */
+.sts .sts-stat-card {
+  background: #141428;
+  border-color: #2a2a3e;
+}
+
+.sts .sts-stat-value {
+  color: #c9a227;
+}
+
+.sts .sts-stat-label {
+  color: #6b6b85;
+}
+
+/* ============================================================
+   STS 主题 - 功能卡片
+   ============================================================ */
+.sts .sts-feature-card {
+  background: #1a1a2e;
+  border-color: #2a2a3e;
+  transition: all 0.3s ease;
+}
+
+.sts .sts-feature-card:hover {
+  border-color: rgba(201, 162, 39, 0.3);
+  box-shadow: 0 0 15px rgba(201, 162, 39, 0.1);
+}
+
+/* ============================================================
+   STS 主题 - 按钮样式覆盖
+   ============================================================ */
+.sts .btn-primary {
+  background: linear-gradient(135deg, #c9a227 0%, #d4b23a 100%);
+  box-shadow: 0 2px 8px rgba(201, 162, 39, 0.3);
+}
+
+.sts .btn-primary:hover {
+  background: linear-gradient(135deg, #d4b23a 0%, #e5c44a 100%);
+  box-shadow: 0 4px 14px rgba(201, 162, 39, 0.4);
+}
+
+.sts .btn-secondary {
+  background: #1a1a2e;
+  border-color: #2a2a3e;
+  color: #a8a0b4;
+}
+
+.sts .btn-secondary:hover {
+  border-color: rgba(201, 162, 39, 0.4);
+  color: #c9a227;
+}
+
+/* ============================================================
+   STS 主题 - 标签样式覆盖
+   ============================================================ */
+.sts .pill-tab {
+  background: #1a1a2e;
+  border-color: #2a2a3e;
+  color: #a8a0b4;
+}
+
+.sts .pill-tab:hover {
+  border-color: rgba(201, 162, 39, 0.3);
+  color: #c9a227;
+}
+
+.sts .pill-tab.active {
+  background: rgba(201, 162, 39, 0.15);
+  color: #c9a227;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(201, 162, 39, 0.2);
+}
+
+/* ============================================================
+   STS 主题 - 输入框样式覆盖
+   ============================================================ */
+.sts .input-field {
+  background: #1a1a2e;
+  border-color: #2a2a3e;
+  color: #e8e4dc;
+}
+
+.sts .input-field:focus {
+  border-color: rgba(201, 162, 39, 0.5);
+  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.1);
+}
+
+.sts .input-field::placeholder {
+  color: #6b6b85;
+}
+
+/* ============================================================
+   STS 主题 - 小米卡片样式覆盖
+   ============================================================ */
+.sts .xiaomi-card,
+.sts .xiaomi-card-static {
+  background: #1a1a2e;
+  border-color: #2a2a3e;
+}
+
+.sts .xiaomi-card:hover {
+  border-color: rgba(201, 162, 39, 0.3);
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.1);
+}
+
+/* ============================================================
+   STS 主题 - Hero 区域渐变
+   ============================================================ */
+.sts .sts-hero-gradient {
+  background: radial-gradient(ellipse at 50% 0%, rgba(201, 162, 39, 0.1) 0%, transparent 60%);
+}
+
+/* ============================================================
+   STS 主题 - 粒子颜色调整
+   ============================================================ */
+.sts .particle {
+  background: rgba(201, 162, 39, 0.25);
+}
+
+.sts .particle:nth-child(odd) {
+  background: rgba(201, 162, 39, 0.2);
+}
+
+.sts .particle:nth-child(3n) {
+  background: rgba(217, 68, 55, 0.15);
 }
